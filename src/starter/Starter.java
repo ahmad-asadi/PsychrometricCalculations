@@ -1,6 +1,9 @@
 package starter;
 
+import uiElements.MainFrame;
+
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * This class is created by Ahmad Asadi on 1/10/17.
@@ -8,8 +11,7 @@ import javax.swing.*;
 public class Starter {
 
     private Starter(){
-        JFrame mainFrame = new JFrame() ;
-        mainFrame.setSize(SystemTo);
+        new MainFrame() ;
     }
 
     public static void main(String[] args)
