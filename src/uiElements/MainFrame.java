@@ -6,6 +6,8 @@ import lang.LanguageDictionary;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
@@ -34,6 +36,8 @@ public class MainFrame extends JFrame {
     private LanguageDictionary languageDictionary;
     private JLabel indexLabel;
     private JScrollPane jScrollPane ;
+    private IndexController indexController;
+    private JButton solveBtn;
 
     public MainFrame()
     {
@@ -43,14 +47,14 @@ public class MainFrame extends JFrame {
         normalFont = new Font("Tahoma",20,12) ;
         width = 1000;
         height = 600;
-        sidePanelWidth = 2*width/3;
-        sidePanelHeight = 60 ;
-        sidePanelLocation = new Point(width/6, 20) ;
+        sidePanelWidth = width - 20 ;
+        sidePanelHeight = 200 ;
+        sidePanelLocation = new Point(10, 20) ;
         graphPanelWidth = width - 20;
         graphPanelHeight = height - sidePanelHeight - 50 ;
         graphPanelLocation = new Point(10, 20 + sidePanelHeight + 10) ;
-        sidePanelElementHeight = sidePanelHeight - 20 ;
-        sidePanelElementWidth = sidePanelWidth / 2 ;
+        sidePanelElementHeight = 40 ;
+        sidePanelElementWidth = sidePanelWidth / 4 ;
         title = getString("applicationTitle");
 
         languageDictionary = LanguageDictionary.getInstance("fa") ;
@@ -97,8 +101,27 @@ public class MainFrame extends JFrame {
     private void createSidePanelComponents() {
         indexLabel = createIndexLabel() ;
         indexName = createIndexCombo() ;
+        solveBtn = createSolveBtn() ;
         sidePanel.add(indexLabel);
         sidePanel.add(indexName);
+        sidePanel.add(solveBtn);
+    }
+
+    private JButton createSolveBtn() {
+        JButton button = new JButton() ;
+        button.setSize(sidePanelElementWidth-20, sidePanelElementHeight);
+        button.setLocation(15,10);
+        button.setText("انجام محاسبه") ;
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    indexController.solve();
+                }catch (Exception ex){ex.printStackTrace();}
+            }
+        });
+        button.setFont(normalFont);
+        return button ;
     }
 
     private JLabel createIndexLabel() {
@@ -115,7 +138,7 @@ public class MainFrame extends JFrame {
         JComboBox<String> combo = new JComboBox<>(languageDictionary.getStrings()) ;
         combo.setSize(sidePanelElementWidth + 20 , sidePanelElementHeight);
         combo.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-        combo.setLocation(5, 10);
+        combo.setLocation(sidePanelWidth - 2*sidePanelElementWidth  , 10);
         combo.setFont(normalFont);
         ItemListener itemListener = new ItemListener() {
             public void itemStateChanged(ItemEvent itemEvent) {
@@ -138,7 +161,7 @@ public class MainFrame extends JFrame {
         panel.setSize(graphPanelWidth , graphPanelHeight);
         panel.setLocation(graphPanelLocation);
         panel.setBorder(BorderFactory.createSoftBevelBorder(0));
-        panel.setLayout(null);
+        panel.setLayout(new BorderLayout());
         panel.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 
         return panel;
@@ -159,15 +182,22 @@ public class MainFrame extends JFrame {
     }
 
     public void addNewIndexController(IndexController indexController) {
+        this.indexController = indexController;
+        if(indexController == null)
+            return;
+
         if(jScrollPane != null)
             graphPanel.remove(jScrollPane);
 
-        jScrollPane = new JScrollPane(indexController) ;
+        jScrollPane = new JScrollPane(indexController, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED) ;
+        jScrollPane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         indexController.setFillsViewportHeight(true);
-        jScrollPane.setBorder(BorderFactory.createSoftBevelBorder(1));
-        jScrollPane.add(indexController);
-        graphPanel.add(jScrollPane) ;
+        indexController.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+
+        graphPanel.add(jScrollPane,BorderLayout.CENTER) ;
+        graphPanel.revalidate();
         graphPanel.repaint();
+        revalidate();
         repaint() ;
     }
 }

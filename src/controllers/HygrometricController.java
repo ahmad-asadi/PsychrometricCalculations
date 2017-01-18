@@ -1,11 +1,11 @@
 package controllers;
 
 /**
- * This class is created by Ahmad Asadi on 1/17/17.
+ * This class is created by Ahmad Asadi on 1/18/17.
  */
-public class THI2Controller extends IndexController {
+public class HygrometricController extends IndexController {
 
-    public THI2Controller(){
+    public HygrometricController(){
         super();
         setCols();
     }
@@ -13,14 +13,13 @@ public class THI2Controller extends IndexController {
     protected void setCols(){
         super.setCols();
         String[] row = new String[cols.length];
-        row[0] = "میانگین دما" ;
+        row[0] = "میانگین دمای نقطه شبنم" ;
         model.addRow(row);
-        row[0] = "میانگین رطوبت" ;
+        row[0] = "میانگین دمای خشک" ;
         model.addRow(row);
-        row[0] = "THI2" ;
+        row[0] = "ترموهیگرومتریک DI" ;
         model.addRow(row);
         row[0] = "شرایط زیست-اقلیمی" ;
         model.addRow(row);
     }
-
 }

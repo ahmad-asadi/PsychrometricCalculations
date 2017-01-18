@@ -48,10 +48,10 @@ public class PersianLanguageDictionary extends LanguageDictionary{
         stringMap.put("ASV(Actual Sensation Vote)" , "شاخص آرای احساس حقیقی") ;
         stringMap.put("PMV (predicted mean vote)" , "شاخص میانگین نظرسنجی پیش‌بینی شده") ;
         stringMap.put("PET(Physiological Equivalent Temperature)" , "شاخص دمای معادل فیزیولوژیک") ;
-        stringMap.put("UTCI(Universal Thermal Climate Index)" , "شاخص جهانی اقلیم حرارتی");
+        stringMap.put("UTCI(Universal Thermal Climate Index)" , "شاخص جهانی اقلیم حرارتی UTCI");
         stringMap.put("HSI(heat stress index)" , " شاخص استرس گرمایی");
         stringMap.put("PHS(Physiological strain index)" , "شاخص تنش فیزیولوژیکی");
-        stringMap.put("STI(Subjective temperature index)" , "شاخص جهانی اقلیم حرارتی");
+        stringMap.put("STI(Subjective temperature index)" , "شاخص جهانی اقلیم حرارتی STI");
         stringMap.put("SST(Still shade temperature)" , "SSTشاخص  ");
         stringMap.put("PST(Physiological subjective temperature)" , "PST شاخص ");
 

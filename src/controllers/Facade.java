@@ -40,7 +40,7 @@ public class Facade {
                 indexController = new TEKController() ;
                 break;
             case "DI (Term hygrometric Index)":
-                indexController = new DIController() ;
+                indexController = new HygrometricController() ;
                 break;
             case "Terjung ":
                 indexController = new TejungController() ;
@@ -82,7 +82,7 @@ public class Facade {
                 indexController = new DController() ;
                 break;
             case "Di(Discomfort Index)":
-                indexController = new DiscomfortController() ;
+                indexController = new DIController() ;
                 break;
             case "Rsi(Relative Strain Index)":
                 indexController = new RSIController() ;
