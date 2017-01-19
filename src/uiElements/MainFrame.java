@@ -38,6 +38,7 @@ public class MainFrame extends JFrame {
     private JScrollPane jScrollPane ;
     private IndexController indexController;
     private JButton solveBtn;
+    private JButton resetBtn;
 
     public MainFrame()
     {
@@ -102,9 +103,11 @@ public class MainFrame extends JFrame {
         indexLabel = createIndexLabel() ;
         indexName = createIndexCombo() ;
         solveBtn = createSolveBtn() ;
+        resetBtn = createResetBtn() ;
         sidePanel.add(indexLabel);
         sidePanel.add(indexName);
         sidePanel.add(solveBtn);
+        sidePanel.add(resetBtn);
     }
 
     private JButton createSolveBtn() {
@@ -118,6 +121,22 @@ public class MainFrame extends JFrame {
                 try {
                     indexController.solve();
                 }catch (Exception ex){ex.printStackTrace();}
+            }
+        });
+        button.setFont(normalFont);
+        return button ;
+    }
+
+
+    private JButton createResetBtn() {
+        JButton button = new JButton() ;
+        button.setSize(sidePanelElementWidth-20, sidePanelElementHeight);
+        button.setLocation(15+button.getWidth() + 5,10);
+        button.setText("پاک کردن جدول") ;
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO
             }
         });
         button.setFont(normalFont);

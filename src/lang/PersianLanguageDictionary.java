@@ -23,7 +23,7 @@ public class PersianLanguageDictionary extends LanguageDictionary{
         stringMap.put("Terjung " , "شاخص ترجونگ") ;
         stringMap.put("(WCT) Wind chill Temperature", "شاخص خنکی باد");
         stringMap.put("(WCI) Wind chill index ", "شاخص خنک‌کنندگی باد");
-        stringMap.put("SET(New Standard Effective Temperature)" , "شاخص دمای موثر ") ;
+        stringMap.put("SET(New Standard Effective Temperature)" , "شاخص دمای موثر SET") ;
         stringMap.put("NET(net effective temperature)" , "شاخص دمای موثر NET") ;
         stringMap.put("SSI (Summer Simmer Index)" , "شاخص داغی تابستان") ;
         stringMap.put("WBGT(Wet Bulb Globe Temperature)" , "شاخص دمای تر") ;

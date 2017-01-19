@@ -8,6 +8,17 @@ public class PPHSController extends IndexController {
     public PPHSController(){
         super();
         setCols();
+        numberOfVars = 1 ;
+        numberOfRes = 2 ;
+        indexOfStringField = 2 ;
+        bounds = new double[]{0,0.25,0.75,Double.MAX_VALUE} ;
+        boundStrings = new String[]{"تعریف نشده","فشار حرارتی بالا","فشار حرارتی متوسط","فشار حرارتی متوسط"} ;
+        setBoundStrings = true ;
+    }
+
+    @Override
+    protected double computeRes(double[] inputs){
+        return Math.pow((2.12513 - 0.058018 *inputs[0]),2) ;
     }
 
     protected void setCols(){
@@ -18,12 +29,6 @@ public class PPHSController extends IndexController {
         row[0] = "TEK" ;
         model.addRow(row);
         row[0] = "شرایط زیست‌-اقلیمی" ;
-        model.addRow(row);
-        row[0] = "Humidex 2" ;
-        model.addRow(row);
-        row[0] = "سطح خطر" ;
-        model.addRow(row);
-        row[0] = "علائم" ;
         model.addRow(row);
     }
 

@@ -13,6 +13,10 @@ public class ASVController extends IndexController {
         coeffs = new double[]{0.049, 0.051, 0.001,0.00014,0,0,0,0};
         numberOfRes = 2 ;
         numberOfVars = 4 ;
+        indexOfStringField = 5 ;
+        bounds = new double[]{1,2,3,4,5,7,Double.MAX_VALUE} ;
+        boundStrings = new String[]{"معتدل","شرایط تقریبا سخت","شرایط تا حدی سخت","شرایط سخت","شرایط خیلی سخت","شرایط بشدت سخت","شرایط خیلی سخت"} ;
+        setBoundStrings = true ;
     }
 
     protected void setCols(){

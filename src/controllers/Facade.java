@@ -20,6 +20,7 @@ public class Facade {
 
     private void generateCorrespondingIndexController(String selectedItem) {
         String itemKey = frame.getLanguageDictionary().getKey(selectedItem);
+        System.out.println(itemKey);
         switch (itemKey){
             case "Evanz":
                 indexController = new EvanzController() ;
@@ -45,7 +46,7 @@ public class Facade {
             case "Terjung ":
                 indexController = new TejungController() ;
                 break;
-            case "(WCT) Wind chill Temperature)":
+            case "(WCT) Wind chill Temperature":
                 indexController = new WCTController() ;
                 break;
             case "(WCI) Wind chill index ":
