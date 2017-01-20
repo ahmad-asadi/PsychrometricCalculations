@@ -27,6 +27,7 @@ public class IndexController extends JTable {
         headerFont = new Font("B Titr" , 14, 14) ;
         headerFont = new Font("B Nazanin" , 14, 14) ;
         setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        getColumnModel().getColumn(0).setWidth(100);
     }
 
     protected void setCols(){
@@ -85,7 +86,7 @@ public class IndexController extends JTable {
 
     }
 
-    private double[][] getTableData() {
+    protected double[][] getTableData() {
         model = (DefaultTableModel) getModel();
         int nRow = model.getRowCount(), nCol = model.getColumnCount();
         double[][] tableData = new double[nRow-1][nCol-1];

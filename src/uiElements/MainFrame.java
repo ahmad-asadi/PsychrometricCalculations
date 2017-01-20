@@ -39,6 +39,10 @@ public class MainFrame extends JFrame {
     private IndexController indexController;
     private JButton solveBtn;
     private JButton resetBtn;
+    private JButton addColBtn;
+    private JButton removeColBtn;
+    private JButton printBtn;
+    private JButton saveBtn;
 
     public MainFrame()
     {
@@ -49,7 +53,7 @@ public class MainFrame extends JFrame {
         width = 1000;
         height = 600;
         sidePanelWidth = width - 20 ;
-        sidePanelHeight = 200 ;
+        sidePanelHeight = 150 ;
         sidePanelLocation = new Point(10, 20) ;
         graphPanelWidth = width - 20;
         graphPanelHeight = height - sidePanelHeight - 50 ;
@@ -104,10 +108,74 @@ public class MainFrame extends JFrame {
         indexName = createIndexCombo() ;
         solveBtn = createSolveBtn() ;
         resetBtn = createResetBtn() ;
+        addColBtn = createAddColBtn() ;
+        removeColBtn = createRemoveColBtn() ;
+        printBtn = createPrintBtn() ;
+        saveBtn = createSaveBtn() ;
+
+
         sidePanel.add(indexLabel);
         sidePanel.add(indexName);
         sidePanel.add(solveBtn);
         sidePanel.add(resetBtn);
+        sidePanel.add(addColBtn);
+        sidePanel.add(saveBtn);
+        sidePanel.add(printBtn);
+        sidePanel.add(removeColBtn);
+    }
+
+    private JButton createSaveBtn() {
+        JButton btn = createSidePanelBtn("ذخیره نتایج جدول",removeColBtn);
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO
+            }
+        });
+        return btn;
+
+    }
+
+    private JButton createPrintBtn() {
+        JButton btn = createSidePanelBtn("چاپ نتایج جدول",addColBtn);
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO
+            }
+        });
+        return btn;
+
+    }
+
+    private JButton createRemoveColBtn() {
+        JButton btn = createSidePanelBtn("حذف آخرین ستون",resetBtn);
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO
+            }
+        });
+        return btn;
+
+    }
+
+    private JButton createAddColBtn() {
+        JButton btn = createSidePanelBtn("اضافه کردن ستون جدید",solveBtn);
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO
+            }
+        });
+        return btn;
+    }
+
+    private JButton createSidePanelBtn(String text, JButton upperBtn) {
+        JButton btn = new JButton(text) ;
+        btn.setLocation(upperBtn.getX() , upperBtn.getHeight() + upperBtn.getY() + 5);
+        btn.setSize(upperBtn.getSize());
+        return btn ;
     }
 
     private JButton createSolveBtn() {
@@ -155,6 +223,7 @@ public class MainFrame extends JFrame {
 
     private JComboBox<String> createIndexCombo() {
         JComboBox<String> combo = new JComboBox<>(languageDictionary.getStrings()) ;
+        combo.removeItem("انتخاب شاخص: ");
         combo.setSize(sidePanelElementWidth + 20 , sidePanelElementHeight);
         combo.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         combo.setLocation(sidePanelWidth - 2*sidePanelElementWidth  , 10);
