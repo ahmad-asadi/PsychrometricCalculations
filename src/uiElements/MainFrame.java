@@ -5,11 +5,10 @@ import controllers.IndexController;
 import lang.LanguageDictionary;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+import java.awt.event.*;
 
 /**
  * This class is created by Ahmad Asadi on 1/10/17.
@@ -43,6 +42,14 @@ public class MainFrame extends JFrame {
     private JButton removeColBtn;
     private JButton printBtn;
     private JButton saveBtn;
+    private JLabel dayLabel;
+    private JLabel monthLabel;
+    private JLabel holLabel;
+    private JTextField dayField;
+    private JTextField jolField;
+    private JTextField monthField;
+    private JLabel deltaLabel;
+    private JTextField deltaField;
 
     public MainFrame()
     {
@@ -113,6 +120,17 @@ public class MainFrame extends JFrame {
         printBtn = createPrintBtn() ;
         saveBtn = createSaveBtn() ;
 
+        dayLabel = createDayLabel() ;
+        monthLabel = createMonthLabel() ;
+        holLabel = createHourLabel() ;
+
+        dayField = createDayField() ;
+        monthField = createMonthField() ;
+        jolField = createJolField() ;
+
+        deltaLabel = createDeltaLabel() ;
+        deltaField = createDeltaField() ;
+
 
         sidePanel.add(indexLabel);
         sidePanel.add(indexName);
@@ -122,6 +140,126 @@ public class MainFrame extends JFrame {
         sidePanel.add(saveBtn);
         sidePanel.add(printBtn);
         sidePanel.add(removeColBtn);
+
+        sidePanel.add(dayLabel);
+        sidePanel.add(monthLabel);
+        sidePanel.add(holLabel);
+        sidePanel.add(dayField);
+        sidePanel.add(monthField);
+        sidePanel.add(jolField);
+
+        sidePanel.add(deltaLabel);
+        sidePanel.add(deltaField);
+    }
+
+    private JTextField createDeltaField() {
+        JTextField field = new JTextField("محاسبه نشده") ;
+        field.setEditable(false);
+        field.setSize(indexName.getWidth() - 20 , sidePanelElementHeight - 5);
+        field.setLocation(indexName.getX() + 10, deltaLabel.getY());
+        field.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        field.setBorder(BorderFactory.createSoftBevelBorder(1));
+        return field;
+    }
+
+    private JLabel createDeltaLabel() {
+        JLabel label = new JLabel("زاویه میل خورشید:") ;
+        label.setSize(indexLabel.getSize());
+        label.setFont(titleFont);
+        label.setLocation(indexLabel.getX() , indexLabel.getY() + 2* sidePanelElementHeight + 15);
+        label.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        return label ;
+    }
+
+    private JTextField createDayField() {
+        JTextField field = new JTextField("0") ;
+        field.setSize(sidePanelElementWidth/4 , sidePanelElementHeight - 5);
+        field.setLocation(dayLabel.getX() - field.getWidth() - 5 , dayLabel.getY());
+        field.setFont(titleFont);
+        field.setBorder(BorderFactory.createSoftBevelBorder(1));
+        field.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                computeDelta();
+            }
+        });
+        return field ;
+    }
+
+    private void computeDelta() {
+        int day = Integer.parseInt(dayField.getText());
+        int month = Integer.parseInt(monthField.getText());
+
+        if (month > 12)
+            monthField.setText("12");
+
+        if(month <= 6 && day > 31)
+            dayField.setText("31");
+        else if(day > 30)
+            dayField.setText("30");
+
+        day = Integer.parseInt(dayField.getText());
+        month = Integer.parseInt(monthField.getText());
+
+        int monthDayCount = (month <= 6 ? (31 * (month - 1)) : (31 * 6) + 30 * (month - 7)) ;
+        int jolNumber = monthDayCount + day;
+
+        double mil = 23.45*Math.sin(Math.toRadians(360*((284+jolNumber)/365))) ;
+
+        deltaField.setText(Double.toString(mil));
+        jolField.setText(Integer.toString(jolNumber));
+    }
+
+    private JTextField createMonthField() {
+        JTextField field = new JTextField("0") ;
+        field.setSize(sidePanelElementWidth/4 , sidePanelElementHeight - 5);
+        field.setLocation(monthLabel.getX() - field.getWidth() - 5 , monthLabel.getY());
+        field.setFont(titleFont);
+        field.setBorder(BorderFactory.createSoftBevelBorder(1));
+        field.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                computeDelta();
+            }
+        });
+        return field ;
+    }
+
+    private JTextField createJolField() {
+        JTextField field = new JTextField("0") ;
+        field.setSize(sidePanelElementWidth/4  , sidePanelElementHeight - 5);
+        field.setLocation(holLabel.getX() - field.getWidth() - 5 , holLabel.getY());
+        field.setFont(titleFont);
+        field.setBorder(BorderFactory.createSoftBevelBorder(1));
+        field.setEditable(false);
+        return field ;
+    }
+
+    private JLabel createHourLabel() {
+        JLabel label = new JLabel("شماره ژولیوسی:") ;
+        label.setFont(titleFont);
+        label.setLocation(indexLabel.getX() - indexLabel.getWidth()*2/3 , indexLabel.getY() + indexLabel.getHeight() + 10);
+        label.setSize(sidePanelElementWidth/3 - 10 , sidePanelElementHeight );
+        label.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        return label;
+    }
+
+    private JLabel createMonthLabel() {
+        JLabel label = new JLabel("ماه:") ;
+        label.setFont(titleFont);
+        label.setLocation(indexLabel.getX() + indexLabel.getWidth()/4 - 50 , indexLabel.getY() + indexLabel.getHeight() + 10);
+        label.setSize(sidePanelElementWidth/3 - 20 , sidePanelElementHeight );
+        label.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        return label;
+    }
+
+    private JLabel createDayLabel() {
+        JLabel label = new JLabel("روز:") ;
+        label.setSize(sidePanelElementWidth/3 - 10 , sidePanelElementHeight);
+        label.setLocation(indexLabel.getX() + indexLabel.getWidth()*2/3 , indexLabel.getY() + indexLabel.getHeight() + 10);
+        label.setFont(titleFont);
+        label.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        return label ;
     }
 
     private JButton createSaveBtn() {
