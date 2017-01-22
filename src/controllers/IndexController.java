@@ -94,7 +94,7 @@ public class IndexController extends JTable {
             for (int j = 1 ; j < nCol ; j++) {
                 try {
                     tableData[i][j - 1] = Double.parseDouble((String) model.getValueAt(i, j));
-                }catch (NumberFormatException e)
+                }catch (Exception e)
                 {
                     tableData[i][j - 1] = 0 ;
                 }
