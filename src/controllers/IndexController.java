@@ -17,6 +17,7 @@ public class IndexController extends JTable {
     protected double[] bounds;
     protected String[] boundStrings;
     protected boolean setBoundStrings;
+    protected boolean callIndexedComputeRes = false ;
     private Font headerFont ;
     private Font colFont ;
     protected DefaultTableModel model ;
@@ -45,7 +46,7 @@ public class IndexController extends JTable {
                 for (int i = 0; i < tableData.length; i++) {
                     inputs[i] = tableData[i][j];
                 }
-                if(numberOfRes == 2)
+                if(numberOfRes == 2 && !callIndexedComputeRes)
                     res[resIndex-numberOfVars][j] = computeRes(inputs) ;
                 else
                     res[resIndex-numberOfVars][j] = computeRes(inputs,resIndex - numberOfVars) ;
