@@ -50,6 +50,7 @@ public class MainFrame extends JFrame {
     private JTextField monthField;
     private JLabel deltaLabel;
     private JTextField deltaField;
+    private JButton cosineBtn;
 
     public MainFrame()
     {
@@ -131,6 +132,8 @@ public class MainFrame extends JFrame {
         deltaLabel = createDeltaLabel() ;
         deltaField = createDeltaField() ;
 
+        cosineBtn = createCosineBtn() ;
+
 
         sidePanel.add(indexLabel);
         sidePanel.add(indexName);
@@ -141,15 +144,31 @@ public class MainFrame extends JFrame {
         sidePanel.add(printBtn);
         sidePanel.add(removeColBtn);
 
-        sidePanel.add(dayLabel);
-        sidePanel.add(monthLabel);
-        sidePanel.add(holLabel);
-        sidePanel.add(dayField);
-        sidePanel.add(monthField);
-        sidePanel.add(jolField);
+//        sidePanel.add(dayLabel);
+//        sidePanel.add(monthLabel);
+//        sidePanel.add(holLabel);
+//        sidePanel.add(dayField);
+//        sidePanel.add(monthField);
+//        sidePanel.add(jolField);
+//
+//        sidePanel.add(deltaLabel);
+//        sidePanel.add(deltaField);
+        sidePanel.add(cosineBtn);
+    }
 
-        sidePanel.add(deltaLabel);
-        sidePanel.add(deltaField);
+    private JButton createCosineBtn() {
+        JButton btn = new JButton("محاسبه قانون کسینوس") ;
+        btn.setSize(saveBtn.getSize());
+        btn.setLocation(removeColBtn.getX() + removeColBtn.getWidth() + 30 , removeColBtn.getY());
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new CosineFrame();
+            }
+        });
+
+        btn.setFont(normalFont);
+        return btn;
     }
 
     private JTextField createDeltaField() {

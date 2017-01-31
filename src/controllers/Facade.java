@@ -124,9 +124,9 @@ public class Facade {
             case "PMV (predicted mean vote)":
                 indexController = new PMVController() ;
                 break;
-            case "PET(Physiological Equivalent Temperature)":
-                indexController = new PETController() ;
-                break;
+//            case "PET(Physiological Equivalent Temperature)":
+//                indexController = new PETController() ;
+//                break;
             case "UTCI(Universal Thermal Climate Index)":
                 indexController = new UTCIController() ;
                 break;

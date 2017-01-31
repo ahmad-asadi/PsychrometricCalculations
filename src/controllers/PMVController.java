@@ -1,9 +1,13 @@
 package controllers;
 
+import uiElements.ThermalChartFrame;
+
 /**
  * This class is created by Ahmad Asadi on 1/17/17.
  */
 public class PMVController extends IndexController {
+    private double PMVval ;
+    private double PPDval ;
     public PMVController(){
         super();
         setCols();
@@ -11,6 +15,12 @@ public class PMVController extends IndexController {
         numberOfVars = 6 ;
         setBoundStrings = false ;
         callIndexedComputeRes = true ;
+    }
+
+    @Override
+    public void solve(){
+        super.solve();
+        new ThermalChartFrame("pmv", new double[][]{{PMVval, PPDval}},null) ;
     }
 
     @Override
@@ -71,8 +81,8 @@ public class PMVController extends IndexController {
 
         double HL6 = FCL * HC * (TCL - TEQ) ;
         double TS = 0.303 * Math.exp(-0.036 * M) + 0.028 ;
-        double PMVval = TS * (M - HL1 - HL2 - HL3 - HL4 - HL5 - HL6) ;
-        double PPDval = 100 - 95 * Math.exp(-0.3353 * Math.pow(PMVval, 4) - 0.2179 * Math.pow(PMVval, 2)) ;
+        PMVval = TS * (M - HL1 - HL2 - HL3 - HL4 - HL5 - HL6) ;
+        PPDval = 100 - 95 * Math.exp(-0.3353 * Math.pow(PMVval, 4) - 0.2179 * Math.pow(PMVval, 2)) ;
 
         switch (index){
             case 1:

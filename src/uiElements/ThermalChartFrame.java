@@ -1,6 +1,7 @@
 package uiElements;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -73,6 +74,12 @@ public class ThermalChartFrame extends JFrame {
         switch (indexName){
             case "olgay" :
                 chart = new OlgayChartPanel(this,data,pointNames) ;
+                break;
+            case "pmv" :
+                chart = new PMVChart(this,new Point((int)data[0][0], (int)data[0][1])) ;
+                break;
+            case "penwarden" :
+                chart = new PenwardenChart(this,data, pointNames) ;
                 break;
             default:
                 chart = null ;

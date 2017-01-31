@@ -47,7 +47,7 @@ public class PersianLanguageDictionary extends LanguageDictionary{
         stringMap.put("TS(Thermal Sensation)" , "شاخص احساس حرارتی") ;
         stringMap.put("ASV(Actual Sensation Vote)" , "شاخص آرای احساس حقیقی") ;
         stringMap.put("PMV (predicted mean vote)" , "شاخص میانگین نظرسنجی پیش‌بینی شده") ;
-        stringMap.put("PET(Physiological Equivalent Temperature)" , "شاخص دمای معادل فیزیولوژیک") ;
+//        stringMap.put("PET(Physiological Equivalent Temperature)" , "شاخص دمای معادل فیزیولوژیک") ;
         stringMap.put("UTCI(Universal Thermal Climate Index)" , "شاخص جهانی اقلیم حرارتی UTCI");
         stringMap.put("HSI(heat stress index)" , " شاخص استرس گرمایی");
         stringMap.put("PHS(Physiological strain index)" , "شاخص تنش فیزیولوژیکی");
