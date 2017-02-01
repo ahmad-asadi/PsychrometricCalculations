@@ -89,7 +89,7 @@ public class IndexController extends JTable {
     protected double[][] getTableData() {
         model = (DefaultTableModel) getModel();
         int nRow = model.getRowCount(), nCol = model.getColumnCount();
-        double[][] tableData = new double[nRow-1][nCol-1];
+        double[][] tableData = new double[nRow][nCol-1];
         for (int i = 0 ; i < numberOfVars; i++)
             for (int j = 1 ; j < nCol ; j++) {
                 try {

@@ -1,24 +1,17 @@
 package uiElements;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Vector;
 
 /**
- * This class is created by Ahmad Asadi on 1/25/17.
+ * This class is created by Ahmad Asadi on 2/1/17.
  */
-public class OlgayChartPanel extends Chart{
+public class GivoniChart extends Chart {
 
-    private double [][] data ;
-    public OlgayChartPanel(ThermalChartFrame parent , double[][] data, String[] pointNames){
+    private double[][] data ;
+    public GivoniChart(ThermalChartFrame parent, double[][] data, String[] pointNames) {
         super(parent);
         this.data = data ;
-        mainChartImage = "./Imgs/OlgayBG.png" ;
+        mainChartImage = "./Imgs/GivoniBG.png" ;
         setMainChart();
         drawChart() ;
         setMappings(pointNames) ;

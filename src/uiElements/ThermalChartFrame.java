@@ -81,6 +81,12 @@ public class ThermalChartFrame extends JFrame {
             case "penwarden" :
                 chart = new PenwardenChart(this,data, pointNames) ;
                 break;
+            case "terjung" :
+                chart = new TerjungChart(this,data, pointNames) ;
+                break;
+            case "givoni" :
+                chart = new GivoniChart(this,data, pointNames) ;
+                break;
             default:
                 chart = null ;
         }
