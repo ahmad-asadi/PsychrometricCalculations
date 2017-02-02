@@ -2,6 +2,7 @@ package uiElements;
 
 import controllers.Facade;
 import controllers.IndexController;
+import facilities.ExcelAdapter;
 import lang.LanguageDictionary;
 
 import javax.swing.*;
@@ -15,6 +16,7 @@ import java.awt.event.*;
  */
 public class MainFrame extends JFrame {
 
+    private ExcelAdapter adapter ;
     private Facade facade ;
     private Font normalFont;
     private Font titleFont ;
@@ -438,6 +440,8 @@ public class MainFrame extends JFrame {
         jScrollPane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         indexController.setFillsViewportHeight(true);
         indexController.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+
+        adapter = new ExcelAdapter(indexController) ;
 
         graphPanel.add(jScrollPane,BorderLayout.CENTER) ;
         graphPanel.revalidate();

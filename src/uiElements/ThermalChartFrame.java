@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.io.File;
 
 /**
@@ -14,10 +16,13 @@ public class ThermalChartFrame extends JFrame {
     private int width = 800 ;
     private int height = 600 ;
 
+    private String[][] map ;
     protected JPanel sidePanel ;
     private JButton saveBtn ;
 
     protected Chart chart;
+    private JComboBox penwardenCombo;
+    private JScrollPane jsp;
 
     public ThermalChartFrame(String indexName , double[][] data, String[] pointNames){
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -50,13 +55,21 @@ public class ThermalChartFrame extends JFrame {
     }
 
     public void setChartMap(String[][] map){
+        this.map = map ;
         JTable table = new JTable(map, new String[]{"نقطه روی نمودار","نام"}) ;
-        table.setSize(sidePanel.getWidth(), sidePanel.getHeight() - 50);
-        table.setLocation(0,50);
-        JScrollPane jsp = new JScrollPane(table) ;
+        if(penwardenCombo != null)
+            table.setSize(sidePanel.getWidth(), sidePanel.getHeight() - penwardenCombo.getHeight() - penwardenCombo.getY() - 10);
+        else
+            table.setSize(sidePanel.getWidth(), sidePanel.getHeight() - saveBtn.getHeight() - saveBtn.getY() - 10);
+
+        table.setLocation(0,0);
+        jsp = new JScrollPane(table) ;
         table.setFillsViewportHeight(true);
         jsp.setSize(table.getSize());
-        jsp.setLocation(0,50);
+        if(penwardenCombo != null)
+            jsp.setLocation(0,penwardenCombo.getY() + penwardenCombo.getHeight() + 10);
+        else
+            jsp.setLocation(0,saveBtn.getY() + saveBtn.getHeight() + 10);
         sidePanel.add(jsp);
         repaint();
     }
@@ -76,9 +89,10 @@ public class ThermalChartFrame extends JFrame {
                 chart = new OlgayChartPanel(this,data,pointNames) ;
                 break;
             case "pmv" :
-                chart = new PMVChart(this,new Point((int)data[0][0], (int)data[0][1])) ;
+                chart = new PMVChart(this,data, pointNames) ;
                 break;
             case "penwarden" :
+                addPenComboToSidePanel() ;
                 chart = new PenwardenChart(this,data, pointNames) ;
                 break;
             case "terjung" :
@@ -91,6 +105,31 @@ public class ThermalChartFrame extends JFrame {
                 chart = null ;
         }
         getContentPane().add(chart) ;
+    }
+
+    private void addPenComboToSidePanel() {
+        penwardenCombo = new JComboBox() ;
+        penwardenCombo.addItem("بهمن - فروردین در آفتاب") ;
+        penwardenCombo.addItem("بهمن - فروردین در سایه") ;
+        penwardenCombo.addItem("اردیبهشت - تیر در آفتاب") ;
+        penwardenCombo.addItem("اردیبهشت - تیر در سایه") ;
+        penwardenCombo.addItem("مرداد - مهر در آفتاب") ;
+        penwardenCombo.addItem("مرداد - مهر در سایه") ;
+        penwardenCombo.addItem("آبان - دی در آفتاب") ;
+        penwardenCombo.addItem("آبان - دی در سایه") ;
+        penwardenCombo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                chart.selectChart(penwardenCombo.getSelectedIndex());
+            }
+        });
+        penwardenCombo.setSize(saveBtn.getSize());
+        penwardenCombo.setLocation(saveBtn.getX() , saveBtn.getHeight() + saveBtn.getY() + 10) ;
+        sidePanel.add(penwardenCombo) ;
+//        sidePanel.remove(jsp);
+//        setChartMap(map);
+        sidePanel.repaint();
+        repaint();
     }
 
     public static void main(String[] args){

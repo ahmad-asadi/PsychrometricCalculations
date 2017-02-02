@@ -7,18 +7,29 @@ import java.awt.*;
  */
 public class PMVChart extends Chart {
 
-    private Point point ;
-    public PMVChart(ThermalChartFrame parent, Point point) {
+    private double[][] data;
+    private String[] colNames;
+    public PMVChart(ThermalChartFrame parent, double[][] data, String[] colNames) {
         super(parent);
-        this.point = point ;
+
+        xMargin = 315  ;
+        yMargin = 160 ;
+        xStride = 11.8 ;
+        yStride = 2.9 ;
+
+        this.data = data ;
+        this.colNames = colNames ;
         mainChartImage = "./Imgs/pmvBG.jpg" ;
         setMainChart();
+        setMappings(colNames);
         drawChart() ;
         repaint();
     }
 
     private void drawChart(){
-        addPoint(point , "نتیجه محاسبات");
+        for(int i = 0 ; i < data.length ; i++) {
+            addPoint(new Point((int)data[i][0]*10 , (int)data[i][1]), colNames[i]);
+        }
     }
 
     @Override

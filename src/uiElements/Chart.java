@@ -56,7 +56,6 @@ public class Chart extends JPanel{
     }
 
     protected void addPoint(Point p, String text){
-        System.out.printf("p.x: %f, p.y: %f\n" , p.getX(), p.getY());
         points.add(p);
         pointStrings.add(text);
     }
@@ -76,17 +75,14 @@ public class Chart extends JPanel{
         for (int i = 0; i < points.size(); i++) {
             g2d.setColor(setPointColor(i));
             Point p = points.elementAt(i);
-//            g2d.setColor(Color.WHITE);
-//            g2d.fillRect(getPointX(p.getX()) ,getPointY(p.getY()) - 2*pointRadius,pointRadius*4,pointRadius*3);
-            g2d.fillOval(getPointX(p.getX()) , getPointY(p.getY()) ,pointRadius,pointRadius);
-//            g2d.setColor(Color.BLUE);
-            g2d.drawString(pointStrings.elementAt(i), getPointX(p.getX()) - pointRadius/2,getPointY(p.getY()) - pointRadius/2);
+            g2d.fillOval(getPointX(p.getX()) , getPointY(p.getY() , p.getX()) ,pointRadius,pointRadius);
+            g2d.drawString(pointStrings.elementAt(i), getPointX(p.getX()) - pointRadius/2,getPointY(p.getY() , p.getX()) - pointRadius/2);
         }
 
         for (int i = 1; i < lines.size(); i++) {
             Point p1 = lines.elementAt(i-1);
             Point p2 = lines.elementAt(i);
-            g2d.drawLine(getPointX(p1.getX()),getPointY(p1.getY()) , getPointX(p2.getX()) , getPointY(p2.getY()));
+            g2d.drawLine(getPointX(p1.getX()),getPointY(p1.getY() , p1.getX()) , getPointX(p2.getX()) , getPointY(p2.getY() , p2.getX()));
         }
     }
 
@@ -97,11 +93,19 @@ public class Chart extends JPanel{
     }
 
     private int getPointX(double x){
-        return (int) (x * xStride + xMargin) ;
+        return (int) (x * getXStride(x) + xMargin) ;
     }
 
-    private int getPointY(double y){
-        return (int) (getHeight() - y * yStride - yMargin) ;
+    private int getPointY(double y, double x){
+        return (int) (getHeight() - y * getYStride(x) - yMargin) ;
+    }
+
+    protected double getYStride(double y){
+        return yStride ;
+    }
+
+    protected double getXStride(double x){
+        return xStride ;
     }
 
     public void saveImage(String fileName){
@@ -120,4 +124,7 @@ public class Chart extends JPanel{
         }
     }
 
+    public void selectChart(int index) {
+
+    }
 }

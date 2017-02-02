@@ -2,12 +2,13 @@ package controllers;
 
 import uiElements.ThermalChartFrame;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  * This class is created by Ahmad Asadi on 1/17/17.
  */
 public class PMVController extends IndexController {
-    private double PMVval ;
-    private double PPDval ;
+
     public PMVController(){
         super();
         setCols();
@@ -20,7 +21,16 @@ public class PMVController extends IndexController {
     @Override
     public void solve(){
         super.solve();
-        new ThermalChartFrame("pmv", new double[][]{{PMVval, PPDval}},null) ;
+        model = (DefaultTableModel) getModel();
+        double[][] data = new double[cols.length-1][2] ;
+        String[] colNames = new String[cols.length] ;
+        for(int j = 0 ; j < cols.length - 1 ; j++){
+            data[j][0] = Double.parseDouble((String) model.getValueAt(model.getRowCount() - 1, j + 1)) ;
+            data[j][1] = Double.parseDouble((String) model.getValueAt(model.getRowCount() - 2, j + 1)) ;
+            colNames[j] = model.getColumnName(j+1) ;
+        }
+
+        new ThermalChartFrame("pmv", data ,colNames) ;
     }
 
     @Override
@@ -81,8 +91,8 @@ public class PMVController extends IndexController {
 
         double HL6 = FCL * HC * (TCL - TEQ) ;
         double TS = 0.303 * Math.exp(-0.036 * M) + 0.028 ;
-        PMVval = TS * (M - HL1 - HL2 - HL3 - HL4 - HL5 - HL6) ;
-        PPDval = 100 - 95 * Math.exp(-0.3353 * Math.pow(PMVval, 4) - 0.2179 * Math.pow(PMVval, 2)) ;
+        double PMVval = TS * (M - HL1 - HL2 - HL3 - HL4 - HL5 - HL6) ;
+        double PPDval = 100 - 95 * Math.exp(-0.3353 * Math.pow(PMVval, 4) - 0.2179 * Math.pow(PMVval, 2)) ;
 
         switch (index){
             case 1:
