@@ -10,51 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2e0aa4d-dfcf-4641-8fb5-70b367bb8a13" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Imgs/givoniBG.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Imgs/penwardenBG0.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Imgs/penwardenBG1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Imgs/penwardenBG2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Imgs/penwardenBG3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Imgs/penwardenBG4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Imgs/penwardenBG5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Imgs/penwardenBG6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Imgs/penwardenBG7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Imgs/terjungBG.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/PsychrometricCalculation_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/facilities/ExcelAdapter.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Imgs/GivoniBG.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Imgs/TerjungBG.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Imgs/penwardenBG.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Imgs/pmvBG.jpg" afterPath="$PROJECT_DIR$/Imgs/pmvBG.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/PMVController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/PMVController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/Chart.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/Chart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/GivoniChart.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/GivoniChart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$1.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$10.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$2.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$3.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$4.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$5.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$6.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$7.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$8.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$9.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/PMVChart.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/PMVChart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/PenwardenChart.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/PenwardenChart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/TerjungChart.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/TerjungChart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/ThermalChartFrame$1.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/ThermalChartFrame$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/ThermalChartFrame.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/ThermalChartFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Imgs/penwardenBG0.jpg" afterPath="$PROJECT_DIR$/Imgs/penwardenBG0.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Imgs/penwardenBG1.jpg" afterPath="$PROJECT_DIR$/Imgs/penwardenBG1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Imgs/penwardenBG2.jpg" afterPath="$PROJECT_DIR$/Imgs/penwardenBG2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Imgs/penwardenBG3.jpg" afterPath="$PROJECT_DIR$/Imgs/penwardenBG3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Imgs/penwardenBG4.jpg" afterPath="$PROJECT_DIR$/Imgs/penwardenBG4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Imgs/penwardenBG5.jpg" afterPath="$PROJECT_DIR$/Imgs/penwardenBG5.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Imgs/penwardenBG6.jpg" afterPath="$PROJECT_DIR$/Imgs/penwardenBG6.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Imgs/penwardenBG7.jpg" afterPath="$PROJECT_DIR$/Imgs/penwardenBG7.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/PMVController.java" afterPath="$PROJECT_DIR$/src/controllers/PMVController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uiElements/Chart.java" afterPath="$PROJECT_DIR$/src/uiElements/Chart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uiElements/GivoniChart.java" afterPath="$PROJECT_DIR$/src/uiElements/GivoniChart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uiElements/MainFrame.java" afterPath="$PROJECT_DIR$/src/uiElements/MainFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uiElements/PMVChart.java" afterPath="$PROJECT_DIR$/src/uiElements/PMVChart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uiElements/PenwardenChart.java" afterPath="$PROJECT_DIR$/src/uiElements/PenwardenChart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uiElements/TerjungChart.java" afterPath="$PROJECT_DIR$/src/uiElements/TerjungChart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uiElements/ThermalChartFrame.java" afterPath="$PROJECT_DIR$/src/uiElements/ThermalChartFrame.java" />
     </list>
     <ignored path="PsychrometricCalculation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,7 +44,7 @@
       <file leaf-file-name="PMVChart.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/uiElements/PMVChart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
+            <state relative-caret-position="285">
               <caret line="19" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
@@ -90,7 +54,7 @@
       <file leaf-file-name="ThermalChartFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/uiElements/ThermalChartFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
+            <state relative-caret-position="915">
               <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -102,7 +66,7 @@
       <file leaf-file-name="GivoniChart.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/uiElements/GivoniChart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="150">
               <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
@@ -112,7 +76,7 @@
       <file leaf-file-name="Chart.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/uiElements/Chart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
+            <state relative-caret-position="660">
               <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -140,8 +104,8 @@
       <file leaf-file-name="TerjungChart.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/uiElements/TerjungChart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
+            <state relative-caret-position="244">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -209,7 +173,6 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1280" />
     <option name="y" value="24" />
     <option name="width" value="1280" />
     <option name="height" value="1000" />
@@ -239,6 +202,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -341,9 +306,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -800,6 +763,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="b2e0aa4d-dfcf-4641-8fb5-70b367bb8a13" name="Default" comment="" />
@@ -809,15 +775,16 @@
       <updated>1485765728331</updated>
       <workItem from="1485765740285" duration="20998000" />
       <workItem from="1486024697020" duration="15803000" />
+      <workItem from="1486108530825" duration="620000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62884000" />
+    <option name="totallyTimeSpent" value="63504000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1280" y="24" width="1280" height="1000" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="24" width="1280" height="1000" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -827,25 +794,33 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41245973" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41245973" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="98" y="223" width="1080" height="800" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -900,7 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="503">
           <caret line="39" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -943,11 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#228#229#0" expanded="true" />
-            <element signature="e#310#311#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -983,7 +952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -991,7 +959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="536" column="25" selection-start-line="536" selection-start-column="25" selection-end-line="536" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -999,9 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1010,11 +974,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Imgs/penwardenBG.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Imgs/penwardenBG.jpg" />
     <entry file="file://$PROJECT_DIR$/src/controllers/PenwardenController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1026,7 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="50" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1034,7 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1785">
           <caret line="122" column="22" selection-start-line="122" selection-start-column="22" selection-end-line="122" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1042,9 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="36" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1052,9 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
           <caret line="55" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1062,7 +1014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="40" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1076,16 +1027,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Imgs/GivoniBG.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Imgs/TerjungBG.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Imgs/GivoniBG.png" />
+    <entry file="file://$PROJECT_DIR$/Imgs/TerjungBG.png" />
     <entry file="file://$PROJECT_DIR$/Imgs/terjungBG.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1095,9 +1038,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
           <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1110,9 +1050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="910">
           <caret line="103" column="65" selection-start-line="103" selection-start-column="65" selection-end-line="103" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1120,9 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="829">
           <caret line="62" column="24" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1130,13 +1064,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="382" column="18" selection-start-line="382" selection-start-column="13" selection-end-line="382" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uiElements/PMVChart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
+        <state relative-caret-position="285">
           <caret line="19" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
@@ -1187,7 +1120,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uiElements/Chart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
+        <state relative-caret-position="660">
           <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1203,7 +1136,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uiElements/ThermalChartFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
+        <state relative-caret-position="915">
           <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1213,7 +1146,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uiElements/GivoniChart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="150">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
@@ -1221,8 +1154,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uiElements/TerjungChart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
+        <state relative-caret-position="244">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
