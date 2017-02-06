@@ -60,8 +60,8 @@ public class MainFrame extends JFrame {
 
         titleFont = new Font("Tahoma",20,18) ;
         normalFont = new Font("Tahoma",20,12) ;
-        width = 1000;
-        height = 600;
+        width = Toolkit.getDefaultToolkit().getScreenSize().width;
+        height = Toolkit.getDefaultToolkit().getScreenSize().height;
         sidePanelWidth = width - 20 ;
         sidePanelHeight = 150 ;
         sidePanelLocation = new Point(10, 20) ;
@@ -433,17 +433,17 @@ public class MainFrame extends JFrame {
         if(indexController == null)
             return;
 
-        if(jScrollPane != null)
-            graphPanel.remove(jScrollPane);
+//        if(jScrollPane != null)
+//            graphPanel.remove(jScrollPane);
+//
+//        jScrollPane = new JScrollPane(indexController, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED) ;
+//        jScrollPane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+//        indexController.setFillsViewportHeight(true);
+//        indexController.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+//
+//        adapter = new ExcelAdapter(indexController) ;
 
-        jScrollPane = new JScrollPane(indexController, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED) ;
-        jScrollPane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-        indexController.setFillsViewportHeight(true);
-        indexController.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-
-        adapter = new ExcelAdapter(indexController) ;
-
-        graphPanel.add(jScrollPane,BorderLayout.CENTER) ;
+        graphPanel.add(indexController,BorderLayout.CENTER) ;
         graphPanel.revalidate();
         graphPanel.repaint();
         revalidate();

@@ -8,26 +8,50 @@ import java.awt.*;
 /**
  * This class is created by Ahmad Asadi on 1/17/17.
  */
-public class IndexController extends JTable {
-    protected double[] coeffs ;
+public abstract class IndexController extends JPanel {
     protected int numberOfRes;
     protected int numberOfVars;
-    protected int indexOfStringField;
-    protected double[] bounds;
-    protected String[] boundStrings;
-    protected boolean setBoundStrings;
-    protected boolean callIndexedComputeRes = false ;
+    protected int numberOfBoundStrings;
+    protected double[][] bounds;
+    protected String[][] boundStrings;
     private Font headerFont ;
     private Font colFont ;
-    protected DefaultTableModel model ;
-    protected String[] cols = {"نام متغیر", "فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"};
+    protected JTable varTable ;
+    protected JTable resTable ;
+    protected JTable boundTable ;
+    protected JTable constTable ;
+    private JScrollPane varJsp ;
+    private JScrollPane resJsp ;
+    private JScrollPane boundJsp ;
+    private JScrollPane constJsp ;
 
-    public IndexController(){
-        super(new DefaultTableModel(new Object[]{"نام متغیر", "فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"},0)) ;
-        headerFont = new Font("B Titr" , 14, 14) ;
-        headerFont = new Font("B Nazanin" , 14, 14) ;
+    public IndexController(int width , int height){
+        setSize(width, height);
+        setLayout(null);
         setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-        getColumnModel().getColumn(0).setWidth(100);
+        varTable = new JTable() ;
+        resTable = new JTable() ;
+        boundTable = new JTable() ;
+        varJsp = createJSP(varTable);
+        resJsp = createJSP(resTable);
+        boundJsp = createJSP(boundTable);
+
+        
+
+
+        add(varJsp) ;
+        add(resJsp) ;
+        add(boundJsp) ;
+
+
+    }
+
+    private JScrollPane createJSP(JTable table) {
+        JScrollPane jsp = new JScrollPane(table) ;
+        jsp.setSize(table.getSize());
+        table.setFillsViewportHeight(true);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        return jsp ;
     }
 
     protected void setCols(){
@@ -84,22 +108,6 @@ public class IndexController extends JTable {
         for(int j = 1 ; j < cols.length ; j++)
             model.setValueAt(strings[j-1],indexOfStringField,j);
 
-    }
-
-    protected double[][] getTableData() {
-        model = (DefaultTableModel) getModel();
-        int nRow = model.getRowCount(), nCol = model.getColumnCount();
-        double[][] tableData = new double[nRow][nCol-1];
-        for (int i = 0 ; i < numberOfVars; i++)
-            for (int j = 1 ; j < nCol ; j++) {
-                try {
-                    tableData[i][j - 1] = Double.parseDouble((String) model.getValueAt(i, j));
-                }catch (Exception e)
-                {
-                    tableData[i][j - 1] = 0 ;
-                }
-            }
-        return tableData;
     }
 
 }
