@@ -1,8 +1,12 @@
 package controllers;
 
+import com.sun.org.apache.xalan.internal.xsltc.compiler.util.StringStack;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import java.awt.*;
+import java.awt.geom.Arc2D;
 
 
 /**
@@ -16,6 +20,7 @@ public abstract class IndexController extends JPanel {
     protected String[][] boundStrings;
     private Font headerFont ;
     private Font colFont ;
+
     protected JTable varTable ;
     protected JTable resTable ;
     protected JTable boundTable ;
@@ -29,14 +34,18 @@ public abstract class IndexController extends JPanel {
         setSize(width, height);
         setLayout(null);
         setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-        varTable = new JTable() ;
-        resTable = new JTable() ;
-        boundTable = new JTable() ;
+        varTable = new JTable(new String[0][0], getVarList()) ;
+        resTable = new JTable(new String[0][0], getResList()) ;
+        boundTable = new JTable(new String[0][0], getBoundStringsList()) ;
         varJsp = createJSP(varTable);
         resJsp = createJSP(resTable);
         boundJsp = createJSP(boundTable);
+        if(hasConstList()) {
+            constTable = new JTable(new String[0][0], getConstList());
+            constJsp = createJSP(boundTable);
+        }
 
-        
+
 
 
         add(varJsp) ;
@@ -46,6 +55,13 @@ public abstract class IndexController extends JPanel {
 
     }
 
+    protected abstract  String[] getVarList();
+    protected abstract  String[] getResList();
+    protected abstract  String[] getConstList();
+    protected abstract  String[] getBoundStringsList();
+    protected abstract  boolean hasConstList();
+    protected abstract  boolean hasBoundStrings();
+
     private JScrollPane createJSP(JTable table) {
         JScrollPane jsp = new JScrollPane(table) ;
         jsp.setSize(table.getSize());
@@ -54,60 +70,61 @@ public abstract class IndexController extends JPanel {
         return jsp ;
     }
 
-    protected void setCols(){
-        model = (DefaultTableModel) getModel();
-    }
-
     public void solve(){
-        double[][] tableData = getTableData();
-        double[][] res = new double[numberOfRes][cols.length-1];
+        TableModel resModel = resTable.getModel() ;
 
-        for (int resIndex = numberOfVars; resIndex < numberOfRes + numberOfVars ; resIndex ++)
+        setResTable(resModel);
+
+        if(hasBoundStrings())
         {
-            for(int j = 0 ; j < cols.length - 1; j++) {
-                double[] inputs = new double[tableData.length] ;
-                for (int i = 0; i < tableData.length; i++) {
-                    inputs[i] = tableData[i][j];
-                }
-                if(numberOfRes == 2 && !callIndexedComputeRes)
-                    res[resIndex-numberOfVars][j] = computeRes(inputs) ;
-                else
-                    res[resIndex-numberOfVars][j] = computeRes(inputs,resIndex - numberOfVars) ;
-
-            }
-            for(int j = 1 ; j < cols.length ; j++)
-                model.setValueAt(Double.toString(res[resIndex-numberOfVars][j-1]),resIndex,j);
+            setBoundStrings(resModel);
         }
-
-        if(setBoundStrings)
-            setBoundStrings(res[indexOfStringField - numberOfVars]);
     }
 
-    protected double computeRes(double[] inputs) {
-        double res = 0 ;
-        for (int i = 0 ; i < numberOfVars ; i++)
-            res += coeffs[i] * inputs[i] ;
-        return res ;
-    }
+    private void setResTable(TableModel resModel) {
+        double[][] inputData = getTableData(varTable);
+        TableModel varModel = varTable.getModel() ;
 
-    protected double computeRes(double[] inputs, int resIndex) {
-        return 0;
-    }
+        for (int i = 0 ; i < resModel.getRowCount() ; i ++)
+        {
+            double[] inputs = new double[varModel.getColumnCount() - 1] ;
+            for(int ri = 0 ; ri < varModel.getColumnCount() - 1 ; ri ++)
+                inputs[ri] = inputData[i][ri] ;
 
-    protected void setBoundStrings(double[] res) {
-        String[] strings = new String[cols.length-1] ;
-        for (int i = 0; i < res.length; i++) {
-            for (int j = 0; j < bounds.length; j++) {
-                if(res[i] <= bounds[j])
-                {
-                    strings[i] = boundStrings[j] ;
-                    break;
-                }
+            for(int j = 0 ; j < resModel.getColumnCount() - 1 ; j++) {
+                resModel.setValueAt(Double.toString(computeRes(inputs, j)) , i , j+1);
             }
         }
-        for(int j = 1 ; j < cols.length ; j++)
-            model.setValueAt(strings[j-1],indexOfStringField,j);
-
     }
+
+    private void setBoundStrings(TableModel resModel) {
+        TableModel boundModel = boundTable.getModel() ;
+        for(int i = 0 ; i < boundModel.getRowCount() ; i++){
+            double[] resInput = new double[resModel.getColumnCount() - 1] ;
+            for(int j = 0 ; j < resInput.length ; j++)
+                resInput[j] = Double.parseDouble((String)resModel.getValueAt(i,j+1)) ;
+
+            for(int j = 0 ; j < boundModel.getColumnCount() - 1 ; j++){
+                boundModel.setValueAt(getBoundString(resInput, i),i,j+1);
+            }
+        }
+    }
+
+    protected abstract String getBoundString(double[] resInput, int i);
+
+    private double[][] getTableData(JTable table) {
+        TableModel model = table.getModel() ;
+
+        double[][] data = new double[model.getRowCount()][model.getColumnCount() - 1] ;
+        for(int i = 0 ; i < data.length ; i++){
+            for (int j = 1 ; j < data[i].length ; j++)
+                data[i][j-1] = Double.parseDouble((String)model.getValueAt(i,j)) ;
+        }
+
+        return data ;
+    }
+
+    protected abstract double computeRes(double[] inputs, int resIndex);
+
 
 }

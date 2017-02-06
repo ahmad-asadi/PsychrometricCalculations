@@ -1,6 +1,5 @@
 package starter;
 
-import uiElements.LineChart_AWT;
 import uiElements.MainFrame;
 
 import javax.swing.*;
