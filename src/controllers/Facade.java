@@ -10,7 +10,7 @@ import java.util.HashMap;
  */
 public class Facade {
     private MainFrame frame;
-    private IndexController indexController = new HK0Controller();
+    private IndexController indexController ;
     public void getCorrespondingTable(String selectedItem, MainFrame frame)
     {
         this.frame = frame;
@@ -22,30 +22,30 @@ public class Facade {
         String itemKey = frame.getLanguageDictionary().getKey(selectedItem);
         System.out.println(itemKey);
         switch (itemKey){
-            case "Evanz":
-                indexController = new EvanzController() ;
-                break;
-            case "Olgyay":
-                indexController = new OlgyayController() ;
-                break;
-            case "Becker":
-                indexController = new BeckerController() ;
-                break;
+//            case "Evanz":
+//                indexController = new EvanzController() ;
+//                break;
+//            case "Olgyay":
+//                indexController = new OlgyayController() ;
+//                break;
+//            case "Becker":
+//                indexController = new BeckerController() ;
+//                break;
             case "ke(Wind cool Index)":
                 indexController = new KeController() ;
                 break;
-            case "Penwarden":
-                indexController = new PenwardenController() ;
-                break;
+//            case "Penwarden":
+//                indexController = new PenwardenController() ;
+//                break;
             case "Tek(Equivalent temperature)":
                 indexController = new TEKController() ;
                 break;
             case "DI (Term hygrometric Index)":
                 indexController = new HygrometricController() ;
                 break;
-            case "Terjung ":
-                indexController = new TejungController() ;
-                break;
+//            case "Terjung ":
+//                indexController = new TejungController() ;
+//                break;
             case "(WCT) Wind chill Temperature":
                 indexController = new WCTController() ;
                 break;
@@ -61,9 +61,9 @@ public class Facade {
             case "SSI (Summer Simmer Index)":
                 indexController = new SSIController() ;
                 break;
-            case "WBGT(Wet Bulb Globe Temperature)":
-                indexController = new WBGTController() ;
-                break;
+//            case "WBGT(Wet Bulb Globe Temperature)":
+//                indexController = new WBGTController() ;
+//                break;
             case "AT(Apparent Temperature)":
                 indexController = new ATController() ;
                 break;
@@ -73,9 +73,9 @@ public class Facade {
             case "Thi2(Thom index)":
                 indexController = new THI2Controller() ;
                 break;
-            case "H&K0(wind-chill index)":
-                indexController = new HK0Controller() ;
-                break;
+//            case "H&K0(wind-chill index)":
+//                indexController = new HK0Controller() ;
+//                break;
             case "Sb(Bodman's weather severity index)":
                 indexController = new SBController() ;
                 break;
@@ -85,27 +85,27 @@ public class Facade {
             case "Di(Discomfort Index)":
                 indexController = new DIController() ;
                 break;
-            case "Rsi(Relative Strain Index)":
-                indexController = new RSIController() ;
-                break;
+//            case "Rsi(Relative Strain Index)":
+//                indexController = new RSIController() ;
+//                break;
             case "CI(neurotic pressure index)":
                 indexController = new CIController() ;
                 break;
             case "Cpi(Cooling Power Index)":
                 indexController = new CPIController() ;
                 break;
-            case "Givoni":
-                indexController = new GivoniController() ;
-                break;
-            case "Mahoney":
-                indexController = new MahoneyController() ;
-                break;
-            case "Humidex":
-                indexController = new HumidexController() ;
-                break;
-            case "HI(Heat Index)":
-                indexController = new HIController() ;
-                break;
+//            case "Givoni":
+//                indexController = new GivoniController() ;
+//                break;
+//            case "Mahoney":
+//                indexController = new MahoneyController() ;
+//                break;
+//            case "Humidex":
+//                indexController = new HumidexController() ;
+//                break;
+//            case "HI(Heat Index)":
+//                indexController = new HIController() ;
+//                break;
             case "EET (Equivalent effective temperature)":
                 indexController = new EETController() ;
                 break;
@@ -121,30 +121,27 @@ public class Facade {
             case "ASV(Actual Sensation Vote)":
                 indexController = new ASVController() ;
                 break;
-            case "PMV (predicted mean vote)":
-                indexController = new PMVController() ;
-                break;
-//            case "PET(Physiological Equivalent Temperature)":
-//                indexController = new PETController() ;
+//            case "PMV (predicted mean vote)":
+//                indexController = new PMVController() ;
 //                break;
-            case "UTCI(Universal Thermal Climate Index)":
-                indexController = new UTCIController() ;
-                break;
-            case "HSI(heat stress index)":
-                indexController = new HSIController() ;
-                break;
-            case "PHS(Physiological strain index)":
-                indexController = new PHSController() ;
-                break;
-            case "STI(Subjective temperature index)":
-                indexController = new STIController() ;
-                break;
-            case "SST(Still shade temperature)":
-                indexController = new SSTController() ;
-                break;
-            case "PST(Physiological subjective temperature)":
-                indexController = new PSTController() ;
-                break;
+//            case "UTCI(Universal Thermal Climate Index)":
+//                indexController = new UTCIController() ;
+//                break;
+//            case "HSI(heat stress index)":
+//                indexController = new HSIController() ;
+//                break;
+//            case "PHS(Physiological strain index)":
+//                indexController = new PHSController() ;
+//                break;
+//            case "STI(Subjective temperature index)":
+//                indexController = new STIController() ;
+//                break;
+//            case "SST(Still shade temperature)":
+//                indexController = new SSTController() ;
+//                break;
+//            case "PST(Physiological subjective temperature)":
+//                indexController = new PSTController() ;
+//                break;
             default:
                 indexController = null ;
         }

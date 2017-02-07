@@ -20,8 +20,8 @@ public class MainFrame extends JFrame {
     private Facade facade ;
     private Font normalFont;
     private Font titleFont ;
-    private int graphPanelWidth;
-    private int graphPanelHeight;
+    public static int graphPanelWidth;
+    public static int graphPanelHeight;
     private Point sidePanelLocation ;
     private Point graphPanelLocation ;
     private int sidePanelHeight;
@@ -61,13 +61,13 @@ public class MainFrame extends JFrame {
         titleFont = new Font("Tahoma",20,18) ;
         normalFont = new Font("Tahoma",20,12) ;
         width = Toolkit.getDefaultToolkit().getScreenSize().width;
-        height = Toolkit.getDefaultToolkit().getScreenSize().height;
+        height = Toolkit.getDefaultToolkit().getScreenSize().height - 60;
         sidePanelWidth = width - 20 ;
         sidePanelHeight = 150 ;
         sidePanelLocation = new Point(10, 20) ;
         graphPanelWidth = width - 20;
-        graphPanelHeight = height - sidePanelHeight - 50 ;
-        graphPanelLocation = new Point(10, 20 + sidePanelHeight + 10) ;
+        graphPanelHeight = height - sidePanelHeight - sidePanelLocation.y - 30 ;
+        graphPanelLocation = new Point(10, sidePanelLocation.y + sidePanelHeight + 10) ;
         sidePanelElementHeight = 40 ;
         sidePanelElementWidth = sidePanelWidth / 4 ;
         title = getString("applicationTitle");
@@ -429,21 +429,18 @@ public class MainFrame extends JFrame {
     }
 
     public void addNewIndexController(IndexController indexController) {
+
+        if(this.indexController != null)
+            graphPanel.remove(this.indexController);
+
         this.indexController = indexController;
         if(indexController == null)
             return;
 
-//        if(jScrollPane != null)
-//            graphPanel.remove(jScrollPane);
-//
-//        jScrollPane = new JScrollPane(indexController, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED) ;
-//        jScrollPane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-//        indexController.setFillsViewportHeight(true);
-//        indexController.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-//
-//        adapter = new ExcelAdapter(indexController) ;
+        graphPanel.setLayout(null);
+        indexController.setSize(graphPanel.getSize());
 
-        graphPanel.add(indexController,BorderLayout.CENTER) ;
+        graphPanel.add(indexController) ;
         graphPanel.revalidate();
         graphPanel.repaint();
         revalidate();

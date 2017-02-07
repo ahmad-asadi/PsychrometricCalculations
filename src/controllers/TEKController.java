@@ -1,19 +1,48 @@
 package controllers;
 
+import java.util.ArrayList;
+
 /**
  * This class is created by Ahmad Asadi on 1/17/17.
  */
 public class TEKController extends IndexController {
 
+    private final double[] bounds;
+    private final String[] boundStrings;
+
     public TEKController(){
         super();
-        setCols();
         numberOfVars = 2 ;
         numberOfRes = 3 ;
-        indexOfStringField = 4 ;
         bounds = new double[]{18,24,32,44,56,Double.MAX_VALUE} ;
         boundStrings = new String[]{"سرد","خنک","کمی خنک","آسایش","شرجی-داغ","خیلی گرم و مرطوب"} ;
-        setBoundStrings = true ;
+        indexOfBoundStrings = new ArrayList<>() ;
+        indexOfBoundStrings.add(1);
+    }
+
+    @Override
+    protected String[] getVarList() {
+        return new String[]{"میانگین دما","میانگین رطوبت نسبی","فشار بخار e"};
+    }
+
+    @Override
+    protected String[] getResList() {
+        return new String[]{"TEK","شرایط زیست-اقلیمی"};
+    }
+
+    @Override
+    protected String[] getConstList() {
+        return new String[0];
+    }
+
+    @Override
+    protected boolean hasConstList() {
+        return false;
+    }
+
+    @Override
+    protected String getBoundString(double[] resInput, int i) {
+        return getBoundString(boundStrings, bounds, resInput[i]);
     }
 
     @Override
@@ -26,21 +55,4 @@ public class TEKController extends IndexController {
         else
             return D2+(1.5*D6) ;
     }
-
-
-    protected void setCols(){
-        super.setCols();
-        String[] row = new String[cols.length];
-        row[0] = "میانگین دما" ;
-        model.addRow(row);
-        row[0] = "میانگین رطوبت نسبی" ;
-        model.addRow(row);
-        row[0] = "فشار بخار e" ;
-        model.addRow(row);
-        row[0] = "TEK" ;
-        model.addRow(row);
-        row[0] = "شرایط زیست-اقلیمی" ;
-        model.addRow(row);
-    }
-
 }
