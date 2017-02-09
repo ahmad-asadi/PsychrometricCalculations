@@ -124,24 +124,24 @@ public class Facade {
 //            case "PMV (predicted mean vote)":
 //                indexController = new PMVController() ;
 //                break;
-//            case "UTCI(Universal Thermal Climate Index)":
-//                indexController = new UTCIController() ;
-//                break;
-//            case "HSI(heat stress index)":
-//                indexController = new HSIController() ;
-//                break;
-//            case "PHS(Physiological strain index)":
-//                indexController = new PHSController() ;
-//                break;
-//            case "STI(Subjective temperature index)":
-//                indexController = new STIController() ;
-//                break;
-//            case "SST(Still shade temperature)":
-//                indexController = new SSTController() ;
-//                break;
-//            case "PST(Physiological subjective temperature)":
-//                indexController = new PSTController() ;
-//                break;
+            case "UTCI(Universal Thermal Climate Index)":
+                indexController = new UTCIController() ;
+                break;
+            case "HSI(heat stress index)":
+                indexController = new HSIController() ;
+                break;
+            case "PHS(Physiological strain index)":
+                indexController = new PHSController() ;
+                break;
+            case "STI(Subjective temperature index)":
+                indexController = new STIController() ;
+                break;
+            case "SST(Still shade temperature)":
+                indexController = new SSTController() ;
+                break;
+            case "PST(Physiological subjective temperature)":
+                indexController = new PSTController() ;
+                break;
             default:
                 indexController = null ;
         }

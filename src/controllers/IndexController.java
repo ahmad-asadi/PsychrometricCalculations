@@ -1,6 +1,7 @@
 package controllers;
 
 import facilities.ExcelAdapter;
+import facilities.SuperTable;
 import uiElements.MainFrame;
 
 import javax.swing.*;
@@ -24,7 +25,7 @@ public abstract class IndexController extends JPanel {
 
     protected JTable varTable ;
     protected JTable resTable ;
-    protected JTable constTable ;
+    protected SuperTable constTable ;
     private JScrollPane varJsp ;
     private JScrollPane resJsp ;
     private JScrollPane constJsp ;
@@ -35,7 +36,11 @@ public abstract class IndexController extends JPanel {
         setBorder(BorderFactory.createSoftBevelBorder(0));
         setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 
-        varLabel = createTableLabel("ورودی‌های مورد نیاز" , MainFrame.graphPanelWidth  / 2 + 20 , 20);
+        if(!hasConstList())
+            varLabel = createTableLabel("ورودی‌های مورد نیاز" , MainFrame.graphPanelWidth  / 2 + 20 , 20);
+        else
+            varLabel = createTableLabel("ورودی‌های مورد نیاز" , MainFrame.graphPanelWidth  * 2 / 3 + 20 , 20);
+
         varTable = new JTable(getInitRowList(getFinalVarList()), getFinalVarList()) ;
 
         setCellRenderer(varTable);
@@ -48,11 +53,7 @@ public abstract class IndexController extends JPanel {
         varJsp = createJSP(varTable,varLabel);
         resJsp = createJSP(resTable,resLabel);
         if(hasConstList()) {
-            constLabel = createTableLabel("پارامترهای عمومی و ثوابت" , MainFrame.graphPanelWidth *3 / 4 - 60 , 20);
-            constTable = new JTable(getInitRowList(getFinalConstList()) , getFinalConstList());
-            constJsp = createJSP(constTable,constLabel);
-            add(constLabel) ;
-            add(constJsp) ;
+            createConstTable();
         }
 
 
@@ -72,6 +73,20 @@ public abstract class IndexController extends JPanel {
 //        add(boundJsp) ;
 
 
+    }
+
+    private void createConstTable() {
+        constLabel = createTableLabel("پارامترهای عمومی و ثوابت" , MainFrame.graphPanelWidth / 3 + 20 , 20);
+        constTable = new SuperTable(getConstRowList(getFinalConstList()) , getFinalConstList());
+        constJsp = createJSP(constTable,constLabel);
+        add(constLabel) ;
+        add(constJsp) ;
+    }
+
+    protected String[][] getConstRowList(String[] list) {
+        String[][] rows =  new String[400][list.length];
+
+        return rows;
     }
 
     private void setCellRenderer(JTable table) {
@@ -106,7 +121,12 @@ public abstract class IndexController extends JPanel {
 
     private JLabel createTableLabel(String text,int x , int y) {
         JLabel label = new JLabel(text) ;
-        label.setSize(MainFrame.graphPanelWidth/2 - 40,40);
+
+        if(!hasConstList())
+            label.setSize(MainFrame.graphPanelWidth/2 - 40,40);
+        else
+            label.setSize(MainFrame.graphPanelWidth/3 - 40,40);
+
         label.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         label.setFont(new Font("B Titr",12,14));
         label.setLocation(x,y);
@@ -139,9 +159,7 @@ public abstract class IndexController extends JPanel {
         return strings ;
     }
     protected String[] getFinalConstList(){
-        String[] list = getConstList();
-        String[] strings = createFinalList(list);
-        return strings ;
+        return getConstList();
     }
 
     private JScrollPane createJSP(JTable table, JLabel label) {
@@ -162,7 +180,7 @@ public abstract class IndexController extends JPanel {
 
     }
 
-    private void setResTable(TableModel resModel) {
+    protected void setResTable(TableModel resModel) {
         double[][] inputData = getTableData(varTable);
         TableModel varModel = varTable.getModel() ;
 
@@ -192,7 +210,7 @@ public abstract class IndexController extends JPanel {
 
     protected abstract String getBoundString(double[] resInput, int i);
 
-    private double[][] getTableData(JTable table) {
+    protected double[][] getTableData(JTable table) {
         TableModel model = table.getModel() ;
 
         double[][] data = new double[model.getRowCount()][model.getColumnCount() - 1] ;
