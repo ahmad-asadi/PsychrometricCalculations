@@ -61,9 +61,9 @@ public class Facade {
             case "SSI (Summer Simmer Index)":
                 indexController = new SSIController() ;
                 break;
-//            case "WBGT(Wet Bulb Globe Temperature)":
-//                indexController = new WBGTController() ;
-//                break;
+            case "WBGT(Wet Bulb Globe Temperature)":
+                indexController = new WBGTController() ;
+                break;
             case "AT(Apparent Temperature)":
                 indexController = new ATController() ;
                 break;
@@ -73,9 +73,9 @@ public class Facade {
             case "Thi2(Thom index)":
                 indexController = new THI2Controller() ;
                 break;
-//            case "H&K0(wind-chill index)":
-//                indexController = new HK0Controller() ;
-//                break;
+            case "H&K0(wind-chill index)":
+                indexController = new HK0Controller() ;
+                break;
             case "Sb(Bodman's weather severity index)":
                 indexController = new SBController() ;
                 break;
@@ -85,9 +85,9 @@ public class Facade {
             case "Di(Discomfort Index)":
                 indexController = new DIController() ;
                 break;
-//            case "Rsi(Relative Strain Index)":
-//                indexController = new RSIController() ;
-//                break;
+            case "Rsi(Relative Strain Index)":
+                indexController = new RSIController() ;
+                break;
             case "CI(neurotic pressure index)":
                 indexController = new CIController() ;
                 break;
@@ -100,12 +100,12 @@ public class Facade {
 //            case "Mahoney":
 //                indexController = new MahoneyController() ;
 //                break;
-//            case "Humidex":
-//                indexController = new HumidexController() ;
-//                break;
-//            case "HI(Heat Index)":
-//                indexController = new HIController() ;
-//                break;
+            case "Humidex":
+                indexController = new HumidexController() ;
+                break;
+            case "HI(Heat Index)":
+                indexController = new HIController() ;
+                break;
             case "EET (Equivalent effective temperature)":
                 indexController = new EETController() ;
                 break;
