@@ -17,7 +17,7 @@ public class GivoniChart extends Chart {
         yStride = 0.2 ;
 
         this.data = data ;
-        mainChartImage = "./Imgs/givoniBG.jpg" ;
+        mainChartImage = "/Imgs/givoniBG.jpg" ;
         setMainChart();
         drawChart() ;
         setMappings(pointNames) ;

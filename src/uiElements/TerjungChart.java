@@ -17,7 +17,7 @@ public class TerjungChart extends Chart{
         yStride = 6.8 ;
 
         this.data = data ;
-        mainChartImage = "./Imgs/terjungBG.jpg" ;
+        mainChartImage = "/Imgs/terjungBG.jpg" ;
         setMainChart();
         drawChart() ;
         setMappings(pointNames) ;

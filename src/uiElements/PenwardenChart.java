@@ -22,9 +22,6 @@ public class PenwardenChart extends Chart {
     }
 
     private void drawChart(){
-        addPoint(new Point(0,0) , "1");
-        addPoint(new Point(0,30) , "10");
-        addPoint(new Point(10,0) , "5");
         for (int i = 0; i < data.length; i++) {
             addPoint(new Point((int)data[i][1],(int)data[i][0]), Integer.toString(i));
         }
@@ -32,7 +29,7 @@ public class PenwardenChart extends Chart {
 
     @Override
     public void selectChart(int index){
-        mainChartImage = "./Imgs/penwardenBG"+Integer.toString(index)+".jpg" ;
+        mainChartImage = "/Imgs/penwardenBG"+Integer.toString(index)+".jpg" ;
         xStride = xStrides[index] ;
         yStride = yStrides[index] ;
         xMargin = xMargins[index] ;

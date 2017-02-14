@@ -18,7 +18,7 @@ public class OlgayChartPanel extends Chart{
     public OlgayChartPanel(ThermalChartFrame parent , double[][] data, String[] pointNames){
         super(parent);
         this.data = data ;
-        mainChartImage = "./Imgs/OlgayBG.png" ;
+        mainChartImage = "/Imgs/OlgayBG.png" ;
         setMainChart();
         drawChart() ;
         setMappings(pointNames) ;

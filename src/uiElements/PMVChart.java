@@ -19,7 +19,7 @@ public class PMVChart extends Chart {
 
         this.data = data ;
         this.colNames = colNames ;
-        mainChartImage = "./Imgs/pmvBG.jpg" ;
+        mainChartImage = "/Imgs/pmvBG.jpg" ;
         setMainChart();
         setMappings(colNames);
         drawChart() ;

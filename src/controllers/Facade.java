@@ -25,18 +25,18 @@ public class Facade {
 //            case "Evanz":
 //                indexController = new EvanzController() ;
 //                break;
-//            case "Olgyay":
-//                indexController = new OlgyayController() ;
-//                break;
-//            case "Becker":
-//                indexController = new BeckerController() ;
-//                break;
+            case "Olgyay":
+                indexController = new OlgyayController() ;
+                break;
+            case "Becker":
+                indexController = new BeckerController() ;
+                break;
             case "ke(Wind cool Index)":
                 indexController = new KeController() ;
                 break;
-//            case "Penwarden":
-//                indexController = new PenwardenController() ;
-//                break;
+            case "Penwarden":
+                indexController = new PenwardenController() ;
+                break;
             case "Tek(Equivalent temperature)":
                 indexController = new TEKController() ;
                 break;
@@ -94,9 +94,9 @@ public class Facade {
             case "Cpi(Cooling Power Index)":
                 indexController = new CPIController() ;
                 break;
-//            case "Givoni":
-//                indexController = new GivoniController() ;
-//                break;
+            case "Givoni":
+                indexController = new GivoniController() ;
+                break;
 //            case "Mahoney":
 //                indexController = new MahoneyController() ;
 //                break;
@@ -121,9 +121,9 @@ public class Facade {
             case "ASV(Actual Sensation Vote)":
                 indexController = new ASVController() ;
                 break;
-//            case "PMV (predicted mean vote)":
-//                indexController = new PMVController() ;
-//                break;
+            case "PMV (predicted mean vote)":
+                indexController = new PMVController() ;
+                break;
             case "UTCI(Universal Thermal Climate Index)":
                 indexController = new UTCIController() ;
                 break;

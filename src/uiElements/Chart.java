@@ -49,7 +49,8 @@ public class Chart extends JPanel{
 
     protected void setMainChart(){
         try {
-            mainChart = ImageIO.read(new FileInputStream(mainChartImage));
+            System.out.println(getClass().getResource(mainChartImage));
+            mainChart = ImageIO.read(getClass().getResource(mainChartImage));
         } catch (IOException e) {
             e.printStackTrace();
         }

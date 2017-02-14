@@ -178,6 +178,17 @@ public abstract class IndexController extends JPanel {
 
         setResTable(resModel);
 
+        if(hasChart())
+            createChart() ;
+
+    }
+
+    protected void createChart() {
+
+    }
+
+    protected boolean hasChart() {
+        return false ;
     }
 
     protected void setResTable(TableModel resModel) {
