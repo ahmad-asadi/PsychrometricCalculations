@@ -6,6 +6,7 @@ import uiElements.MainFrame;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.JTableHeader;
 import javax.swing.table.TableModel;
 import java.awt.*;
 import java.util.ArrayList;
@@ -250,6 +251,15 @@ public abstract class IndexController extends JPanel {
                 result = boundStrings[i+1] ;
         }
         return result ;
+    }
+
+    protected double getCellData(JTable table,int row , int col){
+        try{
+            return Double.parseDouble((String) table.getValueAt(row,col)) ;
+        }
+        catch (Exception e){
+            return 0 ;
+        }
     }
 
 }

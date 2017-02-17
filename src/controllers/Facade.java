@@ -22,9 +22,9 @@ public class Facade {
         String itemKey = frame.getLanguageDictionary().getKey(selectedItem);
         System.out.println(itemKey);
         switch (itemKey){
-//            case "Evanz":
-//                indexController = new EvanzController() ;
-//                break;
+            case "Evanz":
+                indexController = new EvanzController() ;
+                break;
             case "Olgyay":
                 indexController = new OlgyayController() ;
                 break;
@@ -43,9 +43,9 @@ public class Facade {
             case "DI (Term hygrometric Index)":
                 indexController = new HygrometricController() ;
                 break;
-//            case "Terjung ":
-//                indexController = new TejungController() ;
-//                break;
+            case "Terjung ":
+                indexController = new TejungController() ;
+                break;
             case "(WCT) Wind chill Temperature":
                 indexController = new WCTController() ;
                 break;
