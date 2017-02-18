@@ -54,7 +54,11 @@ public class CIController extends IndexController {
         double D27 = (0.5+((Math.pow(D5,2))*(Math.pow(10,(-4)))))*(D9-80+(0.11*D5)) ;
         double D28 = ((((-0.35)*(Math.pow(D7,0.5)))*(((20+(0.5*D5)))-(0.2*D9)))-(35*(Math.pow(D7,0.5)))) ;
 
-        return D27 - D28 ;
+        if(inputs[2] > 20)
+            return D27 - D28 ;
+        else {
+            return 0.57*D7 + 0.42 *(36.5-D9) * 36 ;
+        }
 
     }
 }

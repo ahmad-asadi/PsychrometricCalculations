@@ -9,6 +9,7 @@ public class WCTController extends IndexController {
 
     private final double[] bounds;
     private final String[] boundStrings;
+    private final String[] boundStrings2;
 
     public WCTController(){
         super();
@@ -16,18 +17,20 @@ public class WCTController extends IndexController {
         numberOfRes = 2 ;
         bounds = new double[]{-60,-45,-25,-10,Double.MAX_VALUE} ;
         boundStrings = new String[]{"گرمای متوسط","خیلی سرد","سرد","ملایم و متوسط","کم"} ;
+        boundStrings2 = new String[]{"سطح خطر، شرایط در فضای باز خطرناک هستند، پوست در معرض یخ‌زدن در ۲ دقیقه","هشدار سطح،‌ در معرض یخ پوست در دقیقه، خطر جدی از هیپوترمی","خطر یخ‌زدگی، بررسی صورت و اندام‌ها‌(به عنوان مثال انگشتان پا و گوش) برای بی‌حسی و سفیدی، خطر ابتلا به هیپوترمی","ناراحت‌کننده، پوست در معرض احساس سرد، خطر ابتلا به هیپوترمی بدون حفاظت کافی","افزایش اندک در ناراحتی"} ;
         indexOfBoundStrings = new ArrayList<>() ;
         indexOfBoundStrings.add(1);
+        indexOfBoundStrings.add(2);
     }
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دما","میانگین سرعت باد"};
+        return new String[]{"میانگین دما","دمای تر","سرعت باد به متر بر ثانیه","دمای کروی"};
     }
 
     @Override
     protected String[] getResList() {
-        return new String[]{"WCT","اثرات عمومی روی بدن انسان"};
+        return new String[]{"WCT","اثرات عمومی روی بدن انسان","شرایط زیست-اقلیمی"};
     }
 
     @Override
@@ -42,7 +45,12 @@ public class WCTController extends IndexController {
 
     @Override
     protected String getBoundString(double[] resInput, int i) {
-        return getBoundString(boundStrings,bounds,resInput[i]);
+        switch (i){
+            case 1:
+                return getBoundString(boundStrings,bounds,resInput[i]);
+            default:
+                return getBoundString(boundStrings2, bounds, resInput[i]);
+        }
     }
 
     @Override

@@ -5,11 +5,17 @@ import facilities.SuperTable;
 import uiElements.MainFrame;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.event.CellEditorListener;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.JTableHeader;
+import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableModel;
 import java.awt.*;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.util.ArrayList;
+import java.util.EventObject;
 
 
 /**
@@ -91,11 +97,8 @@ public abstract class IndexController extends JPanel {
     }
 
     private void setCellRenderer(JTable table) {
-        DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
-        renderer.setHorizontalAlignment(SwingConstants.CENTER);
-
         for (int i = 0; i < table.getModel().getColumnCount(); i++) {
-            table.getColumnModel().getColumn(i).setCellRenderer(renderer);
+            table.getColumnModel().getColumn(i).setCellRenderer(new SelectAllRenderer());
         }
     }
 
@@ -210,7 +213,9 @@ public abstract class IndexController extends JPanel {
                     if (indexOfBoundStrings.contains(new Integer(j))) {
                         double[] resInputs = new double[resModel.getColumnCount() - 1];
                         for (int ri = 1; ri < resModel.getColumnCount() - 1; ri++)
-                            resInputs[ri] = Double.parseDouble((String) resModel.getValueAt(i,ri));
+                            try {
+                                resInputs[ri] = Double.parseDouble((String) resModel.getValueAt(i, ri));
+                            }catch (Exception e){resInputs[ri] = 0 ;}
                         resModel.setValueAt(getBoundString(resInputs, j), i, j + 1);
                     }
                     else
@@ -260,6 +265,32 @@ public abstract class IndexController extends JPanel {
         catch (Exception e){
             return 0 ;
         }
+    }
+
+    public void reset(){
+        for(int j = 0 ; j < varTable.getRowCount() ; j++) {
+            for (int i = 1; i < varTable.getColumnCount(); i++) {
+                varTable.setValueAt("", j, i);
+            }
+        }
+        for(int j = 0 ; j < resTable.getRowCount() ; j++) {
+            for (int i = 1; i < resTable.getColumnCount(); i++) {
+                resTable.setValueAt("", j, i);
+            }
+        }
+    }
+}
+
+class SelectAllRenderer extends DefaultTableCellRenderer
+{
+    private Color selectionBackground;
+    private Border editBorder = BorderFactory.createLineBorder(Color.BLACK);
+    private boolean isPaintSelection;
+
+    public SelectAllRenderer()
+    {
+        setHorizontalAlignment(SwingConstants.CENTER);
+
     }
 
 }

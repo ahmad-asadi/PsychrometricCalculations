@@ -14,8 +14,8 @@ public class PPHSController extends IndexController {
         super();
         numberOfVars = 1 ;
         numberOfRes = 2 ;
-        bounds = new double[]{0,0.25,0.75,Double.MAX_VALUE} ;
-        boundStrings = new String[]{"تعریف نشده","فشار حرارتی بالا","فشار حرارتی متوسط","فشار حرارتی متوسط"} ;
+        bounds = new double[]{0,0.25,0.75,1.5,4,8,Double.MAX_VALUE} ;
+        boundStrings = new String[]{"تعریف نشده","فشار حرارتی بالا","فشار حرارتی متوسط","فشار حرارتی متوسط","حالت طبیعی","فشار متوسط خنک‌کننده","فشار خنک‌کننده بالا","فشار بیش از حد بالا خنک‌کننده"} ;
         indexOfBoundStrings = new ArrayList<>() ;
         indexOfBoundStrings.add(1);
     }

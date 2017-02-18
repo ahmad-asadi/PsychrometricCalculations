@@ -14,8 +14,8 @@ public class HIController extends IndexController {
         super();
         numberOfVars = 2 ;
         numberOfRes = 3 ;
-        bounds = new double[]{90,105,130,Double.MAX_VALUE} ;
-        boundStrings = new String[]{"احتیاط","احتیاط بسیار","خطرناک","بسیار خطرناک"} ;
+        bounds = new double[]{80,90,105,130,Double.MAX_VALUE} ;
+        boundStrings = new String[]{"تعریف نشده","احتیاط","احتیاط بسیار","خطرناک","بسیار خطرناک"} ;
         indexOfBoundStrings = new ArrayList<>() ;
         indexOfBoundStrings.add(1);
         indexOfBoundStrings.add(2);
@@ -23,7 +23,7 @@ public class HIController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دما به فارنهایت","رطوبت نسبی"};
+        return new String[]{"میانگین دما به فارنهایت","میانگین رطوبت نسبی به درصد"};
     }
 
     @Override
@@ -43,7 +43,7 @@ public class HIController extends IndexController {
 
     @Override
     protected String getBoundString(double[] resInput, int i) {
-        String[] secondBoundStrings = new String[]{"بسیار گرم", "داغ", "بسیار داغ", "خطرناک"};;
+        String[] secondBoundStrings = new String[]{"تعریف نشده","بسیار گرم", "داغ", "بسیار داغ", "خطرناک"};;
         switch (i){
             case 0:
                 return getBoundString(boundStrings, bounds, resInput[i]) ;

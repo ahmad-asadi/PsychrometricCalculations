@@ -118,10 +118,10 @@ public class MainFrame extends JFrame {
         indexName = createIndexCombo() ;
         solveBtn = createSolveBtn() ;
         resetBtn = createResetBtn() ;
-        addColBtn = createAddColBtn() ;
-        removeColBtn = createRemoveColBtn() ;
-        printBtn = createPrintBtn() ;
-        saveBtn = createSaveBtn() ;
+//        addColBtn = createAddColBtn() ;
+//        removeColBtn = createRemoveColBtn() ;
+//        printBtn = createPrintBtn() ;
+//        saveBtn = createSaveBtn() ;
 
         dayLabel = createDayLabel() ;
         monthLabel = createMonthLabel() ;
@@ -141,10 +141,10 @@ public class MainFrame extends JFrame {
         sidePanel.add(indexName);
         sidePanel.add(solveBtn);
         sidePanel.add(resetBtn);
-        sidePanel.add(addColBtn);
-        sidePanel.add(saveBtn);
-        sidePanel.add(printBtn);
-        sidePanel.add(removeColBtn);
+//        sidePanel.add(addColBtn);
+//        sidePanel.add(saveBtn);
+//        sidePanel.add(printBtn);
+//        sidePanel.add(removeColBtn);
 
 //        sidePanel.add(dayLabel);
 //        sidePanel.add(monthLabel);
@@ -160,8 +160,8 @@ public class MainFrame extends JFrame {
 
     private JButton createCosineBtn() {
         JButton btn = new JButton("محاسبه قانون کسینوس") ;
-        btn.setSize(saveBtn.getSize());
-        btn.setLocation(removeColBtn.getX() + removeColBtn.getWidth() + 30 , removeColBtn.getY());
+        btn.setSize(solveBtn.getSize());
+        btn.setLocation(solveBtn.getX() , solveBtn.getY() + solveBtn.getHeight() + 20);
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -340,7 +340,7 @@ public class MainFrame extends JFrame {
     private JButton createSolveBtn() {
         JButton button = new JButton() ;
         button.setSize(sidePanelElementWidth-20, sidePanelElementHeight);
-        button.setLocation(15,10);
+        button.setLocation(15,20);
         button.setText("انجام محاسبه") ;
         button.addActionListener(new ActionListener() {
             @Override
@@ -358,12 +358,12 @@ public class MainFrame extends JFrame {
     private JButton createResetBtn() {
         JButton button = new JButton() ;
         button.setSize(sidePanelElementWidth-20, sidePanelElementHeight);
-        button.setLocation(15+button.getWidth() + 5,10);
+        button.setLocation(15+button.getWidth() + 5,20);
         button.setText("پاک کردن جدول") ;
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
+                indexController.reset() ;
             }
         });
         button.setFont(normalFont);
@@ -374,7 +374,7 @@ public class MainFrame extends JFrame {
         JLabel label = new JLabel() ;
         label.setText(languageDictionary.getString("indexLabel"));
         label.setSize(sidePanelElementWidth - 20, sidePanelElementHeight);
-        label.setLocation(sidePanelWidth - sidePanelElementWidth - 10 , 10);
+        label.setLocation(sidePanelWidth - sidePanelElementWidth - 10 , 20);
         label.setFont(titleFont);
         label.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         return label;
@@ -385,7 +385,7 @@ public class MainFrame extends JFrame {
         combo.removeItem("انتخاب شاخص: ");
         combo.setSize(sidePanelElementWidth + 20 , sidePanelElementHeight);
         combo.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-        combo.setLocation(sidePanelWidth - 2*sidePanelElementWidth  , 10);
+        combo.setLocation(sidePanelWidth - 2*sidePanelElementWidth  , 20);
         combo.setFont(normalFont);
         ItemListener itemListener = new ItemListener() {
             public void itemStateChanged(ItemEvent itemEvent) {

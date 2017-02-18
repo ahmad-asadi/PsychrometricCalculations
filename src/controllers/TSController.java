@@ -13,8 +13,8 @@ public class TSController extends IndexController {
         super();
         numberOfRes = 2 ;
         numberOfVars = 3 ;
-        bounds = new double[]{1,2,3,4,5,7,Double.MAX_VALUE} ;
-        boundStrings = new String[]{"معتدل","شرایط تقریبا سخت","شرایط تا حدی سخت","شرایط سخت","شرایط خیلی سخت","شرایط بشدت سخت","شرایط خیلی سخت"} ;
+        bounds = new double[]{2,3,4,5,6,7,Double.MAX_VALUE} ;
+        boundStrings = new String[]{"خیلی سرد","سرد","خنک","آسایش","گرم","داغ","بسیار داغ"} ;
         indexOfBoundStrings = new ArrayList<>() ;
         indexOfBoundStrings.add(1);
     }
@@ -41,7 +41,8 @@ public class TSController extends IndexController {
 
     @Override
     protected String getBoundString(double[] resInput, int i) {
-        return null;
+
+        return getBoundString(boundStrings, bounds, resInput[i]);
     }
 
     @Override

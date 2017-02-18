@@ -15,8 +15,8 @@ public class ASVController extends IndexController {
         super();
         numberOfRes = 2 ;
         numberOfVars = 4 ;
-        bounds = new double[][]{{1,2,3,4,5,7,Double.MAX_VALUE}} ;
-        boundStrings = new String[][]{{"معتدل","شرایط تقریبا سخت","شرایط تا حدی سخت","شرایط سخت","شرایط خیلی سخت","شرایط بشدت سخت","شرایط خیلی سخت"}} ;
+        bounds = new double[][]{{-1.5,-0.5,0.5,1.5,Double.MAX_VALUE}} ;
+        boundStrings = new String[][]{{"خیلی سرد","سرد","آسایش","گرم","بسیار گرم"}} ;
         indexOfBoundStrings = new ArrayList<>() ;
         indexOfBoundStrings.add(1);
     }

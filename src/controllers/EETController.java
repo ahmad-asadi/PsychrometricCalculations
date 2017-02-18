@@ -14,7 +14,7 @@ public class EETController extends IndexController {
         super();
         numberOfVars = 3 ;
         numberOfRes = 2 ;
-        bounds = new double[]{8,17,23,Double.MAX_VALUE} ;
+        bounds = new double[]{8,16,23,Double.MAX_VALUE} ;
         boundStrings = new String[]{"سرد","خنک","ملایم و مطبوع","داغ"} ;
         indexOfBoundStrings = new ArrayList<>() ;
         indexOfBoundStrings.add(1);

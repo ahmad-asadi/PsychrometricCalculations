@@ -97,9 +97,9 @@ public class Facade {
             case "Givoni":
                 indexController = new GivoniController() ;
                 break;
-//            case "Mahoney":
-//                indexController = new MahoneyController() ;
-//                break;
+            case "Mahoney":
+                indexController = new MahoneyController() ;
+                break;
             case "Humidex":
                 indexController = new HumidexController() ;
                 break;
