@@ -10,54 +10,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/controllers/HumidexController.java" line="25" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2e0aa4d-dfcf-4641-8fb5-70b367bb8a13" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/AbanCosineController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/AzarCosineController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/BahmanCosineController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/DeyCosineController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/EsfandCosineController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/FarvardinCosineTable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/KhordadCosineController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/MehrCosineTable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/MonthCosineController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/MordadCosineController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/OrdibeheshtCosineTable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/SecondCosineReportTable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/ShahrivarCosineController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/TheoreticalSumMonthCosineTable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/TirCosineController.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/CosineFrame$2.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/ASVController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/ASVController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/CPIController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/CPIController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/CustomCellRenderer.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/CustomCellRenderer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/EETController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/EETController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/EvanzController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/EvanzController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/Facade.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/Facade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/IndexController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/IndexController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/SSIController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/SSIController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/TSController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/TSController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/CosineFrame$1.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/CosineFrame$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/CosineFrame.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/CosineFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$9.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/MainFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/ASVController.java" afterPath="$PROJECT_DIR$/src/controllers/ASVController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/CIController.java" afterPath="$PROJECT_DIR$/src/controllers/CIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/CPIController.java" afterPath="$PROJECT_DIR$/src/controllers/CPIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/EETController.java" afterPath="$PROJECT_DIR$/src/controllers/EETController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/EvanzController.java" afterPath="$PROJECT_DIR$/src/controllers/EvanzController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/Facade.java" afterPath="$PROJECT_DIR$/src/controllers/Facade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/HIController.java" afterPath="$PROJECT_DIR$/src/controllers/HIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/IndexController.java" afterPath="$PROJECT_DIR$/src/controllers/IndexController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/MahoneyController.java" afterPath="$PROJECT_DIR$/src/controllers/MahoneyController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/PPHSController.java" afterPath="$PROJECT_DIR$/src/controllers/PPHSController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/SSIController.java" afterPath="$PROJECT_DIR$/src/controllers/SSIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/TSController.java" afterPath="$PROJECT_DIR$/src/controllers/TSController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/TejungController.java" afterPath="$PROJECT_DIR$/src/controllers/TejungController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/WCTController.java" afterPath="$PROJECT_DIR$/src/controllers/WCTController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uiElements/CosineFrame.java" afterPath="$PROJECT_DIR$/src/uiElements/CosineFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uiElements/MainFrame.java" afterPath="$PROJECT_DIR$/src/uiElements/MainFrame.java" />
-    </list>
+    <list default="true" id="b2e0aa4d-dfcf-4641-8fb5-70b367bb8a13" name="Default" comment="" />
     <ignored path="PsychrometricCalculation.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -174,8 +127,8 @@
       <file leaf-file-name="PPHSController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controllers/PPHSController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="358">
+              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -269,8 +222,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1280" />
-    <option name="y" value="24" />
+    <option name="y" value="1048" />
     <option name="width" value="1280" />
     <option name="height" value="1000" />
   </component>
@@ -873,15 +825,15 @@
       <workItem from="1486365339700" duration="47167000" />
       <workItem from="1487051284006" duration="5137000" />
       <workItem from="1487320921412" duration="8294000" />
-      <workItem from="1487403461262" duration="27791000" />
+      <workItem from="1487403461262" duration="30301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151893000" />
+    <option name="totallyTimeSpent" value="154403000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1280" y="24" width="1280" height="1000" extended-state="6" />
+    <frame x="0" y="1048" width="1280" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1496,8 +1448,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/PPHSController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="358">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding />
         </state>
       </provider>
