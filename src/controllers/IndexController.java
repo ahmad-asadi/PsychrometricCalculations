@@ -1,6 +1,7 @@
 package controllers;
 
 import facilities.ExcelAdapter;
+import facilities.PMVTable;
 import facilities.SuperTable;
 import uiElements.MainFrame;
 
@@ -32,9 +33,9 @@ public abstract class IndexController extends JPanel {
 
     protected JTable varTable ;
     protected JTable resTable ;
-    protected SuperTable constTable ;
+    protected JTable constTable ;
     private JScrollPane varJsp ;
-    private JScrollPane resJsp ;
+    protected JScrollPane resJsp ;
     private JScrollPane constJsp ;
     protected ArrayList<Integer> indexOfBoundStrings ;
 
@@ -84,7 +85,10 @@ public abstract class IndexController extends JPanel {
 
     private void createConstTable() {
         constLabel = createTableLabel("پارامترهای عمومی و ثوابت" , MainFrame.graphPanelWidth / 3 + 20 , 20);
-        constTable = new SuperTable(getConstRowList(getFinalConstList()) , getFinalConstList());
+        if(this instanceof PMVController)
+            constTable = new PMVTable(getConstRowList(getFinalConstList()) , getFinalConstList());
+        else
+            constTable = new SuperTable(getConstRowList(getFinalConstList()) , getFinalConstList());
         constJsp = createJSP(constTable,constLabel);
         add(constLabel) ;
         add(constJsp) ;
@@ -142,6 +146,10 @@ public abstract class IndexController extends JPanel {
     protected abstract  String[] getConstList();
     protected abstract  boolean hasConstList();
 
+    protected String getBoundString(double[] inputs, int i, int row){
+        return getBoundString(inputs, i) ;
+    }
+
     protected String[] getFinalVarList(){
         String[] list = getVarList();
         String[] strings = createFinalList(list);
@@ -178,6 +186,9 @@ public abstract class IndexController extends JPanel {
     }
 
     public void solve(){
+
+        setRowIds() ;
+
         TableModel resModel = resTable.getModel() ;
 
         setResTable(resModel);
@@ -185,6 +196,26 @@ public abstract class IndexController extends JPanel {
         if(hasChart())
             createChart() ;
 
+    }
+
+    private void setRowIds() {
+        int index = 13 ;
+        for(int i = 12 ; i < varTable.getRowCount() ; i ++)
+        {
+            if(hasInput(varTable,i)){
+                varTable.setValueAt(Integer.toString(index),i,0);
+                resTable.setValueAt(Integer.toString(index),i,0);
+                index ++ ;
+            }
+        }
+    }
+
+    private boolean hasInput(JTable varTable, int i) {
+        boolean res = false ;
+        for(int j = 0 ; j < varTable.getColumnCount(); j++)
+            if(getCellData(varTable,i,j)!=0)
+                res = true ;
+        return res;
     }
 
     protected void createChart() {
@@ -216,10 +247,10 @@ public abstract class IndexController extends JPanel {
                             try {
                                 resInputs[ri] = Double.parseDouble((String) resModel.getValueAt(i, ri));
                             }catch (Exception e){resInputs[ri] = 0 ;}
-                        resModel.setValueAt(getBoundString(resInputs, j), i, j + 1);
+                        resModel.setValueAt(getBoundString(resInputs, j, (int)i), i, j + 1);
                     }
                     else
-                        resModel.setValueAt(Double.toString(computeRes(inputs, j)), i, j + 1);
+                        resModel.setValueAt(Double.toString(computeRes(inputs, j,i)), i, j + 1);
                 }
             }
         }
@@ -245,6 +276,10 @@ public abstract class IndexController extends JPanel {
         }
 
         return data ;
+    }
+
+    protected double computeRes(double[] inputs, int resIndex, int row){
+        return computeRes(inputs, resIndex) ;
     }
 
     protected abstract double computeRes(double[] inputs, int resIndex);

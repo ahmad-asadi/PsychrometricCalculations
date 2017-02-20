@@ -22,8 +22,9 @@ public class PenwardenChart extends Chart {
     }
 
     private void drawChart(){
-        for (int i = 0; i < data.length; i++) {
+        for (int i = 0; i < data.length/2; i++) {
             addPoint(new Point((int)data[i][1],(int)data[i][0]), Integer.toString(i));
+            addPoint(new Point((int)data[data.length/2 + i][1] + 1,(int)data[data.length/2 + i][0]), Integer.toString(data.length/2 + i));
         }
     }
 
@@ -41,7 +42,10 @@ public class PenwardenChart extends Chart {
 
     @Override
     protected Color setPointColor(int i){
-        return new Color(200,0,128) ;
+        if(i % 2 == 0)
+            return new Color(200,0,128) ;
+        else
+            return new Color(128,0,200) ;
     }
 
 }

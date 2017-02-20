@@ -21,7 +21,7 @@ public class PersianLanguageDictionary extends LanguageDictionary{
         stringMap.put("Tek(Equivalent temperature)" , "شاخص تعادل گرمایی") ;
         stringMap.put("DI (Term hygrometric Index)" , "شاخص ترموهیگرومتریک") ;
         stringMap.put("Terjung " , "شاخص ترجونگ") ;
-        stringMap.put("(WCT) Wind chill Temperature", "شاخص خنکی باد");
+        stringMap.put("(WCT) Wind chill Temperature", "شاخص دمای سوز باد");
         stringMap.put("(WCI) Wind chill index ", "شاخص خنک‌کنندگی باد");
         stringMap.put("SET(New Standard Effective Temperature)" , "شاخص دمای موثر SET") ;
         stringMap.put("NET(net effective temperature)" , "شاخص دمای موثر NET") ;

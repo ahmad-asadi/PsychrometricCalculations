@@ -22,12 +22,12 @@ public class NETController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دما","میانگین سرعت باد","میانگین رطوبت نسبی"};
+        return new String[]{"میانگین دما","میانگین سرعت باد به متر بر ثانیه","میانگین رطوبت نسبی"};
     }
 
     @Override
     protected String[] getResList() {
-        return new String[]{"TE","اثرات عمومی روی بدن انسان"};
+        return new String[]{"NET","اثرات عمومی روی بدن انسان"};
     }
 
     @Override

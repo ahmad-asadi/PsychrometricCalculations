@@ -22,7 +22,7 @@ public class CIController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین رطوبت","میانگین سرعت باد","میانگین دما"};
+        return new String[]{"میانگین رطوبت","میانگین سرعت باد به متر بر ثانیه","میانگین دما"};
     }
 
     @Override
@@ -41,8 +41,19 @@ public class CIController extends IndexController {
     }
 
     @Override
+    protected String getBoundString(double[] resInput, int i, int r) {
+        double temper = getCellData(varTable, r,3) ;
+        double[] bounds2 = new double[]{540,790,1000,1200,1440,Double.MAX_VALUE} ;
+        String[] boundStrings2 = new String[]{"خنک","خیلی خنک","سرد","خیلی سرد","سرمای گزنده","سطح پوست به سرعت یخ می‌زند"} ;
+        if(temper > 20)
+            return getBoundString(boundStrings, bounds, resInput[i]);
+        else
+            return getBoundString(boundStrings2, bounds2, resInput[i]) ;
+    }
+
+    @Override
     protected String getBoundString(double[] resInput, int i) {
-        return getBoundString(boundStrings, bounds, resInput[i]);
+        return null;
     }
 
     @Override

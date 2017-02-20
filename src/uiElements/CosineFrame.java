@@ -39,7 +39,7 @@ public class CosineFrame extends JFrame{
 
 
         String[][] rowData = new String[1][13] ;
-        rowData[0][0] = "میانگین ساعت آفتابی";
+        rowData[0][0] = "میانگین ساعت آفتابی روزانه";
 
         String[] cols = new String[]{"ماه","فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"};
 
@@ -54,7 +54,7 @@ public class CosineFrame extends JFrame{
         jsp.setSize(sunHoursTable.getWidth(), sunHoursTable.getHeight() + 40);
         jsp.setLocation(10 , 20);
         jsp.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-        jsp.setBorder(BorderFactory.createTitledBorder("میانگین ساعت آفتابی"));
+        jsp.setBorder(BorderFactory.createTitledBorder("میانگین ساعت آفتابی روزانه"));
         sunHoursTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         sunHoursTable.setFillsViewportHeight(true);
         sunHoursTable.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
@@ -81,13 +81,13 @@ public class CosineFrame extends JFrame{
             }
         });
 
-        JButton btn1 = createButton("مجموع ساعات نظری ماه‌ها",getWidth()*2/5 + 20 , label.getY()) ;
-        JButton btn2 = createButton("مجموع ساعات واقعی با احتساب ساعات نظری ماه‌ها",getWidth()/5 + 20, label.getY()) ;
+//        JButton btn1 = createButton("مجموع ساعات نظری ماه‌ها",getWidth()*2/5 + 20 , label.getY()) ;
+//        JButton btn2 = createButton("مجموع ساعات واقعی با احتساب ساعات نظری ماه‌ها",getWidth()/5 + 20, label.getY()) ;
         JButton btn3 = createButton("محاسبه مراحل برای تک‌تک ماه‌ها",20 , label.getY()) ;
 
-        btn1.addActionListener(e -> btn1Handle());
-
-        btn2.addActionListener(e -> btn2Handle());
+//        btn1.addActionListener(e -> btn1Handle());
+//
+//        btn2.addActionListener(e -> btn2Handle());
 
         btn3.addActionListener(e -> btn3Handle());
 
@@ -101,8 +101,8 @@ public class CosineFrame extends JFrame{
         getContentPane().add(jsp) ;
         getContentPane().add(label) ;
         getContentPane().add(lat) ;
-        getContentPane().add(btn1) ;
-        getContentPane().add(btn2) ;
+//        getContentPane().add(btn1) ;
+//        getContentPane().add(btn2) ;
         getContentPane().add(btn3) ;
 
         btn3Handle();

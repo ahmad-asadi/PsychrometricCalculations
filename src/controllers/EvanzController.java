@@ -11,6 +11,12 @@ import java.util.ArrayList;
  */
 public class EvanzController extends IndexController{
 
+    private JTable table1;
+    private JTable table2;
+    private JTable table3;
+    private JTable table4;
+    private JTabbedPane tabbedPane ;
+
     public EvanzController(){
         super();
         numberOfVars = 4 ;
@@ -22,28 +28,71 @@ public class EvanzController extends IndexController{
         indexOfBoundStrings.add(15);
         indexOfBoundStrings.add(16);
         indexOfBoundStrings.add(17);
-        Color color1 = new Color(200,100,200) ;
-        Color color2 = new Color(100,200,200) ;
-        Color color3 = new Color(200,200,100) ;
-        resTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        resTable.getColumnModel().getColumn(1).setCellRenderer(new CustomCellRenderer(color1));
-        resTable.getColumnModel().getColumn(2).setCellRenderer(new CustomCellRenderer(color1));
-        resTable.getColumnModel().getColumn(3).setCellRenderer(new CustomCellRenderer(color1));
-        resTable.getColumnModel().getColumn(4).setCellRenderer(new CustomCellRenderer(color1));
-        resTable.getColumnModel().getColumn(5).setCellRenderer(new CustomCellRenderer(color1));
-        resTable.getColumnModel().getColumn(6).setCellRenderer(new CustomCellRenderer(color1));
-        resTable.getColumnModel().getColumn(7).setCellRenderer(new CustomCellRenderer(color2));
-        resTable.getColumnModel().getColumn(8).setCellRenderer(new CustomCellRenderer(color2));
-        resTable.getColumnModel().getColumn(9).setCellRenderer(new CustomCellRenderer(color2));
-        resTable.getColumnModel().getColumn(10).setCellRenderer(new CustomCellRenderer(color2));
-        resTable.getColumnModel().getColumn(11).setCellRenderer(new CustomCellRenderer(color2));
-        resTable.getColumnModel().getColumn(12).setCellRenderer(new CustomCellRenderer(color2));
-        resTable.getColumnModel().getColumn(13).setCellRenderer(new CustomCellRenderer(color3));
-        resTable.getColumnModel().getColumn(14).setCellRenderer(new CustomCellRenderer(color3));
-        resTable.getColumnModel().getColumn(15).setCellRenderer(new CustomCellRenderer(color3));
-        resTable.getColumnModel().getColumn(16).setCellRenderer(new CustomCellRenderer(color3));
-        resTable.getColumnModel().getColumn(17).setCellRenderer(new CustomCellRenderer(color3));
-        resTable.getColumnModel().getColumn(18).setCellRenderer(new CustomCellRenderer(color3));
+
+        String[] cols1 = new String[]{"ردیف","بیشینه مقیاس الف","کمینه مقیاس الف","بیشینه مقیاس ب","کمینه مقیاس ب","بیشینه مقیاس ج","کمینه مقیاس ج"} ;
+        String[] cols3 = new String[]{"ردیف","مقیاس الف","مقیاس ب","مقیاس ج"} ;
+
+        table1 = new JTable(new String[400][cols1.length],cols1) ;
+        table2 = new JTable(new String[400][cols1.length],cols1) ;
+        table3 = new JTable(new String[400][cols3.length],cols3) ;
+        table4 = new JTable(new String[400][cols3.length],cols3) ;
+
+        JScrollPane jsp1 = createNewSubTable(table1);
+        JScrollPane jsp2 = createNewSubTable(table2);
+        JScrollPane jsp3 = createNewSubTable(table3);
+        JScrollPane jsp4 = createNewSubTable(table4);
+
+        tabbedPane = new JTabbedPane() ;
+
+        tabbedPane.setSize(resJsp.getSize());
+        tabbedPane.add("محدوده مقیاس‌های روز",jsp1) ;
+        tabbedPane.add("محدوده مقیاس‌های شب",jsp2) ;
+        tabbedPane.add("منطقه راحت روز",jsp3) ;
+        tabbedPane.add("منطقه راحت شب",jsp4) ;
+        tabbedPane.setLocation(resJsp.getLocation());
+        tabbedPane.setBorder(BorderFactory.createBevelBorder(0));
+        tabbedPane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+
+        remove(resJsp);
+        add(tabbedPane) ;
+
+    }
+
+    private JScrollPane createNewSubTable(JTable table1) {
+        JScrollPane jsp1 = new JScrollPane(table1) ;
+        jsp1.setSize(table1.getSize());
+        jsp1.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        table1.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        table1.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+
+        table1.getColumnModel().getColumn(0).setPreferredWidth(100);
+        for(int i = 1 ; i < table1.getColumnCount() ; i++)
+            table1.getColumnModel().getColumn(i).setPreferredWidth(180);
+
+        table1.setFillsViewportHeight(true);
+        return jsp1;
+    }
+
+    @Override
+    public void solve(){
+        super.solve();
+        for(int j = 0 ; j < resTable.getRowCount() ; j++) {
+            for (int i = 0; i < 7; i++) {
+                table1.setValueAt(resTable.getValueAt(j, i), j, i);
+            }
+            table2.setValueAt(resTable.getValueAt(j,0),j,0);
+            for (int i = 7; i < 13; i++) {
+                table2.setValueAt(resTable.getValueAt(j, i), j, i-6);
+            }
+            table3.setValueAt(resTable.getValueAt(j,0),j,0);
+            for (int i = 13; i < 16; i++) {
+                table3.setValueAt(resTable.getValueAt(j, i), j, i-12);
+            }
+            table4.setValueAt(resTable.getValueAt(j,0),j,0);
+            for (int i = 16; i < 19; i++) {
+                table4.setValueAt(resTable.getValueAt(j, i), j, i-15);
+            }
+        }
 
     }
 

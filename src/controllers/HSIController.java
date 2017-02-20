@@ -89,20 +89,4 @@ public class HSIController extends AnalyticalIndexController {
                 return -1 ;
         }
     }
-
-    private double getM(double[] input) {
-        return input[18];
-    }
-
-    private double getVPrime(double[] input) {
-        return input[15] ;
-    }
-
-    private double getAp(double[] input) {
-        return input[16] ;
-    }
-
-    private double getGender(double[] input) {
-        return input[17];
-    }
 }

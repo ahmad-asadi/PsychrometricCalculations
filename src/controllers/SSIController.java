@@ -13,7 +13,7 @@ public class SSIController extends IndexController {
 
     public SSIController(){
         super();
-        numberOfVars = 3 ;
+        numberOfVars = 2 ;
         numberOfRes = 3 ;
         bounds = new double[]{77,83,91,100,112,125,150,Double.MAX_VALUE} ;
         boundStrings = new String[]{"افراد بسیار احساس راحتی با کمی گرمی دارند","تمامی افراد در این شرایط احساس راحتی می‌کنند","افراد بسیاری احساس راحتی با کمی گرمی دارند","افزایش حرارت که به همراه احساس ناراحتی می‌باشد","احساس ناراحتی همراه با خطر گرمازدگی","ناراحتی زیاد و افزایش خطر گرمازدگی","حداکثر ناراحتی توام با خطر گرمازدگی زیاد","تعریف نشده"};
@@ -25,7 +25,7 @@ public class SSIController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دمای خشک","میانگین دمای خشک به فارنهایت","میانگین رطوبت نسبی"};
+        return new String[]{"میانگین دما به فارنهایت","میانگین رطوبت نسبی"};
     }
 
     @Override
@@ -44,8 +44,11 @@ public class SSIController extends IndexController {
     }
 
     @Override
-    protected String getBoundString(double[] resInput, int i) {
-        System.out.println(resInput[1]);
+    protected String getBoundString(double[] resInput, int i, int row) {
+        double temp = getCellData(varTable, 1, row) ;
+        if(temp < 22 || temp > 53)
+            return "false" ;
+
         switch (i){
             case 1:
                 return getBoundString(boundStrings, bounds, resInput[1]);
@@ -56,9 +59,14 @@ public class SSIController extends IndexController {
     }
 
     @Override
-    protected double computeRes(double[] inputs, int index){
-        double B8 = inputs[1] ;
-        double B10 = inputs[2] ;
+    protected String getBoundString(double[] resInput, int i) {
+        return null;
+    }
+
+    @Override
+    protected double computeRes(double[] inputs, int resIndex) {
+        double B8 = inputs[0] ;
+        double B10 = inputs[1] ;
         return ((1.98*(B8-((0.55-(0.0055*(B10))*(B8-58)))))-56.83) ;
     }
 }

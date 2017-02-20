@@ -29,6 +29,7 @@ public class ThermalChartFrame extends JFrame {
         setSize(width, height);
         setLayout(null);
         sidePanel = createSidePanel() ;
+        setResizable(false);
 
         saveBtn = new JButton("ذخیره نمودار") ;
         saveBtn.setSize(sidePanel.getWidth() - 10, 40);

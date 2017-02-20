@@ -24,7 +24,7 @@ public class BeckerController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دمای روزانه","میانگین سرعت باد"};
+        return new String[]{"میانگین دما","میانگین سرعت باد به متر بر ثانیه"};
     }
 
     @Override

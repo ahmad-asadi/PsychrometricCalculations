@@ -14,22 +14,22 @@ public class WBGTController extends IndexController {
     public WBGTController(){
         super();
         numberOfVars = 3 ;
-        numberOfRes = 5 ;
+        numberOfRes = 4 ;
         bounds = new double[]{13.5,17,18.5,22,23.5,28,Double.MAX_VALUE} ;
         boundStrings = new String[]{"بسیار سرد","سرد","خنک","آسایش","گرم","داغ","بسیار داغ"} ;
         indexOfBoundStrings = new ArrayList<>() ;
+        indexOfBoundStrings.add(2);
         indexOfBoundStrings.add(3);
-        indexOfBoundStrings.add(4);
     }
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دما","دمای تر","سرعت باد"};
+        return new String[]{"میانگین دما","دمای تر","دمای کروی"};
     }
 
     @Override
     protected String[] getResList() {
-        return new String[]{"محاسبه دمای کروی","WBGT در صورت انرژی مستقیم خورشید","WBGT در صورت عدم انرژی مستقیم خورشید","احساس حرارتی در تابش مستقیم خورشید","احساس حرارتی در عدم تابش مستقیم خورشید"};
+        return new String[]{"WBGT در صورت انرژی مستقیم خورشید","WBGT در صورت عدم انرژی مستقیم خورشید","احساس حرارتی در تابش مستقیم خورشید","احساس حرارتی در عدم تابش مستقیم خورشید"};
     }
 
     @Override

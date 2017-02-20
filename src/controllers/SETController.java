@@ -42,7 +42,7 @@ public class SETController extends IndexController {
 
     @Override
     protected String getBoundString(double[] resInput, int i) {
-        return null;
+        return getBoundString(boundStrings, bounds, resInput[i]);
     }
 
     @Override

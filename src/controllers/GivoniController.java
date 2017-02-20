@@ -44,24 +44,40 @@ public class GivoniController extends IndexController {
 
     @Override
     protected void createChart() {
-        double[][] tableData = getTableData(varTable) ;
-        double[][] data = new double[2*(varTable.getColumnCount() - 1)][2] ;
-        for (int i = 0 ; i < varTable.getColumnCount()-1; i++) {
-            data[i][0] = tableData[0][i] ;
-            data[i][1] = tableData[2][i] ;
+        ArrayList<ArrayList<Double>> data = new ArrayList<ArrayList<Double>>() ;
+        ArrayList<String> cols = new ArrayList<>() ;
+
+        for(int row = 0 ; row < varTable.getRowCount() ; row ++)
+        {
+            if((row > 11 && getCellData(varTable,row,0)!=0) || row < 12){
+                ArrayList rowData = new ArrayList() ;
+                rowData.add(getCellData(varTable,row,3));
+                rowData.add(getCellData(varTable,row,1));
+                data.add(rowData);
+                cols.add((String) varTable.getValueAt(row,0) + " در روز");
+            }
         }
-        for (int i = 0; i < varTable.getColumnCount()-1; i++) {
-            data[varTable.getColumnCount() + i - 1][0] = tableData[1][i] ;
-            data[varTable.getColumnCount() + i - 1][1] = tableData[3][i] ;
+
+        for(int row = 0 ; row < varTable.getRowCount() ; row ++)
+        {
+            if((row > 11 && getCellData(varTable,row,0)!=0) || row < 12){
+                ArrayList rowData = new ArrayList() ;
+                rowData.add(getCellData(varTable,row,4));
+                rowData.add(getCellData(varTable,row,2));
+                data.add(rowData);
+                cols.add((String) varTable.getValueAt(row,0) + " در شب");
+            }
         }
-        String[] colNames = new String[2*(varTable.getColumnCount()-1)];
-        for (int i = 1; i < varTable.getColumnCount() ; i++) {
-            colNames[i-1] = varTable.getColumnName(i) + " در روز" ;
+
+        String[] colNames = new String[cols.size()] ;
+        double[][] dataArr = new double[data.size()][2] ;
+        for (int i = 0; i < data.size(); i++) {
+            dataArr[i][0] = data.get(i).get(0) ;
+            dataArr[i][1] = data.get(i).get(1) ;
+            colNames[i] = cols.get(i) ;
         }
-        for (int i = 1; i < varTable.getColumnCount() ; i++) {
-            colNames[varTable.getColumnCount() + i-2] = varTable.getColumnName(i) + " در شب";
-        }
-        new ThermalChartFrame("givoni", data,colNames) ;
+
+        new ThermalChartFrame("givoni", dataArr,colNames) ;
     }
 
     @Override

@@ -22,7 +22,7 @@ public class HygrometricController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دمای نقطه شبنم","میانگین دمای خشک"};
+        return new String[]{"میانگین دمای نقطه شبنم","میانگین دما"};
     }
 
     @Override

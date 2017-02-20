@@ -1,5 +1,7 @@
 package controllers;
 
+import facilities.SuperTable;
+
 import javax.swing.*;
 import javax.swing.table.TableModel;
 
@@ -11,8 +13,13 @@ public abstract class AnalyticalIndexController extends IndexController {
     public AnalyticalIndexController(){
         super();
         varTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        constTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        constTable.getColumnModel().getColumn(1).setPreferredWidth(300);
+        constTable.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
+//        constTable.getColumnModel().getColumn(1).setPreferredWidth(300);
+
+        for(int i = 0 ; i < 12 ; i++){
+            int jolNo = (i<6?i*31 + 1 : 6*31 +1 + (i-6)*30 ) ;
+            varTable.setValueAt(Integer.toString(jolNo),i,1);
+        }
     }
 
     @Override
@@ -37,12 +44,12 @@ public abstract class AnalyticalIndexController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"شماره روز" , "شماره ماه" ,"شماره سال","میانگین دمای هوا","سرعت باد به متر بر ثانیه","رطوبت نسبی","دمای کروی","میزان ابرناکی","AP"};
+        return new String[]{"شماره ژولیوسی","میانگین دمای هوا","سرعت باد به متر بر ثانیه","رطوبت نسبی","دمای کروی","میزان ابرناکی"};
     }
 
     @Override
     protected String[] getResList() {
-        return new String[]{"شماره ژولیوسی","مدار میل","ارتفاع خورشید","Lg","LA","R در شرایط آفتابی", "R در شرایط سایه", "فشار بخار آب e"} ;
+        return new String[]{"مدار میل","ارتفاع خورشید","Lg","LA","R در شرایط آفتابی", "R در شرایط سایه", "فشار بخار آب e"} ;
     }
 
     @Override
@@ -83,7 +90,7 @@ public abstract class AnalyticalIndexController extends IndexController {
     }
 
     protected double getMedarMil(int rowIndex){
-        int jolNumber = getJolNumber(rowIndex) ;
+        int jolNumber = (int)getInput(rowIndex,1) ;
         return 23.45*Math.sin(Math.toRadians(360*(((double)(284+jolNumber))/365))) ;
     }
 
@@ -105,15 +112,15 @@ public abstract class AnalyticalIndexController extends IndexController {
     }
 
     protected double getAc(){
-        return constTable.ac ;
+        return ((SuperTable)constTable).ac ;
     }
 
     protected double getM(){
-        return constTable.m ;
+        return getCellData(constTable,1,1) ;
     }
 
     protected double getT(int rowIndex) {
-        return getInput(rowIndex,4);
+        return getInput(rowIndex,2);
     }
 
     private double getInput(int rowIndex, int column) {
@@ -125,37 +132,18 @@ public abstract class AnalyticalIndexController extends IndexController {
     }
 
     protected double getRH(int rowIndex) {
-        return getInput(rowIndex, 6);
+        return getInput(rowIndex, 3);
     }
 
     protected double getV(int rowIndex) {
-        return getInput(rowIndex, 5);
+        return 1.1;
     }
 
     protected double getVp(int rowIndex) {
         double B5 = getT(rowIndex) ;
-        double B23 = getAp(rowIndex) ;
         double B6 = getRH(rowIndex) ;
-        double B25 = getHV();
-        double B7 = getV(rowIndex) ;
-        double B26 = B7==0?0.25:(B7>23?15:B7*0.66) ;
-        double B24 = getAc() ;
-        double N13 = getRPrime(rowIndex) ;
-        double O13 = getLg(rowIndex) ;
-        double P13 = getLa(rowIndex) ;
-        double R13 = getTmrtSunny(rowIndex) ;
-        double H38 = -0.04*B5+0.013*B23-0.503 ;
-        double H40 = H38*Math.sqrt(B25+B26) ;
-        double H39 = H38*0.53/(B24*(1-0.27*Math.pow((B26+B25),0.4))) ;
-        double H55 = 0.056*B5+4.48 ;
-        double H54 = H39/(H39+H40+H55) ;
-        double H56 = N13*H54 ;
-        double H22 = getM() ;
-        double H43 = (26.4+0.02138*R13+0.2095*B5-0.0185*B6-0.009*B26)+((B24-1)*0.6)+0.00128*H22 ;
-        double H57 = (0.95*0.0000000567*Math.pow((273+H43),4)) ;
-        double H53 = Math.pow(((H56+(O13+P13)*H54+0.5*H57)/(0.95*0.0000000567)),0.25)-273 ;
 
-        return 6.112*Math.pow(10,(7.5*H53/(237.7+R13)))*0.01*B6 ;
+        return 6.112*Math.pow(10,(7.5*B5/(237.7+B5)))*0.01*B6 ;
     }
 
     protected double getHV() {
@@ -194,7 +182,7 @@ public abstract class AnalyticalIndexController extends IndexController {
     }
 
     protected double getAp(int rowIndex) {
-        return getInput(rowIndex,9) ;
+        return 1000 ;
     }
 
     protected double getLa(int rowIndex) {
@@ -204,13 +192,13 @@ public abstract class AnalyticalIndexController extends IndexController {
     }
 
     protected double getLg(int rowIndex) {
-        double Tg = getInput(rowIndex , 6) ;
+        double Tg = getInput(rowIndex , 4) ;
         return 0.5*0.97*0.0000000567*Math.pow((273+Tg),4) ;
     }
 
     protected double getRSunny(int rowIndex){
         double h = getH(rowIndex) ;
-        double N = getInput(rowIndex, 7) ;
+        double N = getInput(rowIndex, 5) ;
         double ac = getAc() ;
         double RSunny = 0 ;
 
@@ -229,7 +217,7 @@ public abstract class AnalyticalIndexController extends IndexController {
     }
 
     protected double getCloud(int rowIndex){
-        return getInput(rowIndex, 8) ;
+        return getInput(rowIndex, 5) ;
     }
 
     protected double getTmrtShaded(int rowIndex){
@@ -239,15 +227,16 @@ public abstract class AnalyticalIndexController extends IndexController {
         return Math.pow(((N14+O14+P14)/(0.95*0.0000000567)),0.25)-273 ;
     }
 
+    @Override
     protected String[][] getConstRowList(String[] list) {
         String[][] rows = new String[400][list.length] ;
         rows[0][0] = "عرض جغرافیایی" ;
         rows[1][0] = "متابولیسم" ;
+        rows[1][1] = "135" ;
         rows[2][0] = "رنگ لباس" ;
         rows[3][0] = "جنسیت" ;
-        rows[4][0] = "سرعت حرکت انسان" ;
-        rows[5][0] = "ساعت" ;
-
+        rows[3][1] = "1" ;
+        rows[4][0] = "ساعت (جهت محاسبه زاویه ساعتی)" ;
         return rows ;
     }
 

@@ -25,7 +25,7 @@ public class WCTController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دما","دمای تر","سرعت باد به متر بر ثانیه","دمای کروی"};
+        return new String[]{"میانگین دما","سرعت باد به متر بر ثانیه"};
     }
 
     @Override

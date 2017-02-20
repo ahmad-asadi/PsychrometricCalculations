@@ -1,5 +1,6 @@
 package controllers;
 
+import facilities.PMVTable;
 import uiElements.ThermalChartFrame;
 
 import javax.swing.table.DefaultTableModel;
@@ -10,31 +11,47 @@ import java.util.ArrayList;
  */
 public class PMVController extends IndexController {
 
+    private final String[] boundStrings1;
+    private final String[] boundStrings2;
+    private final double[] bounds;
+
     public PMVController(){
         super();
         numberOfRes = 2 ;
         numberOfVars = 6 ;
         indexOfBoundStrings = new ArrayList<>() ;
+        indexOfBoundStrings.add(2);
+        indexOfBoundStrings.add(3);
+//        for(int i = 0 ; i < varTable.getRowCount() ; i++)
+//            if(varTable.getValueAt(i,0) != null && !varTable.getValueAt(i,0).equals("") && !varTable.getValueAt(i,0).equals(" ")) {
+//                varTable.setValueAt("1", i, 1);
+//                varTable.setValueAt("1.2", i, 2);
+//            }
+
+        bounds = new double[]{-3.45, 3.55,-2.5,-1.5,-0.5,0.5,1.5,2.5,3.5,Double.MAX_VALUE} ;
+        boundStrings1 = new String[] {"خیلی سرد","سرد","خنک","کمی خنک","راحت","کمی گرم","گرم","خیلی گرم","داغ","خیلی داغ"} ;
+        boundStrings2 = new String[] {"تنش سرمای بسیار شدید","تنش سرمای شدید","تنش سرمای متوسط","تنش سرمای اندک","بدون تنش سرما","تنش گرمای اندک","تنش گرمای متوسط","تنش گرمای شدید","تنش گرمای بسیار شدید","تنش گرمای بشدت شدید"} ;
+
     }
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"کلو لباس","متابولیسم","دمای هوا","رطوبت نسبی","دمای کروی","سرعت باد"};
+        return new String[]{"دمای هوا","رطوبت نسبی","دمای کروی","سرعت باد"};
     }
 
     @Override
     protected String[] getResList() {
-        return new String[]{"شاخص PMV","شاخص PPD"};
+        return new String[]{"شاخص PMV","شاخص PPD","حساسیت حرارتی","درجه تنش فیزیولوژیک"};
     }
 
     @Override
     protected String[] getConstList() {
-        return new String[0];
+        return new String[]{"نام پارامتر","مقدار پارامتر"};
     }
 
     @Override
     protected boolean hasConstList() {
-        return false;
+        return true;
     }
 
     @Override
@@ -52,17 +69,23 @@ public class PMVController extends IndexController {
 
     @Override
     protected String getBoundString(double[] resInput, int i) {
-        return null;
+        switch (i){
+            case 1:
+                return getBoundString(boundStrings1, bounds, resInput[2]) ;
+            case 2:
+                return getBoundString(boundStrings2, bounds, resInput[2]) ;
+        }
+        return "ناشناخته";
     }
 
     @Override
     protected double computeRes(double[] input, int index){
-        double CLO = input[0] ;
-        double MET = input[1] ;
-        double TEQ = input[2] ;
-        double REL = input[3] ;
-        double Tg = input[4] ;
-        double V = input[5] ;
+        double CLO = ((PMVTable)constTable).m ;
+        double MET = ((PMVTable)constTable).ac ;
+        double TEQ = input[0] ;
+        double REL = input[1] ;
+        double Tg = input[2] ;
+        double V = input[3] ;
 
         double TA = Math.pow(Math.pow((Tg + 273.15),4) + ((Math.pow((1.335 + V),0.71) + (Tg - TEQ))/(0.95*Math.pow(0.15,0.4))) *100000000,0.25) - 273.15 ;
 
@@ -124,4 +147,13 @@ public class PMVController extends IndexController {
         }
 
     }
+
+    @Override
+    protected String[][] getConstRowList(String[] list) {
+        String[][] rows = new String[400][list.length] ;
+        rows[0][0] = "متابولیسم" ;
+        rows[1][0] = "کلو لباس" ;
+        return rows ;
+    }
+
 }

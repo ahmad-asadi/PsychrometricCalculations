@@ -23,7 +23,7 @@ public class ASVController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دمای ماهیانه", "میانگین سرعت باد", "میانگین تابش مستقیم بر افق", "رطوبت نسبی"};
+        return new String[]{"میانگین دما", "میانگین سرعت باد به متر بر ثانیه", "میانگین تابش مستقیم بر افق", "رطوبت نسبی"};
     }
 
     @Override

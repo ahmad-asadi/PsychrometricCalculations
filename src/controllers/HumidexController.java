@@ -15,7 +15,7 @@ public class HumidexController extends IndexController {
         numberOfVars = 2 ;
         numberOfRes = 4 ;
         bounds = new double[]{30,40,55,Double.MAX_VALUE} ;
-        boundStrings = new String[]{"بی‌خطر","خطرناک","بسیار خطرناک","بسیار خطرناک"} ;
+        boundStrings = new String[]{"بی‌خطر","اخطار","خطرناک","بسیار خطرناک"} ;
         indexOfBoundStrings = new ArrayList<>() ;
         indexOfBoundStrings.add(2);
         indexOfBoundStrings.add(3);

@@ -134,7 +134,7 @@ public abstract class MonthCosineController extends JTable {
             double D14 = getCellData(1,i) ;
             double O2 = getMedar() ;
             double E5 = parent.getLat() ;
-            double D16 = (((Math.cos(Math.toRadians(E5)))*(Math.cos(Math.toRadians(O2))*(Math.cos(Math.toRadians(D14)))))+((Math.sin(Math.toRadians(E5)))*(Math.sin(Math.toRadians(O2))))) ;
+            double D16 = Math.abs((((Math.cos(Math.toRadians(E5)))*(Math.cos(Math.toRadians(O2))*(Math.cos(Math.toRadians(D14)))))+((Math.sin(Math.toRadians(E5)))*(Math.sin(Math.toRadians(O2)))))) ;
             double D15 = getCellData(2,i) ;
             double D17 = Math.toDegrees(Math.asin(D16)) ;
             double D19 = Math.cos(Math.toRadians(D17)) ;
@@ -147,6 +147,8 @@ public abstract class MonthCosineController extends JTable {
             for(int j = 0 ; j < 13 ; j++) {
                 double C22 = getCellData(8 + j, 1);
                 double D22 = (D19 * (Math.cos(Math.toRadians(D20 - C22))));
+                if(i >= 9)
+                    D22 = (D19 * (Math.cos(Math.toRadians(D20 + C22))));
                 setValueAt(Double.toString(D22),8+j,i);
                 double D37 = D22 < 0 ? 0 : D22 ;
                 setValueAt(Double.toString(D37),22+j,i);
@@ -161,6 +163,8 @@ public abstract class MonthCosineController extends JTable {
             for(int j = 0 ; j < 13 ; j++) {
                 double C22 = getCellData(8 + j, 1);
                 double D22 = (D19 * (Math.cos(Math.toRadians(D20 - C22))));
+                if(i >= 9)
+                    D22 = (D19 * (Math.cos(Math.toRadians(D20 + C22))));
                 double D37 = D22 < 0 ? 0 : D22 ;
                 double D64 = D61*D37 ;
                 setValueAt(Double.toString(D64), 36 + j , i);

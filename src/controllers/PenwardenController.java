@@ -24,7 +24,7 @@ public class PenwardenController extends IndexController {
 
     @Override
     protected String[] getResList() {
-        return new String[]{"پارامتر اول روش علیخانی","پارامتر دوم روش علیخانی","VG"};
+        return new String[0];
     }
 
     @Override
@@ -44,16 +44,40 @@ public class PenwardenController extends IndexController {
 
     @Override
     protected void createChart() {
-        double[][] data = new double[varTable.getColumnCount()-1][2] ;
-        String[] colNames = new String[varTable.getColumnCount() - 1] ;
-        for(int i = 1 ; i < varTable.getColumnCount() ; i++)
+        ArrayList<ArrayList<Double>> data = new ArrayList<ArrayList<Double>>() ;
+        ArrayList<String> cols = new ArrayList<>() ;
+
+        for(int row = 0 ; row < varTable.getRowCount() ; row ++)
         {
-            data[i-1][0] = getTableValue(6,i) ;
-            data[i-1][1] = getTableValue(0,i) ;
-            colNames[i-1] = varTable.getColumnName(i) ;
+            if((row > 11 && getCellData(varTable,row,0)!=0) || row < 12){
+                ArrayList rowData = new ArrayList() ;
+                rowData.add(getCellData(varTable,row,2));
+                rowData.add(getCellData(varTable,row,4));
+                data.add(rowData);
+                cols.add((String) varTable.getValueAt(row,0) + " در آفتاب");
+            }
         }
 
-        new ThermalChartFrame("penwarden", data,colNames) ;
+        for(int row = 0 ; row < varTable.getRowCount() ; row ++)
+        {
+            if((row > 11 && getCellData(varTable,row,0)!=0) || row < 12){
+                ArrayList rowData = new ArrayList() ;
+                rowData.add(getCellData(varTable,row,3));
+                rowData.add(getCellData(varTable,row,4));
+                data.add(rowData);
+                cols.add((String) varTable.getValueAt(row,0) + " در سایه");
+            }
+        }
+
+        String[] colNames = new String[cols.size()] ;
+        double[][] dataArr = new double[data.size()][2] ;
+        for (int i = 0; i < data.size(); i++) {
+            dataArr[i][0] = data.get(i).get(0) ;
+            dataArr[i][1] = data.get(i).get(1) ;
+            colNames[i] = cols.get(i) ;
+        }
+
+        new ThermalChartFrame("penwarden", dataArr,colNames) ;
     }
 
     @Override

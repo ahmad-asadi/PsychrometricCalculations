@@ -22,7 +22,7 @@ public class WCIController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دما","میانگین سرعت باد"};
+        return new String[]{"میانگین دما","میانگین سرعت باد به نات"};
     }
 
     @Override
