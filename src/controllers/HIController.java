@@ -12,7 +12,7 @@ public class HIController extends IndexController {
 
     public HIController(){
         super();
-        numberOfVars = 2 ;
+        numberOfVars = 3 ;
         numberOfRes = 3 ;
         bounds = new double[]{80,90,105,130,Double.MAX_VALUE} ;
         boundStrings = new String[]{"تعریف نشده","احتیاط","احتیاط بسیار","خطرناک","بسیار خطرناک"} ;
@@ -23,7 +23,7 @@ public class HIController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دما به فارنهایت","میانگین رطوبت نسبی به درصد"};
+        return new String[]{"میانگین دما به فارنهایت","میانگین رطوبت نسبی به درصد" , "دمای نقطه شبنم"};
     }
 
     @Override
@@ -44,6 +44,8 @@ public class HIController extends IndexController {
     @Override
     protected String getBoundString(double[] resInput, int i) {
         String[] secondBoundStrings = new String[]{"تعریف نشده","بسیار گرم", "داغ", "بسیار داغ", "خطرناک"};;
+        if(resInput[i] == -1)
+            return "false" ;
         switch (i){
             case 0:
                 return getBoundString(boundStrings, bounds, resInput[i]) ;
@@ -55,7 +57,11 @@ public class HIController extends IndexController {
 
     @Override
     protected double computeRes(double[] inputs, int index){
-        return -24.379+(2.04901523*inputs[0])+(10.14333127*inputs[1])-(0.22475541*inputs[0]*inputs[1])-(0.00683783*inputs[0]*inputs[0])-(0.05481717*inputs[1]*inputs[1])+(0.001228*inputs[0]*inputs[0]*inputs[1])+(0.00085282*inputs[0]*inputs[1]*inputs[1])-(0.00000199*inputs[0]*inputs[0]*inputs[1]*inputs[1]) ;
+        double cond = inputs[2] ;
+        if(cond >= 20 && inputs[0] >= 80 && inputs[1] >= 40)
+            return -24.379+(2.04901523*inputs[0])+(10.14333127*inputs[1])-(0.22475541*inputs[0]*inputs[1])-(0.00683783*inputs[0]*inputs[0])-(0.05481717*inputs[1]*inputs[1])+(0.001228*inputs[0]*inputs[0]*inputs[1])+(0.00085282*inputs[0]*inputs[1]*inputs[1])-(0.00000199*inputs[0]*inputs[0]*inputs[1]*inputs[1]) ;
+        else
+            return -1 ;
     }
 
 }

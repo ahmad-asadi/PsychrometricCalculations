@@ -12,24 +12,24 @@ public class RSIController extends IndexController {
 
     public RSIController(){
         super();
-        numberOfVars = 5 ;
-        numberOfRes = 4 ;
+        numberOfVars = 4 ;
+        numberOfRes = 5 ;
         bounds = new double[]{0.1,0.3,0.5,Double.MAX_VALUE} ;
         boundStrings = new String[]{"آسایش","عدم آسایش","اضطراب","ناتوانی"} ;
         indexOfBoundStrings = new ArrayList<>() ;
-        indexOfBoundStrings.add(1);
         indexOfBoundStrings.add(2);
         indexOfBoundStrings.add(3);
+        indexOfBoundStrings.add(4);
     }
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دما","میانگین رطوبت", "باد","دمای نقطه شبنم", "فشار بخار به میلی بار  e"};
+        return new String[]{"میانگین دما","میانگین رطوبت", "میانگین سرعت باد به نات","دمای نقطه شبنم"};
     }
 
     @Override
     protected String[] getResList() {
-        return new String[]{"شاخص فشار نسبی","شخص متوسط","شخص سازگار","شخص سال‌خورده"};
+        return new String[]{"فشار بخار به میلی بار  e","شاخص فشار نسبی","شخص متوسط","شخص سازگار","شخص سال‌خورده"};
     }
 
     @Override
@@ -49,11 +49,11 @@ public class RSIController extends IndexController {
 
         switch (i){
             case 2:
-                return getBoundString(boundStrings, bounds, resInput[i]) ;
+                return getBoundString(boundStrings, bounds, resInput[2]) ;
             case 3:
-                return getBoundString(boundStrings, secondBounds , resInput[i]) ;
+                return getBoundString(boundStrings, secondBounds , resInput[2]) ;
             case 4:
-                return getBoundString(boundStrings, thirdBounds, resInput[i]) ;
+                return getBoundString(boundStrings, thirdBounds, resInput[2]) ;
         }
 
         return "ناشناخته" ;

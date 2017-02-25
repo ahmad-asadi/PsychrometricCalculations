@@ -46,7 +46,7 @@ public class SSIController extends IndexController {
     @Override
     protected String getBoundString(double[] resInput, int i, int row) {
         double temp = getCellData(varTable, 1, row) ;
-        if(temp < 22 || temp > 53)
+        if(temp < 71.6 || temp > 127.4)
             return "false" ;
 
         switch (i){

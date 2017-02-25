@@ -29,7 +29,7 @@ public class TejungController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"MEAN","تعداد روزهای ماه","شماره ژولیوسی","میانگین سرعت باد به نات","میانگین حداقل دما","میانگین حداکثر دما","میانگین حداقل رطوبت نسبی"};
+        return new String[]{"میانگین ساعت آفتابی روزانه","شماره ژولیوسی","میانگین سرعت باد به نات","میانگین حداقل دما","میانگین حداکثر دما","میانگین حداقل رطوبت نسبی"};
     }
 
     @Override
@@ -49,27 +49,25 @@ public class TejungController extends IndexController {
 
     @Override
     protected double computeRes(double[] input , int index){
-        double B4 = input[0] ;
-        double B5 = input[1] ;
-        double B6 = B4/B5 ;
-        double C4 = input[3] ;
+        double B6 = input[0] ;
+        double C4 = input[2] ;
         double R4 = C4*0.514444 ;
         double C8 = getCellData(constTable,0,0) ;
         if(lat > 0 )
             C8 = lat ;
         else
             lat = C8 ;
-        double B16 = input[2] ;
+        double B16 = input[1] ;
 
 
         double C23 = -23.4*Math.cos(Math.toRadians(((B16+10)*360)/365)) ;
         double C25 = (((double)24)/360)*(Math.toDegrees(Math.acos((-Math.tan(Math.toRadians(C8)))*Math.tan(Math.toRadians(C23))))) ;
         double C27 = ((-(double)24)/360)*(Math.toDegrees(Math.acos((-Math.tan(Math.toRadians(C8)))*Math.tan(Math.toRadians(C23))))) ;
         double C29 = (((double)2)/15)*(Math.toDegrees(Math.acos(((-Math.tan(Math.toRadians(C23)))*Math.tan(Math.toRadians(C8)))))) ;
-        double D3 = input[5] ;
+        double D3 = input[4] ;
         double D5 = R4 ;
         double D7 = -(10.45+(10*(Math.sqrt(D5)))-D5)*(33-D3) ;
-        D3 = input[5] ;
+        D3 = input[4] ;
         double D77 = -(10.45+(10*(Math.sqrt(D5)))-D5)*(33-D3) ;
         double B9 = B6 * 200 ;
         double B8 = Math.abs(D7 * C29) ;

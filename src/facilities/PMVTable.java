@@ -12,7 +12,8 @@ public class PMVTable extends JTable{
     private JComboBox clothesColor ;
     private JComboBox metabolism ;
 
-    public double ac = 0 ;
+    private double ac = 0 ;
+//    public double ac = 0 ;
     public double m = 135 ;
 
     public PMVTable(String[][] rowData, String[] colData) {
@@ -67,6 +68,18 @@ public class PMVTable extends JTable{
                 m = setSelectedMetabolism(metabolism.getSelectedIndex()) ;
             }
         });
+
+
+        setValueAt("کلو لباس",1,0);
+        setValueAt("1",1,1);
+    }
+
+    public double ac(){
+        try{
+            return Double.parseDouble((String) getValueAt(1,1)) ;
+        }catch (Exception e){
+            return 0 ;
+        }
     }
 
     private double setSelectedMetabolism(int selectedIndex) {
@@ -225,9 +238,10 @@ public class PMVTable extends JTable{
     }
 
     public TableCellEditor getCellEditor(int row, int column) {
-        if (row == 1 & column == 1) {
-            return new DefaultCellEditor(clothesColor);
-        } else if (row == 0 & column == 1) {
+//        if (row == 1 & column == 1) {
+//            return new DefaultCellEditor(clothesColor);
+//        } else if (row == 0 & column == 1) {
+        if (row == 0 & column == 1) {
             return new DefaultCellEditor(metabolism);
         } else {
             return super.getCellEditor(row, column);

@@ -22,7 +22,7 @@ public class KeController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دمای ماهانه","میانگین سرعت باد"};
+        return new String[]{"میانگین دما","میانگین سرعت باد به متر بر ثانیه"};
     }
 
     @Override

@@ -14,8 +14,8 @@ public class CPIController extends IndexController {
         super();
         numberOfRes = 2 ;
         numberOfVars = 2 ;
-        bounds = new double[]{0,51,101,201,401,601,801,1001,1201,1401,2000,Double.MAX_VALUE} ;
-        boundStrings = new String[]{"خیلی داغ","داغ","گرم","مطبوع","خنک","خیلی خنک","سرد","خیلی سرد","سرمای آزاردهنده","قسمت برهنه بدن یخ می‌زند","قسمت برهنه بدن ظرف 6 ثانیه یخ می‌زند","غیر قابل تحمل"} ;
+        bounds = new double[]{210,420,630,840,1260,1680,2100,Double.MAX_VALUE} ;
+        boundStrings = new String[]{"خیلی داغ","داغ","طبیعی","تا حدی خنک","خنک","سرد","خیلی سرد","فوق‌العاده سرد، طوفانی"} ;
         indexOfBoundStrings = new ArrayList<>() ;
         indexOfBoundStrings.add(1);
     }

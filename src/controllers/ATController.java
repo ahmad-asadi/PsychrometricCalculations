@@ -24,7 +24,7 @@ public class ATController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دما","میانگین باد","دمای نقطه شبنم"};
+        return new String[]{"میانگین دما","میانگین سرعت باد به متر بر ثانیه","دمای نقطه شبنم"};
     }
 
     @Override

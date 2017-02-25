@@ -17,17 +17,17 @@ public class TEKController extends IndexController {
         bounds = new double[]{18,24,32,44,56,Double.MAX_VALUE} ;
         boundStrings = new String[]{"سرد","خنک","کمی خنک","آسایش","شرجی-داغ","خیلی گرم و مرطوب"} ;
         indexOfBoundStrings = new ArrayList<>() ;
-        indexOfBoundStrings.add(1);
+        indexOfBoundStrings.add(2);
     }
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دما","میانگین رطوبت نسبی","فشار بخار e"};
+        return new String[]{"میانگین دما","میانگین رطوبت نسبی"};
     }
 
     @Override
     protected String[] getResList() {
-        return new String[]{"TEK","شرایط زیست-اقلیمی"};
+        return new String[]{"فشار بخار e","TEK","شرایط زیست-اقلیمی"};
     }
 
     @Override
@@ -42,7 +42,7 @@ public class TEKController extends IndexController {
 
     @Override
     protected String getBoundString(double[] resInput, int i) {
-        return getBoundString(boundStrings, bounds, resInput[i]);
+        return getBoundString(boundStrings, bounds, resInput[2]);
     }
 
     @Override

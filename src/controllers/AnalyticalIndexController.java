@@ -177,7 +177,7 @@ public abstract class AnalyticalIndexController extends IndexController {
     }
 
     protected double getTmrtSunny(int rowIndex) {
-        double N13 = getRPrime(rowIndex) ;
+        double N13 = getRPrimeSunny(rowIndex) ;
         double O13 = getLg(rowIndex) ;
         double P13 = getLa(rowIndex) ;
         return Math.pow(((N13+O13+P13)/(0.95*0.0000000567)),0.25)-273 ;
@@ -189,6 +189,12 @@ public abstract class AnalyticalIndexController extends IndexController {
     }
 
     protected double getRPrime(int rowIndex) {
+
+        double H3 = getHInverse(rowIndex) ;
+        return H3<=0?0:getRShaded(rowIndex) ;
+    }
+
+    protected double getRPrimeSunny(int rowIndex) {
 
         double H3 = getHInverse(rowIndex) ;
         return H3<=0?0:getRSunny(rowIndex) ;
@@ -207,6 +213,13 @@ public abstract class AnalyticalIndexController extends IndexController {
     protected double getLg(int rowIndex) {
         double Tg = getInput(rowIndex , 5) ;
         return 0.5*0.97*0.0000000567*Math.pow((273+Tg),4) ;
+    }
+
+    protected double getRShaded(int rowIndex){
+        double h = getHInverse(rowIndex) ;
+        double N = getCloud(rowIndex) ;
+
+        return 1.4*0.951*Math.pow(h,1.039) * (1-0.01*N) ;
     }
 
     protected double getRSunny(int rowIndex){

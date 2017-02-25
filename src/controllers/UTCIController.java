@@ -1,5 +1,6 @@
 package controllers;
 
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 
@@ -17,6 +18,9 @@ public class UTCIController extends AnalyticalIndexController {
         indexOfBoundStrings = new ArrayList<>() ;
         indexOfBoundStrings.add(1);
         indexOfBoundStrings.add(3);
+
+        resTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+
     }
 
     @Override

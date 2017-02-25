@@ -81,7 +81,7 @@ public class PMVController extends IndexController {
     @Override
     protected double computeRes(double[] input, int index){
         double CLO = ((PMVTable)constTable).m ;
-        double MET = ((PMVTable)constTable).ac ;
+        double MET = ((PMVTable)constTable).ac() ;
         double TEQ = input[0] ;
         double REL = input[1] ;
         double Tg = input[2] ;

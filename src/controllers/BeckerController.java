@@ -47,15 +47,12 @@ public class BeckerController extends IndexController {
         String[] secondBoundStrings = new String[]{"فشار زیست-اقلیمی", "آسایش زیست-اقلیمی", "آسایش زیست-اقلیمی", "تحریک ملایم", "تحریک متوسط تا شدید", "نسبتا آزاردهنده", "به شدت آزار دهنده" ,"تعریف نشده"};
         String[] thirdBoundStrings = new String[]{"A", "B", "C", "D", "E", "F" ,"G", "H"};
         switch (i){
-            case 0:
-                getBoundString(boundStrings, bounds, resInput[i]) ;
-                break;
             case 1:
-                getBoundString(secondBoundStrings, bounds, resInput[i]) ;
-                break;
+                return getBoundString(boundStrings, bounds, resInput[1]) ;
             case 2:
-                getBoundString(thirdBoundStrings, bounds, resInput[i]) ;
-                break;
+                return getBoundString(secondBoundStrings, bounds, resInput[1]) ;
+            case 3:
+                return getBoundString(thirdBoundStrings, bounds, resInput[1]) ;
         }
 
         return  "ناشناخته" ;

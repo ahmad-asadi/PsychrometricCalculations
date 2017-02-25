@@ -12,14 +12,14 @@ public class PenwardenController extends IndexController {
 
     public PenwardenController(){
         super();
-        numberOfVars = 5 ;
+        numberOfVars = 3 ;
         numberOfRes = 3 ;
         indexOfBoundStrings = new ArrayList<>() ;
     }
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دما","میانگین حداکثر دما","میانگین حداقل دما","میانگین سرعت باد","رطوبت نسبی"};
+        return new String[]{"میانگین دما","میانگین سرعت باد","رطوبت نسبی"};
     }
 
     @Override
@@ -51,23 +51,24 @@ public class PenwardenController extends IndexController {
         {
             if((row > 11 && getCellData(varTable,row,0)!=0) || row < 12){
                 ArrayList rowData = new ArrayList() ;
+                rowData.add(getCellData(varTable,row,1));
                 rowData.add(getCellData(varTable,row,2));
-                rowData.add(getCellData(varTable,row,4));
                 data.add(rowData);
-                cols.add((String) varTable.getValueAt(row,0) + " در آفتاب");
+//                cols.add((String) varTable.getValueAt(row,0) + " در آفتاب");
+                cols.add((String) varTable.getValueAt(row,0) );
             }
         }
 
-        for(int row = 0 ; row < varTable.getRowCount() ; row ++)
-        {
-            if((row > 11 && getCellData(varTable,row,0)!=0) || row < 12){
-                ArrayList rowData = new ArrayList() ;
-                rowData.add(getCellData(varTable,row,3));
-                rowData.add(getCellData(varTable,row,4));
-                data.add(rowData);
-                cols.add((String) varTable.getValueAt(row,0) + " در سایه");
-            }
-        }
+//        for(int row = 0 ; row < varTable.getRowCount() ; row ++)
+//        {
+//            if((row > 11 && getCellData(varTable,row,0)!=0) || row < 12){
+//                ArrayList rowData = new ArrayList() ;
+//                rowData.add(getCellData(varTable,row,1));
+//                rowData.add(getCellData(varTable,row,2));
+//                data.add(rowData);
+//                cols.add((String) varTable.getValueAt(row,0) + " در سایه");
+//            }
+//        }
 
         String[] colNames = new String[cols.size()] ;
         double[][] dataArr = new double[data.size()][2] ;
