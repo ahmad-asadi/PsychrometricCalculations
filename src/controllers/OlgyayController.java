@@ -52,7 +52,7 @@ public class OlgyayController extends IndexController {
             if((row > 11 && getCellData(varTable,row,0)!=0) || row < 12){
                 ArrayList rowData = new ArrayList() ;
                 rowData.add(getCellData(varTable,row,1));
-                rowData.add(getCellData(varTable,row,3));
+                rowData.add(getCellData(varTable,row,4));
                 data.add(rowData);
                 cols.add((String) varTable.getValueAt(row,0) + " در روز");
             }
@@ -63,7 +63,7 @@ public class OlgyayController extends IndexController {
             if((row > 11 && getCellData(varTable,row,0)!=0) || row < 12){
                 ArrayList rowData = new ArrayList() ;
                 rowData.add(getCellData(varTable,row,2));
-                rowData.add(getCellData(varTable,row,4));
+                rowData.add(getCellData(varTable,row,3));
                 data.add(rowData);
                 cols.add((String) varTable.getValueAt(row,0) + " در شب");
             }

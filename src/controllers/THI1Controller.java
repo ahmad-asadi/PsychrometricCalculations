@@ -22,7 +22,7 @@ public class THI1Controller extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دمای خشک","میانگین رطوبت به درصد"};
+        return new String[]{"میانگین دما ","میانگین رطوبت به درصد"};
     }
 
     @Override
@@ -49,6 +49,7 @@ public class THI1Controller extends IndexController {
     protected double computeRes(double[] inputs, int index){
         double B2 = inputs[0] ;
         double B4 = inputs[1] ;
+//        if()
         return (B2-((0.55-(0.55*B4))*(B2-58))) ;
     }
 }

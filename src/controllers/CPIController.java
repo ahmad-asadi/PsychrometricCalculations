@@ -22,7 +22,7 @@ public class CPIController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دما", "میانگین سرعت باد به نات"};
+        return new String[]{"میانگین دما", "میانگین سرعت باد به متر بر ثانیه"};
     }
 
     @Override

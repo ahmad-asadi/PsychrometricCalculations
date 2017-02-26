@@ -10,7 +10,7 @@ public class SuperTable extends JTable {
     private final JComboBox gender;
     private JComboBox clothesColor ;
 
-    public double ac = 0 ;
+    public int ac = 0 ;
     public int g = 1;
 
     public SuperTable(String[][] rowData, String[] colData){
@@ -67,8 +67,8 @@ public class SuperTable extends JTable {
         }
     }
 
-    public double setSelectedColor(int selectedIndex) {
-        double res = 0 ;
+    public int setSelectedColor(int selectedIndex) {
+        int res = 0 ;
         switch (selectedIndex){
             case 0:
                 res = 1 ;

@@ -50,7 +50,8 @@ public class STIController extends AnalyticalIndexController {
         double H43 = (26.4+0.02138*R13+0.2095*B5-0.0185*B6-0.009*B26)+((B24-1)*0.6)+0.00128*H22 ;
         double H38 = -0.04 * B5 + 0.013 * B23 - 0.503 ;
         double H40 = H38 * Math.sqrt(B25+B26) ;
-        double H39 = H38 * 0.53/B24 * (1-0.27*Math.pow((B26+B25),0.4)) ;
+        double temp = Math.pow((B26+B25),0.4) ;
+        double H39 = H38 * 0.53/(B24 * (1-0.27*temp)) ;
 
         double H41 = H39/(H39+H40) ;
         double H44 = Math.exp(0.058*H43+2.003) ;
@@ -65,7 +66,7 @@ public class STIController extends AnalyticalIndexController {
         double H48 = H47<22?22:H47 ;
         double H49 = H48>36.5?1:(1.031/(37.5-H48))-0.065 ;
         double H50 = Math.exp(0.058*H49+2.003) ;
-        double H57 = Math.pow(0.95*0.0000000567*(273+H43),4) ;
+        double H57 = 0.95*0.0000000567*Math.pow((273+H43),4) ;
         double H56 = N13*H54 ;
         double H53 = (Math.pow(((H56+(O13+P13)*H54+0.5*H57)/(0.95*0.0000000567)),0.25))-273 ;
         double H51 = 6.112*Math.pow(10,(7.5*H53/(237.7+R13)))*0.01*B6 ;

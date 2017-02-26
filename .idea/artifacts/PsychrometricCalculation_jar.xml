@@ -3,7 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/PsychrometricCalculation_jar</output-path>
     <root id="archive" name="PsychrometricCalculation.jar">
       <element id="module-output" name="PsychrometricCalculation" />
-      <element id="library" level="application" name="hamcrest-core-1.3" />
+      <element id="directory" name="Imgs" />
     </root>
   </artifact>
 </component>

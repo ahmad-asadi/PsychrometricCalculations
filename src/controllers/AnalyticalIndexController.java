@@ -29,6 +29,15 @@ public abstract class AnalyticalIndexController extends IndexController {
         {
             if(varModel.getValueAt(i,0) != null && !varModel.getValueAt(i,0).equals("")) {
                 for (int j = 0; j < resModel.getColumnCount() - 1; j++) {
+                    if (indexOfBoundStrings.contains(new Integer(j))) {
+                        double[] resInputs = new double[resModel.getColumnCount() - 1];
+                        for (int ri = 1; ri < resModel.getColumnCount() - 1; ri++)
+                            try {
+                                resInputs[ri] = Double.parseDouble((String) resModel.getValueAt(i, ri));
+                            }catch (Exception e){resInputs[ri] = 0 ;}
+                        resModel.setValueAt(getBoundString(resInputs, j, (int)i), i, j + 1);
+                    }
+                    else
                         resModel.setValueAt(Double.toString(computeRes(i, j)), i, j + 1);
                 }
             }
@@ -76,15 +85,11 @@ public abstract class AnalyticalIndexController extends IndexController {
         double mil = getMedarMil(rowIndex) ;
         double lat = getLat() ;
         double SHA = getSHA(rowIndex) ;
-        return  (((Math.cos(Math.toRadians(mil)))*(Math.cos(Math.toRadians(lat))*(Math.cos(Math.toRadians(SHA)))))+((Math.sin(Math.toRadians(mil)))*(Math.sin(Math.toRadians(lat))))) ;
+        return  Math.abs((((Math.cos(Math.toRadians(mil)))*(Math.cos(Math.toRadians(lat))*(Math.cos(Math.toRadians(SHA)))))+((Math.sin(Math.toRadians(mil)))*(Math.sin(Math.toRadians(lat)))))) ;
     }
 
     protected double getSHA(int rowIndex){
-        double hour = 0 ;
-        try{
-            hour = Double.parseDouble((String) (varTable.getModel()).getValueAt(rowIndex,2)) ;
-        }catch (Exception e){
-        }
+        double hour = getCellData(constTable, 4,1);
 
         return  0.25*(12-hour)*60 ;
     }
@@ -112,7 +117,15 @@ public abstract class AnalyticalIndexController extends IndexController {
     }
 
     protected double getAc(){
-        return ((SuperTable)constTable).ac ;
+        int color =  ((SuperTable)constTable).ac ;
+        switch (color){
+            case 1:
+                return 60 ;
+            case 2:
+                return 30 ;
+            default:
+                return 5 ;
+        }
     }
 
     protected double getM(){
@@ -132,11 +145,11 @@ public abstract class AnalyticalIndexController extends IndexController {
     }
 
     protected double getRH(int rowIndex) {
-        return getInput(rowIndex, 3);
+        return getInput(rowIndex, 4);
     }
 
     protected double getV(int rowIndex) {
-        return 1.1;
+        return getInput(rowIndex, 3);
     }
 
     protected double getVp(int rowIndex) {
@@ -147,11 +160,11 @@ public abstract class AnalyticalIndexController extends IndexController {
     }
 
     protected double getHV() {
-        return getConstant(4, 2);
+        return 1.1;
     }
 
     protected double getGender() {
-        return getConstant(3, 2);
+        return ((SuperTable)constTable).g ;
     }
 
     private double getConstant(int row, int col) {
@@ -192,13 +205,13 @@ public abstract class AnalyticalIndexController extends IndexController {
     }
 
     protected double getLg(int rowIndex) {
-        double Tg = getInput(rowIndex , 4) ;
+        double Tg = getInput(rowIndex , 5) ;
         return 0.5*0.97*0.0000000567*Math.pow((273+Tg),4) ;
     }
 
     protected double getRSunny(int rowIndex){
-        double h = getH(rowIndex) ;
-        double N = getInput(rowIndex, 5) ;
+        double h = getHInverse(rowIndex) ;
+        double N = getInput(rowIndex, 6) ;
         double ac = getAc() ;
         double RSunny = 0 ;
 

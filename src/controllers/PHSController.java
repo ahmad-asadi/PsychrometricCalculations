@@ -49,7 +49,8 @@ public class PHSController extends AnalyticalIndexController {
         double H43 = (26.4+0.02138*R13+0.2095*B5-0.0185*B6-0.009*B26)+((B24-1)*0.6)+0.00128*H22 ;
         double H38 = -0.04 * B5 + 0.013 * B23 - 0.503 ;
         double H40 = H38 * Math.sqrt(B25+B26) ;
-        double H39 = H38 * 0.53/B24 * (1-0.27*Math.pow((B26+B25),0.4)) ;
+        double temp = Math.pow((B26+B25),0.4) ;
+        double H39 = H38 * 0.53/(B24 * (1-0.27*temp)) ;
 
         double H41 = H39/(H39+H40) ;
         double H44 = Math.exp(0.058*H43+2.003) ;
