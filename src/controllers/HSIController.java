@@ -14,11 +14,12 @@ public class HSIController extends AnalyticalIndexController {
         bounds = new double[]{-20,10,30,70,90,100,Double.MAX_VALUE} ;
         boundStrings = new String[]{"استرس گرمایی کم","شرایط نرمال (نه گرم و نه سرد)","استرس گرمایی خفیف و متوسط","استرس گرمایی شدید و خطرناک برای وضعیت سلامت افرادی که سازگاری پایینی دارند","استرس گرمایی بسیار شدید، ذخیره آب و مواد معدنی بسیار ضروری است","ماکزیمم استرس گرمایی قابل کنترل توسط افراد جوان و کسانی‌ که سازگاری بالایی دارند","خطر بیش از حد گرم شدن یک ارگانیسم زمان رویارویی باید کنترل شود"} ;
         indexOfBoundStrings = new ArrayList<>() ;
-        indexOfBoundStrings.add(1);
+        indexOfBoundStrings.add(7);
     }
 
+
     @Override
-    protected String[] getResList(){
+    protected String[] getLocalResList(){
         return new String[]{"HSI" , "واکنش فیزیکی یک ارگانیسم در شاخص استرس گرمایی HSI"} ;
     }
 

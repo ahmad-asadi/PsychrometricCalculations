@@ -16,8 +16,8 @@ public class UTCIController extends AnalyticalIndexController {
         bounds = new double[]{-40,-27,-13,0,9,26,32,38,46,Double.MAX_VALUE} ;
         boundStrings = new String[]{"تنش سرمایی شدید","تنش سرمایی خیلی زیاد","تنش سرمایی زیاد","تنش سرمایی متوسط","تنش سرمایی اندک","بدون تنش حرارتی","تنش گرمایی متوسط","تنش گرمایی زیاد","تنش گرمایی بسیار زیاد","تنش گرمایی شدید"} ;
         indexOfBoundStrings = new ArrayList<>() ;
-        indexOfBoundStrings.add(1);
-        indexOfBoundStrings.add(3);
+        indexOfBoundStrings.add(7);
+        indexOfBoundStrings.add(9);
 
         resTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
@@ -43,7 +43,7 @@ public class UTCIController extends AnalyticalIndexController {
     }
 
     @Override
-    protected String[] getResList(){
+    protected String[] getLocalResList(){
 
         return new String[]{"شاخص UTCI در شرایط آفتابی","شرایط زیست-اقلیمی در شرایط آفتابی","شاخص UTCI در شرایط سایه","شرایط زیست-اقلیمی در شرایط سایه"};
     }

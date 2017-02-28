@@ -14,17 +14,21 @@ public class PSTController extends AnalyticalIndexController {
         bounds = new double[]{-36,-16.1,4,14,24,34,44,54,Double.MAX_VALUE} ;
         boundStrings = new String[]{"یخ‌زدگی","خیلی سرد","سرد","خنک","آسایش","گرم","داغ","خیلی گرم","سوزان"} ;
         indexOfBoundStrings = new ArrayList<>() ;
-        indexOfBoundStrings.add(1);
+        indexOfBoundStrings.add(7);
     }
 
     @Override
     protected String[] getResList(){
+        return concatArrays(super.getResList(),getLocalResList()) ;
+    }
+
+    @Override
+    protected String[] getLocalResList(){
         return new String[]{"PST", "احساس حرارتی"} ;
     }
 
     @Override
     protected String getBoundString(double[] resInput, int i) {
-        System.out.println(resInput[i]);
         return getBoundString(boundStrings, bounds, resInput[i]);
     }
 

@@ -4,11 +4,16 @@ import facilities.SuperTable;
 
 import javax.swing.*;
 import javax.swing.table.TableModel;
+import java.awt.*;
 
 /**
  * This class is created by Ahmad Asadi on 1/21/17.
  */
 public abstract class AnalyticalIndexController extends IndexController {
+
+    private final JTable table1;
+    private final JTable table2;
+    private final JTabbedPane tabbedPane;
 
     public AnalyticalIndexController(){
         super();
@@ -20,6 +25,62 @@ public abstract class AnalyticalIndexController extends IndexController {
             int jolNo = (i<6?i*31 + 1 : 6*31 +1 + (i-6)*30 ) ;
             varTable.setValueAt(Integer.toString(jolNo),i,1);
         }
+
+        String[] cols1 = new String[]{"ردیف","مدار میل","ارتفاع خورشید","Lg","LA","R در شرایط آفتابی", "R در شرایط سایه"} ;
+        String[] cols2 = concatArrays(new String[]{"ردیف"},getLocalResList()) ;
+
+        table1 = new JTable(new String[400][cols1.length],cols1) ;
+        table2 = new JTable(new String[400][cols2.length],cols2) ;
+
+
+        JScrollPane jsp1 = createNewSubTable(table1);
+        JScrollPane jsp2 = createNewSubTable(table2);
+
+        tabbedPane = new JTabbedPane() ;
+
+        tabbedPane.setSize(resJsp.getSize());
+        tabbedPane.add("پارامترهای مشترک",jsp1) ;
+        tabbedPane.add("پارامترهای مربوط به شاخص",jsp2) ;
+        tabbedPane.setLocation(resJsp.getLocation());
+        tabbedPane.setBorder(BorderFactory.createBevelBorder(0));
+        tabbedPane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+
+        remove(resJsp);
+        add(tabbedPane) ;
+
+    }
+
+    private JScrollPane createNewSubTable(JTable table1) {
+        JScrollPane jsp1 = new JScrollPane(table1) ;
+        jsp1.setSize(table1.getSize());
+        jsp1.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        table1.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        table1.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+
+        table1.getColumnModel().getColumn(0).setPreferredWidth(100);
+        for(int i = 1 ; i < table1.getColumnCount() ; i++)
+            table1.getColumnModel().getColumn(i).setPreferredWidth(180);
+
+        table1.setFillsViewportHeight(true);
+        return jsp1;
+    }
+
+    protected abstract String[] getLocalResList() ;
+
+    @Override
+    public void solve(){
+        super.solve();
+        System.out.println(resTable.getColumnCount());
+        for(int j = 0 ; j < resTable.getRowCount() ; j++) {
+            for (int i = 0; i < 7; i++) {
+                table1.setValueAt(resTable.getValueAt(j, i), j, i);
+            }
+            table2.setValueAt(resTable.getValueAt(j,0),j,0);
+            for (int i = 7; i < 7 + getLocalResList().length; i++) {
+                table2.setValueAt(resTable.getValueAt(j, i), j, i-6);
+            }
+        }
+
     }
 
     @Override
@@ -44,9 +105,39 @@ public abstract class AnalyticalIndexController extends IndexController {
         }
     }
 
+    protected String[] concatArrays(String[] str1 , String[] str2){
+        String[] res = new String[str1.length + str2.length] ;
+        int index = 0 ;
+        for (int i = 0; i < str1.length; i++)
+            res[index ++] = str1[i] ;
+        for (int i = 0; i < str2.length; i++)
+            res[index ++] = str2[i] ;
+        return res ;
+    }
+
+    @Override
+    protected double computeRes(double[] inputs, int index, int row){
+        switch (index){
+            case 0:
+                return getMedarMil(row) ;
+            case 1:
+                return getHInverse(row) ;
+            case 2:
+                return getLg(row) ;
+            case 3:
+                return getLa(row) ;
+            case 4:
+                return getRSunny(row) ;
+            case 5:
+                return getRShaded(row) ;
+            default:
+                return computeRes(row, index-5) ;
+        }
+    }
+
     @Override
     protected double computeRes(double[] inputs, int index){
-        return 0; //UNUSED HERE
+        return 0 ;
     }
 
     protected abstract double computeRes(int rowIndex , int resIndex);
@@ -58,7 +149,7 @@ public abstract class AnalyticalIndexController extends IndexController {
 
     @Override
     protected String[] getResList() {
-        return new String[]{"مدار میل","ارتفاع خورشید","Lg","LA","R در شرایط آفتابی", "R در شرایط سایه", "فشار بخار آب e"} ;
+        return concatArrays(new String[]{"مدار میل","ارتفاع خورشید","Lg","LA","R در شرایط آفتابی", "R در شرایط سایه"},getLocalResList()) ;
     }
 
     @Override

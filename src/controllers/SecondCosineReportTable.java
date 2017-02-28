@@ -46,7 +46,7 @@ public class SecondCosineReportTable extends JTable {
             double C9 = col < 6 ? 31 :(col < 11 ? 30 : 29) ;
             double C10 = C8 / C9 ;
             double C14 = cosineFrame.getMedar(col) ;
-            double C12 = (2/15)*(Math.toDegrees(Math.acos(((-Math.tan(Math.toRadians(C14)))*Math.tan(Math.toRadians(cosineFrame.getLat())))))) ;
+            double C12 = (((double)2)/15)*(Math.toDegrees(Math.acos(((-Math.tan(Math.toRadians(C14)))*Math.tan(Math.toRadians(cosineFrame.getLat())))))) ;
             double D1 = C10 / C12 ;
             for(int row = 0; row < data[col].length ; row ++){
                 setValueAt(Double.toString(D1 * data[col][row]),row,col+1);

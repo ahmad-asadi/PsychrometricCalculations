@@ -55,6 +55,10 @@ public abstract class IndexController extends JPanel {
 
         resLabel = createTableLabel("نتایج و شرایط زیست-اقلیمی" ,  20 , 20);
         resTable = new JTable(getInitRowList(getFinalResList()) , getFinalResList()) ;
+        if(hasConstList())
+        {
+            resLabel.setSize(resLabel.getWidth() + 60 , resLabel.getHeight());
+        }
 
         setCellRenderer(resTable);
 
@@ -84,11 +88,14 @@ public abstract class IndexController extends JPanel {
     }
 
     private void createConstTable() {
-        constLabel = createTableLabel("پارامترهای عمومی و ثوابت" , MainFrame.graphPanelWidth / 3 + 20 , 20);
+        constLabel = createTableLabel("پارامترهای عمومی و ثوابت" , MainFrame.graphPanelWidth / 3 + 80 , 20);
+        constLabel.setSize(constLabel.getWidth() - 60 , constLabel.getHeight());
         if(this instanceof PMVController)
             constTable = new PMVTable(getConstRowList(getFinalConstList()) , getFinalConstList());
-        else
+        else if (this instanceof AnalyticalIndexController)
             constTable = new SuperTable(getConstRowList(getFinalConstList()) , getFinalConstList());
+        else
+            constTable = new JTable(getConstRowList(getFinalConstList()),getFinalConstList()) ;
         constJsp = createJSP(constTable,constLabel);
         add(constLabel) ;
         add(constJsp) ;

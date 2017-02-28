@@ -14,11 +14,11 @@ public class SSTController extends AnalyticalIndexController {
         bounds = new double[]{-7.5,0.3,2,5.2,11.3,18.8,20.9,23.7,Double.MAX_VALUE} ;
         boundStrings = new String[]{"به شدت سرد","خیلی سرد","سرد","خنک","طبیعی","گرم","داغ","خیلی داغ","به شدت داغ"} ;
         indexOfBoundStrings = new ArrayList<>() ;
-        indexOfBoundStrings.add(1);
+        indexOfBoundStrings.add(7);
     }
 
     @Override
-    protected String[] getResList() {
+    protected String[] getLocalResList() {
         return new String[]{"شاخص SST","احساس حرارتی"};
     }
 

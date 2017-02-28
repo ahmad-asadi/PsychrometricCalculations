@@ -14,13 +14,13 @@ public class STIController extends AnalyticalIndexController {
         bounds = new double[]{-38,-20,-0.5,22.5,31.9,45.9,54.9,69.9,Double.MAX_VALUE} ;
         boundStrings = new String[]{"به شدت سرد","خیلی سرد","سرد","خنک","آسایش","گرم","داغ","خیلی گرم","سوزان"} ;
         indexOfBoundStrings = new ArrayList<>() ;
-        indexOfBoundStrings.add(1);
+        indexOfBoundStrings.add(7);
 
     }
 
 
     @Override
-    protected String[] getResList() {
+    protected String[] getLocalResList() {
         return new String[]{"شاخص STI","احساس حرارتی"};
     }
 

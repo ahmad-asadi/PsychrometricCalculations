@@ -14,7 +14,7 @@ public class PHSController extends AnalyticalIndexController {
         bounds = new double[]{0,0.24,0.74,1.5,4,8,Double.MAX_VALUE} ;
         boundStrings = new String[]{"فشار گرمای شدید","فشار گرمای زیاد","فشار گرمای متوسط","طبیعی","فشار سرمای متوسط","فشار سرمای زیاد","فشار سرمای شدید"} ;
         indexOfBoundStrings = new ArrayList<>() ;
-        indexOfBoundStrings.add(1);
+        indexOfBoundStrings.add(7);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class PHSController extends AnalyticalIndexController {
     }
 
     @Override
-    protected String[] getResList(){
+    protected String[] getLocalResList(){
         return new String[]{"PHS","محدودیت‌های شاخص تنش فیزیکی PHS"} ;
     }
 

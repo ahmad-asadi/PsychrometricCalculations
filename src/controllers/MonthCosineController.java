@@ -168,7 +168,8 @@ public abstract class MonthCosineController extends JTable {
                 double D37 = D22 < 0 ? 0 : D22 ;
                 double D64 = D61*D37 ;
                 setValueAt(Double.toString(D64), 36 + j , i);
-                hours[j] += D64 ;
+                if(i > 2 && j < 14)
+                    hours[j] += D64 ;
             }
 
         }
