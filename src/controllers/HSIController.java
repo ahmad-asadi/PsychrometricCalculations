@@ -43,7 +43,7 @@ public class HSIController extends AnalyticalIndexController {
         double H6 = super.getVp(input) ;
         double P13 = super.getLa(input) ;
         double O13 = super.getLg(input) ;
-        double N13 = super.getRPrime(input) ;
+        double N13 = super.getRPrimeSunny(input) ;
         double R13 = Math.pow((N13+O13+P13)/(0.95*0.0000000567),0.25)-273 ;
 
         double H22 = getM();

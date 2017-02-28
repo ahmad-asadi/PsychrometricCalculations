@@ -47,7 +47,7 @@ public class PSTController extends AnalyticalIndexController {
         double H6 = getVp(rowIndex) ;
         double P13 = getLa(rowIndex) ;
         double O13 = getLg(rowIndex) ;
-        double N13 = getRPrime(rowIndex) ;
+        double N13 = getRPrimeSunny(rowIndex) ;
         double R13 = Math.pow((N13+O13+P13)/(0.95*0.0000000567),0.25)-273 ;
 
         double H22 = getM();

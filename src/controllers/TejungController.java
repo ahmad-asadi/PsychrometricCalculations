@@ -164,6 +164,8 @@ public class TejungController extends IndexController {
         double B12 = B11/B5 ;
 
         switch (index){
+//            case 0:
+//                return B6 ;
             case 0:
                 return D7 ;
             case 1:

@@ -187,7 +187,7 @@ public abstract class AnalyticalIndexController extends IndexController {
 
     protected double getMedarMil(int rowIndex){
         int jolNumber = (int)getInput(rowIndex,1) ;
-        return 23.45*Math.sin(Math.toRadians(360*(((double)(284+jolNumber))/365))) ;
+        return 23.45*Math.sin(Math.toRadians(360*(((double)(jolNumber))/365))) ;
     }
 
     protected int getJolNumber(int rowIndex){
@@ -279,7 +279,7 @@ public abstract class AnalyticalIndexController extends IndexController {
         return Math.toDegrees(Math.asin(H2)) ;
     }
 
-    protected double getRPrime(int rowIndex) {
+    protected double getRPrimeShaded(int rowIndex) {
 
         double H3 = getHInverse(rowIndex) ;
         return H3<=0?0:getRShaded(rowIndex) ;
@@ -340,7 +340,7 @@ public abstract class AnalyticalIndexController extends IndexController {
     protected double getTmrtShaded(int rowIndex){
         double P14 = getLa(rowIndex) ;
         double O14 = getLg(rowIndex) ;
-        double N14 = getRPrime(rowIndex) ;
+        double N14 = getRPrimeShaded(rowIndex) ;
         return Math.pow(((N14+O14+P14)/(0.95*0.0000000567)),0.25)-273 ;
     }
 
