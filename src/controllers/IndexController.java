@@ -113,7 +113,7 @@ public abstract class IndexController extends JPanel {
         }
     }
 
-    private String[][] getInitRowList(String[] list) {
+    protected String[][] getInitRowList(String[] list) {
         String[][] rows =  new String[400][list.length];
         rows[0][0] = "فروردین" ;
         rows[1][0] = "اردیبهشت" ;

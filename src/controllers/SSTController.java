@@ -30,6 +30,10 @@ public class SSTController extends AnalyticalIndexController {
     @Override
     protected double computeRes(int rowIndex , int index)
     {
+        double superRes = super.computeRes(rowIndex, index) ;
+        if(superRes != -1)
+            return superRes ;
+
         double B5 = super.getT(rowIndex) ;
         double B7 = super.getV(rowIndex) ;
         double B26 = B7==0?0.25:(B7>23?15:B7*0.66) ;

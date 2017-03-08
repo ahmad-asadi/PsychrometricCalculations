@@ -31,6 +31,10 @@ public class STIController extends AnalyticalIndexController {
 
     @Override
     protected double computeRes(int rowIndex, int resIndex) {
+        double superRes = super.computeRes(rowIndex, resIndex) ;
+        if(superRes != -1)
+            return superRes ;
+
         double B5 = getT(rowIndex) ;
         double B6 = getRH(rowIndex) ;
         double B7 = getV(rowIndex) ;

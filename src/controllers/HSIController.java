@@ -31,6 +31,10 @@ public class HSIController extends AnalyticalIndexController {
     @Override
     protected double computeRes(int input , int index)
     {
+        double superRes = super.computeRes(input, index) ;
+        if(superRes != -1)
+            return superRes ;
+
         double B5 = getT(input) ;
         double B6 = getRH(input) ;
         double B7 = getV(input) ;

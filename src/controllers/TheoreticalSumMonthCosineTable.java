@@ -44,7 +44,9 @@ public class TheoreticalSumMonthCosineTable extends JTable {
         double[][] data = cosineFrame.getData() ;
         for(int col = 0 ; col < data.length ; col++){
             for(int row = 0; row < 24 ; row ++){
-                if(row == 12)
+                if(row == 0)
+                    setValueAt(Double.toString(data[col][12]), row , col + 1);
+                else if(row == 12)
                     setValueAt(Double.toString(data[col][0]), row , col + 1);
                 else if (row > 12)
                     setValueAt(Double.toString(data[col][24-row]), row , col + 1);

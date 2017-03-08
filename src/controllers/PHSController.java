@@ -30,6 +30,10 @@ public class PHSController extends AnalyticalIndexController {
     @Override
     protected double computeRes(int rowIndex , int index)
     {
+        double superRes = super.computeRes(rowIndex, index) ;
+        if(superRes != -1)
+            return superRes ;
+
         double B5 = getT(rowIndex) ;
         double B6 = getRH(rowIndex) ;
         double B7 = getV(rowIndex) ;

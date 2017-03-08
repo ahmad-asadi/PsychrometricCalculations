@@ -26,7 +26,7 @@ public abstract class AnalyticalIndexController extends IndexController {
             varTable.setValueAt(Integer.toString(jolNo),i,1);
         }
 
-        String[] cols1 = new String[]{"ردیف","مدار میل","ارتفاع خورشید","Lg","LA","R در شرایط آفتابی", "R در شرایط سایه"} ;
+        String[] cols1 = new String[]{"ردیف","مدار میل","وارون ارتفاع خورشید","Lg","LA","R در شرایط آفتابی", "R در شرایط سایه"} ;
         String[] cols2 = concatArrays(new String[]{"ردیف"},getLocalResList()) ;
 
         table1 = new JTable(new String[400][cols1.length],cols1) ;
@@ -49,6 +49,30 @@ public abstract class AnalyticalIndexController extends IndexController {
         add(tabbedPane) ;
 
     }
+
+    @Override
+    protected String[][] getInitRowList(String[] list) {
+        String[][] rows =  new String[400][list.length];
+        rows[0][0] = "فروردین-مارس" ;
+        rows[1][0] = "اردیبهشت-آوریل" ;
+        rows[2][0] = "خرداد-می" ;
+
+        rows[3][0] = "تیر-ژوئن" ;
+        rows[4][0] = "مرداد-جولای" ;
+        rows[5][0] = "شهریور-آگوست" ;
+
+        rows[6][0] = "مهر-سپتامبر" ;
+        rows[7][0] = "آبان-اکتبر" ;
+        rows[8][0] = "آذر-نوامبر" ;
+
+        rows[9][0] = "دی-دسامبر" ;
+        rows[10][0] = "بهمن-ژانویه" ;
+        rows[11][0] = "اسفند-فوریه" ;
+
+        return rows;
+    }
+
+
 
     private JScrollPane createNewSubTable(JTable table1) {
         JScrollPane jsp1 = new JScrollPane(table1) ;
@@ -117,7 +141,16 @@ public abstract class AnalyticalIndexController extends IndexController {
 
     @Override
     protected double computeRes(double[] inputs, int index, int row){
-        switch (index){
+        return 0 ;
+    }
+
+    @Override
+    protected double computeRes(double[] inputs, int index){
+        return 0 ;
+    }
+
+    protected double computeRes(int row , int resIndex){
+        switch (resIndex){
             case 0:
                 return getMedarMil(row) ;
             case 1:
@@ -131,16 +164,9 @@ public abstract class AnalyticalIndexController extends IndexController {
             case 5:
                 return getRShaded(row) ;
             default:
-                return computeRes(row, index-5) ;
+                return -1;
         }
     }
-
-    @Override
-    protected double computeRes(double[] inputs, int index){
-        return 0 ;
-    }
-
-    protected abstract double computeRes(int rowIndex , int resIndex);
 
     @Override
     protected String[] getVarList() {
@@ -187,7 +213,7 @@ public abstract class AnalyticalIndexController extends IndexController {
 
     protected double getMedarMil(int rowIndex){
         int jolNumber = (int)getInput(rowIndex,1) ;
-        return 23.45*Math.sin(Math.toRadians(360*(((double)(jolNumber))/365))) ;
+        return -23.45*Math.cos(Math.toRadians(360*(((double)(jolNumber+10))/365))) ;
     }
 
     protected int getJolNumber(int rowIndex){
@@ -334,7 +360,7 @@ public abstract class AnalyticalIndexController extends IndexController {
     }
 
     protected double getCloud(int rowIndex){
-        return getInput(rowIndex, 5) ;
+        return getInput(rowIndex, 6) ;
     }
 
     protected double getTmrtShaded(int rowIndex){

@@ -26,6 +26,10 @@ public class UTCIController extends AnalyticalIndexController {
     @Override
     protected double computeRes(int rowIndex, int resIndex) {
 
+        double superRes = super.computeRes(rowIndex, resIndex) ;
+        if(superRes != -1)
+            return superRes ;
+
         double R13 = getTmrtSunny(rowIndex) ;
         double R14 = getTmrtShaded(rowIndex) ;
 

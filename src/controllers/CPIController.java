@@ -47,7 +47,7 @@ public class CPIController extends IndexController {
 
     @Override
     protected double computeRes(double[] inputs, int index){
-        double v = inputs[1]*0.54444 ;
+        double v = inputs[1] ;
         if(v < 1)
             return (36.5 - inputs[0]) * (0.2 + (0.4*Math.sqrt(v))) * 41.868 ;
         else

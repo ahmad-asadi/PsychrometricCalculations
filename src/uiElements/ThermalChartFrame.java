@@ -110,14 +110,8 @@ public class ThermalChartFrame extends JFrame {
 
     private void addPenComboToSidePanel() {
         penwardenCombo = new JComboBox() ;
-        penwardenCombo.addItem("بهمن - فروردین در آفتاب") ;
-        penwardenCombo.addItem("بهمن - فروردین در سایه") ;
-        penwardenCombo.addItem("اردیبهشت - تیر در آفتاب") ;
-        penwardenCombo.addItem("اردیبهشت - تیر در سایه") ;
-        penwardenCombo.addItem("مرداد - مهر در آفتاب") ;
-        penwardenCombo.addItem("مرداد - مهر در سایه") ;
-        penwardenCombo.addItem("آبان - دی در آفتاب") ;
-        penwardenCombo.addItem("آبان - دی در سایه") ;
+        penwardenCombo.addItem("نمودار مناطق آسایش عابر پیاده") ;
+        penwardenCombo.addItem("نمودار مناطق آسایش") ;
         penwardenCombo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -48,10 +48,15 @@ public class SecondCosineReportTable extends JTable {
             double C14 = cosineFrame.getMedar(col) ;
             double C12 = (((double)2)/15)*(Math.toDegrees(Math.acos(((-Math.tan(Math.toRadians(C14)))*Math.tan(Math.toRadians(cosineFrame.getLat())))))) ;
             double D1 = C10 / C12 ;
-            for(int row = 0; row < data[col].length ; row ++){
-                setValueAt(Double.toString(D1 * data[col][row]),row,col+1);
-                if(row + 13 < 24)
-                    setValueAt(Double.toString(D1 * data[col][row]),row+13,col+1);
+            for(int row = 0; row < 24 ; row ++){
+                if(row == 0)
+                    setValueAt(Double.toString(D1*data[col][12]), row , col + 1);
+                else if(row == 12)
+                    setValueAt(Double.toString(D1*data[col][0]), row , col + 1);
+                else if (row > 12)
+                    setValueAt(Double.toString(D1*data[col][24-row]), row , col + 1);
+                else if (row < 12)
+                    setValueAt(Double.toString(D1*data[col][row]),row,col+1);
             }
         }
     }

@@ -23,8 +23,8 @@ public class Chart extends JPanel{
     protected int pointRadius = 12 ;
     protected ThermalChartFrame parent;
 
-    private Vector<Point> points ;
-    private Vector<String> pointStrings ;
+    protected Vector<Point> points ;
+    protected Vector<String> pointStrings ;
     private Vector<Point> lines ;
 
     public Chart(ThermalChartFrame parent){

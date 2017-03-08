@@ -113,8 +113,8 @@ public class TejungController extends IndexController {
             table4.setValueAt(resTable.getValueAt(j,0),j,0);
             table4.setValueAt(resTable.getValueAt(j, 3), j, 1);
             table4.setValueAt(resTable.getValueAt(j, 4), j, 2);
-            table4.setValueAt(resTable.getValueAt(j, 5), j, 3);
-            table4.setValueAt(resTable.getValueAt(j, 6), j, 4);
+            table4.setValueAt(resTable.getValueAt(j, 6), j, 3);
+            table4.setValueAt(resTable.getValueAt(j, 7), j, 4);
         }
 
     }

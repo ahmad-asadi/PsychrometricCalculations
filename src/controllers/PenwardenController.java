@@ -19,7 +19,7 @@ public class PenwardenController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دما","میانگین سرعت باد","رطوبت نسبی"};
+        return new String[]{"میانگین دما","میانگین سرعت باد به متر بر ثانیه","رطوبت نسبی"};
     }
 
     @Override
@@ -52,7 +52,7 @@ public class PenwardenController extends IndexController {
             if((row > 11 && getCellData(varTable,row,0)!=0) || row < 12){
                 ArrayList rowData = new ArrayList() ;
                 rowData.add(getCellData(varTable,row,1));
-                rowData.add(getCellData(varTable,row,2));
+                rowData.add(getCellData(varTable,row,2)*1.35);
                 data.add(rowData);
 //                cols.add((String) varTable.getValueAt(row,0) + " در آفتاب");
                 cols.add((String) varTable.getValueAt(row,0) );
