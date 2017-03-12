@@ -28,7 +28,7 @@ public class PMVController extends IndexController {
 //                varTable.setValueAt("1.2", i, 2);
 //            }
 
-        bounds = new double[]{-3.45, 3.55,-2.5,-1.5,-0.5,0.5,1.5,2.5,3.5,Double.MAX_VALUE} ;
+        bounds = new double[]{-3.5, -2.5,-1.5,-0.5,0.5,1.5,2.5,3.5,Double.MAX_VALUE} ;
         boundStrings1 = new String[] {"خیلی سرد","سرد","خنک","کمی خنک","راحت","کمی گرم","گرم","خیلی گرم","داغ","خیلی داغ"} ;
         boundStrings2 = new String[] {"تنش سرمای بسیار شدید","تنش سرمای شدید","تنش سرمای متوسط","تنش سرمای اندک","بدون تنش سرما","تنش گرمای اندک","تنش گرمای متوسط","تنش گرمای شدید","تنش گرمای بسیار شدید","تنش گرمای بشدت شدید"} ;
 
@@ -70,10 +70,10 @@ public class PMVController extends IndexController {
     @Override
     protected String getBoundString(double[] resInput, int i) {
         switch (i){
-            case 1:
-                return getBoundString(boundStrings1, bounds, resInput[2]) ;
             case 2:
-                return getBoundString(boundStrings2, bounds, resInput[2]) ;
+                return getBoundString(boundStrings1, bounds, resInput[1]) ;
+            case 3:
+                return getBoundString(boundStrings2, bounds, resInput[1]) ;
         }
         return "ناشناخته";
     }

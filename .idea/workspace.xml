@@ -7,59 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4149f2a8-9bce-4555-b8c7-5e578421fb42" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/TerjungChartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PsychrometricCalculation_jar/PsychrometricCalculation.jar" afterPath="$PROJECT_DIR$/out/artifacts/PsychrometricCalculation_jar/PsychrometricCalculation.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/AbanCosineController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/AbanCosineController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/AnalyticalIndexController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/AnalyticalIndexController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/AzarCosineController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/AzarCosineController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/BahmanCosineController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/BahmanCosineController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/CustomCellRenderer2.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/CustomCellRenderer2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/DeyCosineController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/DeyCosineController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/EsfandCosineController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/EsfandCosineController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/EvanzController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/EvanzController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/Facade.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/Facade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/FarvardinCosineTable.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/FarvardinCosineTable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/KhordadCosineController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/KhordadCosineController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/MehrCosineTable.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/MehrCosineTable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/MonthCosineController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/MonthCosineController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/MordadCosineController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/MordadCosineController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/OrdibeheshtCosineTable.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/OrdibeheshtCosineTable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/SecondCosineReportTable.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/SecondCosineReportTable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/ShahrivarCosineController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/ShahrivarCosineController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/TejungController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/TejungController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/TheoreticalSumMonthCosineTable.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/TheoreticalSumMonthCosineTable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/TirCosineController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/TirCosineController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/UTCIController.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/controllers/UTCIController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/lang/PersianLanguageDictionary.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/lang/PersianLanguageDictionary.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/CosineFrame$1.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/CosineFrame$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/CosineFrame.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/CosineFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/CustomCellRenderer.class" afterPath="$PROJECT_DIR$/out/production/PsychrometricCalculation/uiElements/CustomCellRenderer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/AbanCosineController.java" afterPath="$PROJECT_DIR$/src/controllers/AbanCosineController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/AnalyticalIndexController.java" afterPath="$PROJECT_DIR$/src/controllers/AnalyticalIndexController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/AzarCosineController.java" afterPath="$PROJECT_DIR$/src/controllers/AzarCosineController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/BahmanCosineController.java" afterPath="$PROJECT_DIR$/src/controllers/BahmanCosineController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/DeyCosineController.java" afterPath="$PROJECT_DIR$/src/controllers/DeyCosineController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/EsfandCosineController.java" afterPath="$PROJECT_DIR$/src/controllers/EsfandCosineController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/EvanzController.java" afterPath="$PROJECT_DIR$/src/controllers/EvanzController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/Facade.java" afterPath="$PROJECT_DIR$/src/controllers/Facade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/FarvardinCosineTable.java" afterPath="$PROJECT_DIR$/src/controllers/FarvardinCosineTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/KhordadCosineController.java" afterPath="$PROJECT_DIR$/src/controllers/KhordadCosineController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/CPIController.java" afterPath="$PROJECT_DIR$/src/controllers/CPIController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/EETController.java" afterPath="$PROJECT_DIR$/src/controllers/EETController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/HSIController.java" afterPath="$PROJECT_DIR$/src/controllers/HSIController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/MahoneyController.java" afterPath="$PROJECT_DIR$/src/controllers/MahoneyController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/MehrCosineTable.java" afterPath="$PROJECT_DIR$/src/controllers/MehrCosineTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/MonthCosineController.java" afterPath="$PROJECT_DIR$/src/controllers/MonthCosineController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/MordadCosineController.java" afterPath="$PROJECT_DIR$/src/controllers/MordadCosineController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/OrdibeheshtCosineTable.java" afterPath="$PROJECT_DIR$/src/controllers/OrdibeheshtCosineTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/PSTController.java" afterPath="$PROJECT_DIR$/src/controllers/PSTController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/SecondCosineReportTable.java" afterPath="$PROJECT_DIR$/src/controllers/SecondCosineReportTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/ShahrivarCosineController.java" afterPath="$PROJECT_DIR$/src/controllers/ShahrivarCosineController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/TejungController.java" afterPath="$PROJECT_DIR$/src/controllers/TejungController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/TheoreticalSumMonthCosineTable.java" afterPath="$PROJECT_DIR$/src/controllers/TheoreticalSumMonthCosineTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/TirCosineController.java" afterPath="$PROJECT_DIR$/src/controllers/TirCosineController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/UTCIController.java" afterPath="$PROJECT_DIR$/src/controllers/UTCIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lang/PersianLanguageDictionary.java" afterPath="$PROJECT_DIR$/src/lang/PersianLanguageDictionary.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uiElements/CosineFrame.java" afterPath="$PROJECT_DIR$/src/uiElements/CosineFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uiElements/MainFrame.java" afterPath="$PROJECT_DIR$/src/uiElements/MainFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/PMVController.java" afterPath="$PROJECT_DIR$/src/controllers/PMVController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/SSIController.java" afterPath="$PROJECT_DIR$/src/controllers/SSIController.java" />
     </list>
     <ignored path="PsychrometricCalculation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,11 +35,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TejungController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/TejungController.java">
+      <file leaf-file-name="PersianLanguageDictionary.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lang/PersianLanguageDictionary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+            <state relative-caret-position="275">
+              <caret line="29" column="72" selection-start-line="29" selection-start-column="72" selection-end-line="29" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SSIController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controllers/SSIController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PMVController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/PMVController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EETController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/EETController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HSIController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/HSIController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CPIController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/CPIController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="444">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,70 +98,18 @@
       <file leaf-file-name="PSTController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/PSTController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+            <state relative-caret-position="249">
+              <caret line="72" column="40" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/IndexController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
-              <folding>
-                <element signature="e#9266#9267#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uiElements/MainFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2499">
-              <caret line="485" column="39" selection-start-line="485" selection-start-column="39" selection-end-line="485" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MahoneyController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MahoneyController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/MahoneyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1725">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CosineFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uiElements/CosineFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="190" column="90" selection-start-line="190" selection-start-column="90" selection-end-line="190" selection-end-column="90" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TheoreticalSumMonthCosineTable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/TheoreticalSumMonthCosineTable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-91">
-              <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SecondCosineReportTable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/SecondCosineReportTable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state relative-caret-position="390">
+              <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -177,8 +128,8 @@
       <file leaf-file-name="AnalyticalIndexController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/AnalyticalIndexController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="374" column="22" selection-start-line="374" selection-start-column="22" selection-end-line="374" selection-end-column="22" />
+            <state relative-caret-position="213">
+              <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -219,15 +170,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/controllers/HSIController.java" />
         <option value="$PROJECT_DIR$/src/controllers/PHSController.java" />
         <option value="$PROJECT_DIR$/src/controllers/SSTController.java" />
         <option value="$PROJECT_DIR$/src/controllers/STIController.java" />
-        <option value="$PROJECT_DIR$/src/controllers/CPIController.java" />
         <option value="$PROJECT_DIR$/src/uiElements/ThermalChartFrame.java" />
         <option value="$PROJECT_DIR$/src/uiElements/Chart.java" />
         <option value="$PROJECT_DIR$/src/uiElements/PenwardenChart.java" />
-        <option value="$PROJECT_DIR$/src/controllers/IndexController.java" />
         <option value="$PROJECT_DIR$/src/controllers/PenwardenController.java" />
         <option value="$PROJECT_DIR$/src/controllers/EsfandCosineController.java" />
         <option value="$PROJECT_DIR$/src/controllers/FarvardinCosineTable.java" />
@@ -255,6 +203,12 @@
         <option value="$PROJECT_DIR$/src/controllers/AnalyticalIndexController.java" />
         <option value="$PROJECT_DIR$/src/controllers/PSTController.java" />
         <option value="$PROJECT_DIR$/src/controllers/MahoneyController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/IndexController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/HSIController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/CPIController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/EETController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/PMVController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/SSIController.java" />
       </list>
     </option>
   </component>
@@ -271,8 +225,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
-    <option name="y" value="1048" />
+    <option name="y" value="24" />
     <option name="width" value="1280" />
     <option name="height" value="1000" />
   </component>
@@ -799,15 +752,15 @@
       <updated>1488288365898</updated>
       <workItem from="1488288369147" duration="381000" />
       <workItem from="1489145913104" duration="5972000" />
-      <workItem from="1489228753479" duration="12098000" />
+      <workItem from="1489228753479" duration="17043000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18451000" />
+    <option name="totallyTimeSpent" value="23396000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="1048" width="1280" height="1000" extended-state="6" />
+    <frame x="0" y="24" width="1280" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -816,6 +769,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="100" y="124" width="1080" height="800" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32867885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -854,7 +808,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="24" />
+      <option name="time" value="38" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -863,28 +817,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/controllers/TejungController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2088">
-          <caret line="116" column="54" selection-start-line="116" selection-start-column="54" selection-end-line="116" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uiElements/PenwardenChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uiElements/Chart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
-          <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/uiElements/ThermalChartFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1890">
@@ -937,6 +869,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
           <caret line="53" column="39" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -963,14 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/HSIController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/PHSController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -992,13 +917,6 @@
         <state relative-caret-position="72">
           <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/CPIController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="53" column="39" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1146,14 +1064,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lang/PersianLanguageDictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/Facade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1221,36 +1131,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
-          <folding>
-            <element signature="e#9266#9267#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/AnalyticalIndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="374" column="22" selection-start-line="374" selection-start-column="22" selection-end-line="374" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/TejungController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/PSTController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1265,8 +1149,83 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/MahoneyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1725">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="390">
+          <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="291" column="37" selection-start-line="291" selection-start-column="37" selection-end-line="291" selection-end-column="37" />
+          <folding>
+            <element signature="e#9214#9215#0" expanded="true" />
+            <element signature="e#9266#9267#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/PSTController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="72" column="40" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/AnalyticalIndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/HSIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/CPIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/EETController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/PMVController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lang/PersianLanguageDictionary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="29" column="72" selection-start-line="29" selection-start-column="72" selection-end-line="29" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/SSIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
           <folding />
         </state>
       </provider>

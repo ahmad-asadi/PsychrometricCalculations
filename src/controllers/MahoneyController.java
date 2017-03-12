@@ -12,6 +12,10 @@ public class MahoneyController extends IndexController {
 
     private final double[] bounds;
     private final String[] boundStrings;
+    private final JTable table1;
+    private final JTable table2;
+    private final JTable table3;
+    private JTabbedPane tabbedPane;
 
     public MahoneyController(){
         super();
@@ -24,32 +28,31 @@ public class MahoneyController extends IndexController {
         indexOfBoundStrings.add(7);
         indexOfBoundStrings.add(8);
 
-        String[] cols1 = new String[]{"ردیف","بیشینه مقیاس الف","کمینه مقیاس الف","بیشینه مقیاس ب","کمینه مقیاس ب","بیشینه مقیاس ج","کمینه مقیاس ج"} ;
-        String[] cols3 = new String[]{"ردیف","مقیاس الف","مقیاس ب","مقیاس ج"} ;
-        String[] cols4 = new String[]{"ردیف","شرایط گرمایی"} ;
+        String[] cols1 = getFinalResList() ;
 
         table1 = new JTable(new String[400][cols1.length],cols1) ;
         table2 = new JTable(new String[400][cols1.length],cols1) ;
-        table3 = new JTable(new String[400][cols3.length],cols3) ;
-        table4 = new JTable(new String[400][cols3.length],cols3) ;
-        table5 = new JTable(new String[400][cols4.length],cols4) ;
+        table3 = new JTable(new String[400][cols1.length],cols1) ;
 
 
         JScrollPane jsp1 = createNewSubTable(table1);
         JScrollPane jsp2 = createNewSubTable(table2);
         JScrollPane jsp3 = createNewSubTable(table3);
-        JScrollPane jsp4 = createNewSubTable(table4);
-        JScrollPane jsp5 = createNewSubTable(table5);
 
-        table5.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
+        table1.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        for(int i = 0 ; i < table1.getColumnCount() ; i ++)
+            table1.getColumnModel().getColumn(i).setPreferredWidth(200);
+
+        varTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        for(int i = 0 ; i < varTable.getColumnCount() ; i ++)
+            varTable.getColumnModel().getColumn(i).setPreferredWidth(200);
 
         tabbedPane = new JTabbedPane() ;
 
         tabbedPane.setSize(resJsp.getSize());
-        tabbedPane.add("محدوده مقیاس‌های روز",jsp1) ;
-        tabbedPane.add("محدوده مقیاس‌های شب",jsp2) ;
-        tabbedPane.add("منطقه راحت روز",jsp3) ;
-        tabbedPane.add("منطقه راحت شب",jsp4) ;
+        tabbedPane.add("نتایج",jsp1) ;
+        tabbedPane.add("توصیه‌ها ۱",jsp2) ;
+        tabbedPane.add("توصیه‌ها ۲",jsp3) ;
 //        tabbedPane.add("شرایط گرمایی",jsp5) ;
         tabbedPane.setLocation(resJsp.getLocation());
         tabbedPane.setBorder(BorderFactory.createBevelBorder(0));
@@ -79,25 +82,17 @@ public class MahoneyController extends IndexController {
     public void solve(){
         super.solve();
         for(int j = 0 ; j < resTable.getRowCount() ; j++) {
-            for (int i = 0; i < 7; i++) {
+            for (int i = 0; i < table1.getColumnCount(); i++) {
                 table1.setValueAt(resTable.getValueAt(j, i), j, i);
             }
             table2.setValueAt(resTable.getValueAt(j,0),j,0);
-            for (int i = 7; i < 13; i++) {
-                table2.setValueAt(resTable.getValueAt(j, i), j, i-6);
-            }
+//            for (int i = 7; i < 13; i++) {
+//                table2.setValueAt(resTable.getValueAt(j, i), j, i-6);
+//            }
             table3.setValueAt(resTable.getValueAt(j,0),j,0);
-            for (int i = 13; i < 16; i++) {
-                table3.setValueAt(resTable.getValueAt(j, i), j, i-12);
-            }
-            table4.setValueAt(resTable.getValueAt(j,0),j,0);
-            for (int i = 16; i < 19; i++) {
-                table4.setValueAt(resTable.getValueAt(j, i), j, i-15);
-            }
-            table5.setValueAt(resTable.getValueAt(j,0),j,0);
-            for (int i = 19; i < 20; i++) {
-                table5.setValueAt(resTable.getValueAt(j, i), j, i-18);
-            }
+//            for (int i = 13; i < 16; i++) {
+//                table3.setValueAt(resTable.getValueAt(j, i), j, i-12);
+//            }
         }
 
     }

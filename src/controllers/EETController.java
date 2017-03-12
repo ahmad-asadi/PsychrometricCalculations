@@ -22,7 +22,7 @@ public class EETController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دما","میانگین رطوبت نسبی","میانگین سرعت باد"};
+        return new String[]{"میانگین دما","میانگین رطوبت نسبی","میانگین سرعت باد به متر در ثانیه"};
     }
 
     @Override

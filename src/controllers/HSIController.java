@@ -68,7 +68,7 @@ public class HSIController extends AnalyticalIndexController {
         double H55 = 0.056*B5+4.48 ;
         double H54 = H39 / (H39 + H40 + H55) ;
         double H27 = (O13+P13-(0.95*0.0000000567*Math.pow(273+H48,4)))*H54 ;
-        double H56 = N13 + H54 ;
+        double H56 = N13 * H54 ;
         double H26 = H56 + H27 ;
         double H57 = 0.95*0.0000000567*Math.pow((273+H43),4) ;
         double H53 = Math.pow(((H56+(O13+P13)*H54+0.5*H57)/(0.95*0.0000000567)),0.25)-273 ;
@@ -78,21 +78,25 @@ public class HSIController extends AnalyticalIndexController {
         double H74 = 7*(Math.pow(B7,0.6))*(56-H6) ;
         double HSI = 100*(H73/H74) ;
 
-        switch (index){
-            case 0:
-                return P13 ;
-            case 1:
-                return O13 ;
-            case 2:
-                return N13 ;
-            case 3:
-                return H73 ;
-            case 4:
-                return H74 ;
-            case 5:
-                return HSI ;
-            default:
-                return -1 ;
-        }
+        if(H74 == 0)
+            return -999999 ;
+        else
+            return HSI ;
+//        switch (index){
+//            case 0:
+//                return P13 ;
+//            case 1:
+//                return O13 ;
+//            case 2:
+//                return N13 ;
+//            case 3:
+//                return H73 ;
+//            case 4:
+//                return H74 ;
+//            case 5:
+//                return HSI ;
+//            default:
+//                return -1 ;
+//        }
     }
 }
