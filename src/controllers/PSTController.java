@@ -11,8 +11,8 @@ public class PSTController extends AnalyticalIndexController {
 
     public PSTController(){
         numberOfRes = 2 ;
-        bounds = new double[]{-36,-16.1,4,14,24,34,44,54,Double.MAX_VALUE} ;
-        boundStrings = new String[]{"یخ‌زدگی","خیلی سرد","سرد","خنک","آسایش","گرم","داغ","خیلی گرم","سوزان"} ;
+        bounds = new double[]{-16,4,14,24,34,44,54,Double.MAX_VALUE} ;
+        boundStrings = new String[]{"خیلی سرد","سرد","خنک","آسایش","داغ","سوزان","خیلی داغ"} ;
         indexOfBoundStrings = new ArrayList<>() ;
         indexOfBoundStrings.add(7);
     }

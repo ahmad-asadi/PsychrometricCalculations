@@ -17,11 +17,6 @@ public class KhordadCosineController extends MonthCosineController {
     }
 
     @Override
-    protected double getMedar() {
-        return 23.2546178057485;
-    }
-
-    @Override
     protected int getMonthNo() {
         return 2;
     }

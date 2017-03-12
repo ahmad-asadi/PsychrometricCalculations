@@ -19,9 +19,7 @@ public abstract class MonthCosineController extends JTable {
 
     protected abstract double getA();
     protected abstract double getB();
-    protected abstract double getMedar();
     protected abstract int getMonthNo();
-
     public MonthCosineController(CosineFrame parent){
         super(new String[49][15],new String[]{"ستون اول","ستون دوم","ستون سوم","ستون چهارم","ستون پنجم","ستون ششم","ستون هفتم","ستون هشتم","ستون نهم","ستون دهم","ستون یازدهم","ستون دوازدهم","ستون سیزدهم","ستون چهاردهم","ستون پانزدهم"});
         this.parent = parent ;
@@ -168,7 +166,7 @@ public abstract class MonthCosineController extends JTable {
                 double D37 = D22 < 0 ? 0 : D22 ;
                 double D64 = D61*D37 ;
                 setValueAt(Double.toString(D64), 36 + j , i);
-                if(i > 2 && j < 14)
+//                if(i > 2 && i < 14)
                     hours[j] += D64 ;
             }
 
@@ -180,6 +178,10 @@ public abstract class MonthCosineController extends JTable {
         parent.setMonthSummary(getMonthNo(), hours) ;
         parent.setMedar(getMonthNo(), getMedar());
 
+    }
+
+    protected double getMedar(){
+        return parent.getMedarMill(getMonthNo()) ;
     }
 
     protected double getCellData(int row, int col){

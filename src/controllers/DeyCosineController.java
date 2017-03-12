@@ -17,11 +17,6 @@ public class DeyCosineController extends MonthCosineController {
     }
 
     @Override
-    protected double getMedar() {
-        return -21.0963438933451;
-    }
-
-    @Override
     protected int getMonthNo() {
         return 9;
     }

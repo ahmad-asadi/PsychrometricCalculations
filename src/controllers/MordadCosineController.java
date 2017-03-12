@@ -17,11 +17,6 @@ public class MordadCosineController extends MonthCosineController {
     }
 
     @Override
-    protected double getMedar() {
-        return 13.1223682035186;
-    }
-
-    @Override
     protected int getMonthNo() {
         return 4;
     }

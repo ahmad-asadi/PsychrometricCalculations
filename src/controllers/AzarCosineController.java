@@ -18,11 +18,6 @@ public class AzarCosineController extends MonthCosineController {
     }
 
     @Override
-    protected double getMedar() {
-        return -23.2416248006465;
-    }
-
-    @Override
     protected int getMonthNo() {
         return 8;
     }

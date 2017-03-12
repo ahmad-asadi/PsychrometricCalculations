@@ -42,20 +42,14 @@ public class SecondCosineReportTable extends JTable {
         setValueAt("-15",23,0);
         double[][] data = cosineFrame.getData() ;
         for(int col = 0 ; col < data.length ; col++){
-            double C8 = cosineFrame.getSunHour(col) ;
-            double C9 = col < 6 ? 31 :(col < 11 ? 30 : 29) ;
-            double C10 = C8 / C9 ;
+            double C10 = cosineFrame.getSunHour(col) ;
             double C14 = cosineFrame.getMedar(col) ;
             double C12 = (((double)2)/15)*(Math.toDegrees(Math.acos(((-Math.tan(Math.toRadians(C14)))*Math.tan(Math.toRadians(cosineFrame.getLat())))))) ;
             double D1 = C10 / C12 ;
             for(int row = 0; row < 24 ; row ++){
-                if(row == 0)
-                    setValueAt(Double.toString(D1*data[col][12]), row , col + 1);
-                else if(row == 12)
-                    setValueAt(Double.toString(D1*data[col][0]), row , col + 1);
-                else if (row > 12)
+                if (row > 12)
                     setValueAt(Double.toString(D1*data[col][24-row]), row , col + 1);
-                else if (row < 12)
+                else //if (row < 12)
                     setValueAt(Double.toString(D1*data[col][row]),row,col+1);
             }
         }

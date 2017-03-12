@@ -1,6 +1,8 @@
 package controllers;
 
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -21,7 +23,85 @@ public class MahoneyController extends IndexController {
         indexOfBoundStrings.add(6);
         indexOfBoundStrings.add(7);
         indexOfBoundStrings.add(8);
+
+        String[] cols1 = new String[]{"ردیف","بیشینه مقیاس الف","کمینه مقیاس الف","بیشینه مقیاس ب","کمینه مقیاس ب","بیشینه مقیاس ج","کمینه مقیاس ج"} ;
+        String[] cols3 = new String[]{"ردیف","مقیاس الف","مقیاس ب","مقیاس ج"} ;
+        String[] cols4 = new String[]{"ردیف","شرایط گرمایی"} ;
+
+        table1 = new JTable(new String[400][cols1.length],cols1) ;
+        table2 = new JTable(new String[400][cols1.length],cols1) ;
+        table3 = new JTable(new String[400][cols3.length],cols3) ;
+        table4 = new JTable(new String[400][cols3.length],cols3) ;
+        table5 = new JTable(new String[400][cols4.length],cols4) ;
+
+
+        JScrollPane jsp1 = createNewSubTable(table1);
+        JScrollPane jsp2 = createNewSubTable(table2);
+        JScrollPane jsp3 = createNewSubTable(table3);
+        JScrollPane jsp4 = createNewSubTable(table4);
+        JScrollPane jsp5 = createNewSubTable(table5);
+
+        table5.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
+
+        tabbedPane = new JTabbedPane() ;
+
+        tabbedPane.setSize(resJsp.getSize());
+        tabbedPane.add("محدوده مقیاس‌های روز",jsp1) ;
+        tabbedPane.add("محدوده مقیاس‌های شب",jsp2) ;
+        tabbedPane.add("منطقه راحت روز",jsp3) ;
+        tabbedPane.add("منطقه راحت شب",jsp4) ;
+//        tabbedPane.add("شرایط گرمایی",jsp5) ;
+        tabbedPane.setLocation(resJsp.getLocation());
+        tabbedPane.setBorder(BorderFactory.createBevelBorder(0));
+        tabbedPane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+
+        remove(resJsp);
+        add(tabbedPane) ;
+
     }
+
+    private JScrollPane createNewSubTable(JTable table1) {
+        JScrollPane jsp1 = new JScrollPane(table1) ;
+        jsp1.setSize(table1.getSize());
+        jsp1.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        table1.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        table1.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+
+        table1.getColumnModel().getColumn(0).setPreferredWidth(100);
+        for(int i = 1 ; i < table1.getColumnCount() ; i++)
+            table1.getColumnModel().getColumn(i).setPreferredWidth(180);
+
+        table1.setFillsViewportHeight(true);
+        return jsp1;
+    }
+
+    @Override
+    public void solve(){
+        super.solve();
+        for(int j = 0 ; j < resTable.getRowCount() ; j++) {
+            for (int i = 0; i < 7; i++) {
+                table1.setValueAt(resTable.getValueAt(j, i), j, i);
+            }
+            table2.setValueAt(resTable.getValueAt(j,0),j,0);
+            for (int i = 7; i < 13; i++) {
+                table2.setValueAt(resTable.getValueAt(j, i), j, i-6);
+            }
+            table3.setValueAt(resTable.getValueAt(j,0),j,0);
+            for (int i = 13; i < 16; i++) {
+                table3.setValueAt(resTable.getValueAt(j, i), j, i-12);
+            }
+            table4.setValueAt(resTable.getValueAt(j,0),j,0);
+            for (int i = 16; i < 19; i++) {
+                table4.setValueAt(resTable.getValueAt(j, i), j, i-15);
+            }
+            table5.setValueAt(resTable.getValueAt(j,0),j,0);
+            for (int i = 19; i < 20; i++) {
+                table5.setValueAt(resTable.getValueAt(j, i), j, i-18);
+            }
+        }
+
+    }
+
 
     @Override
     protected double computeRes(double[] inputs, int index){

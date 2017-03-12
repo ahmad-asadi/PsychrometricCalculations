@@ -46,6 +46,9 @@ public class Facade {
             case "Terjung ":
                 indexController = new TejungController() ;
                 break;
+            case "TerjungChart ":
+                indexController = new TerjungChartController() ;
+                break;
             case "(WCT) Wind chill Temperature":
                 indexController = new WCTController() ;
                 break;

@@ -17,11 +17,6 @@ public class OrdibeheshtCosineTable extends MonthCosineController {
     }
 
     @Override
-    protected double getMedar() {
-        return 19.2636251749416;
-    }
-
-    @Override
     protected int getMonthNo() {
         return 1;
     }

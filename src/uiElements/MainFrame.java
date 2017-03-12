@@ -53,6 +53,11 @@ public class MainFrame extends JFrame {
     private JLabel deltaLabel;
     private JTextField deltaField;
     private JButton cosineBtn;
+    private JLabel titleLabel;
+    private JLabel authors;
+    private JLabel authorsen;
+    private JLabel email1;
+    private JLabel email2;
 
     public MainFrame()
     {
@@ -411,7 +416,46 @@ public class MainFrame extends JFrame {
         panel.setLayout(new BorderLayout());
         panel.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 
+        createInitialMessage(panel) ;
+
         return panel;
+    }
+
+    private void createInitialMessage(JPanel panel) {
+        titleLabel = new JLabel("نرم‌افزار Thermal Comfort Indices Climate",JLabel.CENTER) ;
+        titleLabel.setFont(new Font("Tahoma", 10 , 20));
+        titleLabel.setSize(500, 40);
+        titleLabel.setLocation((panel.getWidth() - titleLabel.getWidth())/2 , 50);
+
+        authors = new JLabel("توسط دکتر زهرا حجازی‌زاده و علیرضا کربلائی درئی تهیه شده است.", JLabel.CENTER) ;
+        authors.setFont(new Font("Tahoma", 10 , 18));
+        authors.setSize(700 , 40);
+        authors.setLocation((panel.getWidth() - authors.getWidth())/2 , titleLabel.getY() + titleLabel.getHeight() + 20);
+
+
+        authorsen = new JLabel("Dr Z. Hejazizadeh                    A. R. Karbalaee Doree", JLabel.CENTER) ;
+        authorsen.setFont(new Font("Tahoma", 10 , 18));
+        authorsen.setSize(700 , 40);
+        authorsen.setLocation((panel.getWidth() - authorsen.getWidth())/2 , authors.getY() + authors.getHeight() + 20);
+
+        email1 = new JLabel("hedijazizadeh@tmu.ac.ir", JLabel.CENTER) ;
+        email1.setFont(new Font("Tahoma", 10 , 18));
+        email1.setSize(700 , 40);
+        email1.setLocation((panel.getWidth() - authorsen.getWidth())/2 , authorsen.getY() + authorsen.getHeight() + 20);
+
+        email2 = new JLabel("Karbalaee20@gmail.com", JLabel.CENTER) ;
+        email2.setFont(new Font("Tahoma", 10 , 18));
+        email2.setSize(700 , 40);
+        email2.setLocation((panel.getWidth() - authorsen.getWidth())/2 , email1.getY() + email1.getHeight() + 20);
+
+
+
+        panel.setLayout(null);
+        panel.add(titleLabel);
+        panel.add(authors);
+        panel.add(authorsen);
+        panel.add(email1);
+        panel.add(email2);
     }
 
     private JPanel getSidePanel() {
@@ -430,12 +474,20 @@ public class MainFrame extends JFrame {
 
     public void addNewIndexController(IndexController indexController) {
 
+        graphPanel.remove(titleLabel);
+        graphPanel.remove(authors);
+        graphPanel.remove(authorsen);
+        graphPanel.remove(email1);
+        graphPanel.remove(email2);
+
         if(this.indexController != null)
             graphPanel.remove(this.indexController);
 
         this.indexController = indexController;
-        if(indexController == null)
+        if(indexController == null) {
+            createInitialMessage(graphPanel);
             return;
+        }
 
         graphPanel.setLayout(null);
         indexController.setSize(graphPanel.getSize());

@@ -17,11 +17,6 @@ public class BahmanCosineController extends MonthCosineController {
     }
 
     @Override
-    protected double getMedar() {
-        return 13.2891561850267;
-    }
-
-    @Override
     protected int getMonthNo() {
         return 10;
     }

@@ -40,7 +40,7 @@ public class UTCIController extends AnalyticalIndexController {
         double S13 = 3.21+0.872*B5+0.2459*R13+(-2.5078*B7)-0.0176*B6 ;
         double S14 = 3.21+0.872*B5+0.2459*R14+(-2.5078*B7)-0.0176*B6 ;
 
-        if(resIndex < 2)
+        if(resIndex == 6)
             return S13 ;
         else
             return S14 ;
@@ -54,7 +54,7 @@ public class UTCIController extends AnalyticalIndexController {
 
     @Override
     protected String getBoundString(double[] resInput, int i) {
-        return getBoundString(boundStrings, bounds, resInput[i<2?0 : 2]);
+        return getBoundString(boundStrings, bounds, resInput[i]);
     }
 
 

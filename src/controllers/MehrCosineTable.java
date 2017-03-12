@@ -17,11 +17,6 @@ public class MehrCosineTable extends MonthCosineController {
     }
 
     @Override
-    protected double getMedar() {
-        return -10.3301654930191;
-    }
-
-    @Override
     protected int getMonthNo() {
         return 6;
     }

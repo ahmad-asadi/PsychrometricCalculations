@@ -19,6 +19,7 @@ import java.io.*;
  */
 public class CosineFrame extends JFrame{
 
+    private final JTable medarMillTable;
     private JTable sunHoursTable ;
     private JTextField lat ;
     private JPanel panel ;
@@ -43,6 +44,30 @@ public class CosineFrame extends JFrame{
 
         String[] cols = new String[]{"ماه","فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"};
 
+        String[][] rowData1 = new String[1][13] ;
+        rowData1[0][0] = "مدارهای میل";
+        rowData1[0][1] = "9.96588881328322";
+        rowData1[0][2] = "19.2636251749416";
+        rowData1[0][3] = "23.2546178057485";
+        rowData1[0][4] = "21.1836935645139";
+        rowData1[0][5] = "13.1223682035186";
+        rowData1[0][6] = "1.61335714612628";
+        rowData1[0][7] = "-10.3301654930191";
+        rowData1[0][8] = "-19.4902292262213";
+        rowData1[0][9] = "-23.2416248006465";
+        rowData1[0][10] = "-21.0963438933451";
+        rowData1[0][11] = "-13.2891561850267";
+        rowData1[0][12] = "-2.01587453039313";
+
+        String[] cols1 = new String[]{"ماه","فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"};
+
+        medarMillTable = new JTable(rowData1, cols1) ;
+        medarMillTable.setSize(getWidth() - 20 , 50);
+        medarMillTable.setLocation(0,50);
+        medarMillTable.setRowHeight(30);
+        for(int i = 0 ; i < medarMillTable.getColumnCount() ; i ++)
+            medarMillTable.getColumnModel().getColumn(i).setCellRenderer(new CustomCellRenderer());
+
         sunHoursTable = new JTable(rowData, cols) ;
         sunHoursTable.setSize(getWidth() - 20 , 50);
         sunHoursTable.setLocation(0,50);
@@ -52,12 +77,21 @@ public class CosineFrame extends JFrame{
 
         JScrollPane jsp = new JScrollPane(sunHoursTable) ;
         jsp.setSize(sunHoursTable.getWidth(), sunHoursTable.getHeight() + 40);
-        jsp.setLocation(10 , 20);
+        jsp.setLocation(10 , 120);
         jsp.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         jsp.setBorder(BorderFactory.createTitledBorder("میانگین ساعت آفتابی روزانه"));
         sunHoursTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         sunHoursTable.setFillsViewportHeight(true);
         sunHoursTable.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+
+        JScrollPane jsp1 = new JScrollPane(medarMillTable) ;
+        jsp1.setSize(medarMillTable.getWidth(), medarMillTable.getHeight() + 40);
+        jsp1.setLocation(10 , 20);
+        jsp1.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        jsp1.setBorder(BorderFactory.createTitledBorder("مدارهای میل مورد استفاده"));
+        medarMillTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        medarMillTable.setFillsViewportHeight(true);
+        medarMillTable.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 
 
         JLabel label = new JLabel("عرض جغرافیایی");
@@ -98,6 +132,7 @@ public class CosineFrame extends JFrame{
         panel.setLayout(null);
 
         getContentPane().add(panel) ;
+        getContentPane().add(jsp1) ;
         getContentPane().add(jsp) ;
         getContentPane().add(label) ;
         getContentPane().add(lat) ;
@@ -108,6 +143,14 @@ public class CosineFrame extends JFrame{
         btn3Handle();
 
         setVisible(true);
+    }
+
+    public double getMedarMill(int monthNo){
+        try{
+            return Double.parseDouble((String) medarMillTable.getValueAt(0,monthNo+1)) ;
+        }catch (Exception e){
+            return 0 ;
+        }
     }
 
     private JScrollPane createJSP(JTable table){

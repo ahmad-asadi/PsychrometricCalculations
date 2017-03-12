@@ -17,11 +17,6 @@ public class EsfandCosineController extends MonthCosineController {
     }
 
     @Override
-    protected double getMedar() {
-        return -2.01587453039313;
-    }
-
-    @Override
     protected int getMonthNo() {
         return 11;
     }

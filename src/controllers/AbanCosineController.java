@@ -17,11 +17,6 @@ public class AbanCosineController extends MonthCosineController {
     }
 
     @Override
-    protected double getMedar() {
-        return -19.4902292262213;
-    }
-
-    @Override
     protected int getMonthNo() {
         return 7;
     }

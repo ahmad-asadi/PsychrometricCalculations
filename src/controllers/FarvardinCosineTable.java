@@ -18,11 +18,6 @@ public class FarvardinCosineTable extends MonthCosineController {
     }
 
     @Override
-    protected double getMedar() {
-        return 9.96588881328322;
-    }
-
-    @Override
     protected int getMonthNo() {
         return 0;
     }

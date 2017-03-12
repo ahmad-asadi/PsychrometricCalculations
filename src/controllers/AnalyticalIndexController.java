@@ -53,21 +53,21 @@ public abstract class AnalyticalIndexController extends IndexController {
     @Override
     protected String[][] getInitRowList(String[] list) {
         String[][] rows =  new String[400][list.length];
-        rows[0][0] = "فروردین-مارس" ;
-        rows[1][0] = "اردیبهشت-آوریل" ;
-        rows[2][0] = "خرداد-می" ;
+        rows[0][0] = "ژانویه" ;
+        rows[1][0] = "فوریه" ;
+        rows[2][0] = "مارس" ;
 
-        rows[3][0] = "تیر-ژوئن" ;
-        rows[4][0] = "مرداد-جولای" ;
-        rows[5][0] = "شهریور-آگوست" ;
+        rows[3][0] = "آوریل" ;
+        rows[4][0] = "می" ;
+        rows[5][0] = "ژوئن" ;
 
-        rows[6][0] = "مهر-سپتامبر" ;
-        rows[7][0] = "آبان-اکتبر" ;
-        rows[8][0] = "آذر-نوامبر" ;
+        rows[6][0] = "ژولای" ;
+        rows[7][0] = "آگوست" ;
+        rows[8][0] = "سپتامبر" ;
 
-        rows[9][0] = "دی-دسامبر" ;
-        rows[10][0] = "بهمن-ژانویه" ;
-        rows[11][0] = "اسفند-فوریه" ;
+        rows[9][0] = "اکتبر" ;
+        rows[10][0] = "نوامبر" ;
+        rows[11][0] = "دسامبر" ;
 
         return rows;
     }
@@ -346,11 +346,11 @@ public abstract class AnalyticalIndexController extends IndexController {
         double RSunny = 0 ;
 
         if(h>4){
-            if(N < 3)
+            if(N <= 3)
                 RSunny = 1.4* (-100.428+73.981*Math.log(h))*(1-0.01*ac) ;
-            else if(N < 5)
+            else if(N <= 5)
                 RSunny = 1.4*Math.exp(5.383-16.072/h) * (1-0.01*ac) ;
-            else if(N < 7)
+            else if(N <= 7)
                 RSunny = 1.4*Math.exp(5.012-11.805/h) * (1-0.01*ac) ;
             else
                 RSunny = 1.4*0.951*Math.pow(h,1.039) * (1-0.01*ac) ;
@@ -380,6 +380,7 @@ public abstract class AnalyticalIndexController extends IndexController {
         rows[3][0] = "جنسیت" ;
         rows[3][1] = "1" ;
         rows[4][0] = "ساعت (جهت محاسبه زاویه ساعتی)" ;
+        rows[4][1] = "12" ;
         return rows ;
     }
 

@@ -17,11 +17,6 @@ public class TirCosineController extends MonthCosineController {
     }
 
     @Override
-    protected double getMedar() {
-        return 21.1836935645139;
-    }
-
-    @Override
     protected int getMonthNo() {
         return 3;
     }

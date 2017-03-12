@@ -57,7 +57,7 @@ public class EvanzController extends IndexController{
         tabbedPane.add("محدوده مقیاس‌های شب",jsp2) ;
         tabbedPane.add("منطقه راحت روز",jsp3) ;
         tabbedPane.add("منطقه راحت شب",jsp4) ;
-        tabbedPane.add("شرایط گرمایی",jsp5) ;
+//        tabbedPane.add("شرایط گرمایی",jsp5) ;
         tabbedPane.setLocation(resJsp.getLocation());
         tabbedPane.setBorder(BorderFactory.createBevelBorder(0));
         tabbedPane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);

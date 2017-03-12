@@ -17,11 +17,6 @@ public class ShahrivarCosineController extends MonthCosineController {
     }
 
     @Override
-    protected double getMedar() {
-        return 1.61335714612628;
-    }
-
-    @Override
     protected int getMonthNo() {
         return 5;
     }
