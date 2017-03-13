@@ -7,16 +7,11 @@ import uiElements.MainFrame;
 
 import javax.swing.*;
 import javax.swing.border.Border;
-import javax.swing.event.CellEditorListener;
 import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.JTableHeader;
-import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableModel;
 import java.awt.*;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
+import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.EventObject;
 
 
 /**
@@ -27,6 +22,8 @@ public abstract class IndexController extends JPanel {
     private JLabel varLabel;
     private JLabel resLabel;
     private JLabel constLabel;
+
+    private ExcelAdapter constAdapter ;
 
     protected int numberOfRes;
     protected int numberOfVars;
@@ -71,7 +68,9 @@ public abstract class IndexController extends JPanel {
 
         ExcelAdapter varAdapter = new ExcelAdapter(varTable) ;
         ExcelAdapter resAdapter = new ExcelAdapter(resTable) ;
-
+        if(constTable != null){
+            constAdapter = new ExcelAdapter(constTable) ;
+        }
 
 
 
@@ -93,6 +92,65 @@ public abstract class IndexController extends JPanel {
         if(constTable != null) {
             constTable.setShowHorizontalLines(true);
             constTable.setShowVerticalLines(true);
+        }
+
+        varTable.addMouseListener( new MouseAdapter()
+        {
+            public void mousePressed(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            public void mouseReleased(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            private void doPop(MouseEvent e){
+                PopUp menu = new PopUp(varAdapter);
+                menu.show(e.getComponent(), e.getX(), e.getY());
+            }
+        });
+        resTable.addMouseListener( new MouseAdapter()
+        {
+            public void mousePressed(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            public void mouseReleased(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            private void doPop(MouseEvent e){
+                PopUp menu = new PopUp(resAdapter);
+                menu.show(e.getComponent(), e.getX(), e.getY());
+            }
+        });
+
+        if(constTable != null)
+        {
+            ExcelAdapter finalConstAdapter = constAdapter;
+            constTable.addMouseListener(new MouseAdapter()
+            {
+                public void mousePressed(MouseEvent e){
+                    if (e.isPopupTrigger())
+                        doPop(e);
+                }
+
+                public void mouseReleased(MouseEvent e){
+                    if (e.isPopupTrigger())
+                        doPop(e);
+                }
+
+                private void doPop(MouseEvent e){
+                    PopUp menu = new PopUp(finalConstAdapter);
+                    menu.show(e.getComponent(), e.getX(), e.getY());
+                }
+            });
+
+
         }
     }
 
@@ -344,4 +402,33 @@ class SelectAllRenderer extends DefaultTableCellRenderer
 
     }
 
+}
+
+class PopUp extends JPopupMenu {
+    JMenuItem copyItem;
+    JMenuItem pasteItem;
+    ExcelAdapter adapter ;
+    public PopUp(ExcelAdapter adapter){
+        this.adapter = adapter ;
+        copyItem = new JMenuItem("Copy");
+        add(copyItem);
+        pasteItem = new JMenuItem("Paste");
+        add(pasteItem);
+
+        copyItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ActionEvent ev = new ActionEvent(this , 9999999 , "Copy") ;
+                adapter.actionPerformed(ev);
+            }
+        });
+
+        pasteItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ActionEvent ev = new ActionEvent(this , 9999998 , "Paste") ;
+                adapter.actionPerformed(ev);
+            }
+        });
+    }
 }

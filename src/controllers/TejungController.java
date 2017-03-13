@@ -1,10 +1,13 @@
 package controllers;
 
+import facilities.ExcelAdapter;
 import uiElements.ThermalChartFrame;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 /**
@@ -85,11 +88,34 @@ public class TejungController extends IndexController {
     }
 
     private JScrollPane createNewSubTable(JTable table1) {
+        table1.setShowHorizontalLines(true);
+        table1.setShowVerticalLines(true);
+
         JScrollPane jsp1 = new JScrollPane(table1) ;
         jsp1.setSize(table1.getSize());
         jsp1.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         table1.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         table1.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+
+        ExcelAdapter adapter = new ExcelAdapter(table1) ;
+        table1.addMouseListener( new MouseAdapter()
+        {
+            public void mousePressed(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            public void mouseReleased(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            private void doPop(MouseEvent e){
+                PopUp menu = new PopUp(adapter);
+                menu.show(e.getComponent(), e.getX(), e.getY());
+            }
+        });
+
 
         table1.getColumnModel().getColumn(0).setPreferredWidth(100);
         for(int i = 1 ; i < table1.getColumnCount() ; i++)

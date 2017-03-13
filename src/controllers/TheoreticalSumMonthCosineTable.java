@@ -12,6 +12,8 @@ public class TheoreticalSumMonthCosineTable extends JTable {
 
     public TheoreticalSumMonthCosineTable(CosineFrame cosineFrame) {
         super(new String[24][13], new String[]{"","فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"});
+        setShowHorizontalLines(true);
+        setShowVerticalLines(true);
 
         setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         setSize(cosineFrame.getWidth(), cosineFrame.getHeight() - 50);

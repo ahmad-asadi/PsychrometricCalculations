@@ -12,6 +12,9 @@ public class SecondCosineReportTable extends JTable {
     public SecondCosineReportTable(CosineFrame cosineFrame) {
         super(new String[24][13], new String[]{"","فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"});
 
+        setShowHorizontalLines(true);
+        setShowVerticalLines(true);
+
         setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         setSize(cosineFrame.getWidth(), cosineFrame.getHeight() - 50);
         setLocation(0,0);

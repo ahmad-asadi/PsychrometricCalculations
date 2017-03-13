@@ -1,9 +1,13 @@
 package controllers;
 
+import facilities.ExcelAdapter;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 /**
@@ -91,7 +95,32 @@ public class MahoneyController extends IndexController {
         for(int i = 1 ; i < table1.getColumnCount() ; i++)
             table1.getColumnModel().getColumn(i).setPreferredWidth(180);
 
+
+
+        ExcelAdapter adapter = new ExcelAdapter(table1) ;
+        table1.addMouseListener( new MouseAdapter()
+        {
+            public void mousePressed(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            public void mouseReleased(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            private void doPop(MouseEvent e){
+                PopUp menu = new PopUp(adapter);
+                menu.show(e.getComponent(), e.getX(), e.getY());
+            }
+        });
+
+
         table1.setFillsViewportHeight(true);
+        table1.setShowHorizontalLines(true);
+        table1.setShowVerticalLines(true);
+
         return jsp1;
     }
 
@@ -157,52 +186,63 @@ public class MahoneyController extends IndexController {
         table2.setValueAt(Integer.toString(sums[5]),13,6);
 
 
+        //////////////////////////////   JANAMAEI
         int index = 0 ;
-        if((sums[0] >=0 && sums[0] <= 10) || (sums[0] >= 11 && sums[0] <= 12 && sums[2]>=5 && sums[2]<=12) )
-            table3.setValueAt("ساختمان‌ها بر محور شرقی-غربی جهت‌گیری کنند تا حتی‌الامکان در معرض خورشید نباشند.",index++ , 0);
+        if(sums[0] <= 10 || sums[2] >= 5 )
+            table3.setValueAt("جانمایی: ساختمان‌ها بر محور شرقی-غربی جهت‌گیری کنند تا حتی‌الامکان در معرض خورشید نباشند.",index++ , 0);
 
-        if(sums[0] >= 11 && sums[0] <= 12 && sums[2]>=0 && sums[2]<=4)
-            table3.setValueAt("طراحی فشرده حول یک حیاط مرکزی" , index++ , 0);
+        if(sums[0] >= 11 && sums[2]<=4)
+            table3.setValueAt("جانمایی: طراحی فشرده حول یک حیاط مرکزی" , index++ , 0);
 
-        if(sums[3]>=11 && sums [3] <= 12)
-            table3.setValueAt("فضاسازی باز برای نفوذ باد",index++ , 0);
 
-        if(sums[3]>=0 && sums[3] <= 10)
-            table3.setValueAt("فضاسازی باز برای نفوذ باد، اما از باد سرد/داغ جلوگیری شود", index++ , 0);
+        //////////////////////////////   FAZASAZI
+        if(sums[3]>=11)
+            table3.setValueAt("فضاسازی: فضاسازی باز برای نفوذ باد",index++ , 0);
+
+        if(sums[3]>=2 && sums[3] <= 10)
+            table3.setValueAt("فضاسازی: فضاسازی باز برای نفوذ باد، اما از باد سرد/داغ جلوگیری شود", index++ , 0);
 
         if(sums[3]>=0 && sums[3] <= 1)
-            table3.setValueAt("طراحی فشرده", index++ , 0);
+            table3.setValueAt("فضاسازی: طراحی فشرده", index++ , 0);
 
-        if((sums[3]>=3 && sums[3] <= 12)||(sums[3]>=1 && sums[3]<=2 && sums[5]>=0 && sums[5]<=5))
-            table3.setValueAt("اتاق‌های یک جداره، شرایط دائمی برای جابجایی هوا", index++ , 0);
-        if((sums[3]>=1 && sums[3]<=2 && sums[5]>=6 && sums[5]<=12) || (sums[3]== 0 && sums[4]>=2 && sums[4]<=12))
-            table3.setValueAt("اتاق‌های دوجداره با شرایط موقتی برای جابجایی هوا",index++ , 0);
-        if(sums[3]== 0 && sums[4]>=0 && sums[4]<=1)
-            table3.setValueAt("هیچ جابجایی هوایی نیاز نیست", index++ , 0);
 
+        //////////////////////////////   JABEJAEI E HAVA
+        if(sums[3]>=3 ||sums[0]>=5)
+            table3.setValueAt("جابجایی هوا: اتاق‌های یک جداره، شرایط دائمی برای جابجایی هوا", index++ , 0);
+        if((sums[3]>=1 && sums[3]<=2 && sums[0]>=6 && sums[0]<=12) || (sums[3]== 0 && sums[4]>=2))
+            table3.setValueAt("جابجایی هوا: اتاق‌های دوجداره با شرایط موقتی برای جابجایی هوا",index++ , 0);
+        if(sums[3]== 0 && sums[4]<=1)
+            table3.setValueAt(" جابجایی هوا: هیچ جابجایی هوایی نیاز نیست", index++ , 0);
+
+        //////////////////////////////   BAZSHO
         if(sums[2] == 0 && sums[0] <=1)
-            table3.setValueAt("بازشوهای بزرگ، 40 تا 80 درصد از دیوارهای شمالی و جنوبی", index++ , 0);
+            table3.setValueAt("بازشوها: بازشوهای بزرگ، 40 تا 80 درصد از دیوارهای شمالی و جنوبی", index++ , 0);
         else if(sums[2] <= 1 && sums[0] >= 11)
-            table3.setValueAt("بازشوهای بسیار کوچک، 10 تا 20 درصد",index++ , 0);
+            table3.setValueAt("بازشو‌ها: بازشوهای بسیار کوچک، 10 تا 20 درصد",index++ , 0);
         else
-            table3.setValueAt("بازشو‌های متوسط، ۲۰ تا ۴۰ درصد",index++ , 0);
+            table3.setValueAt("بازشوها: بازشو‌های متوسط، ۲۰ تا ۴۰ درصد",index++ , 0);
 
+        //////////////////////////////   DIVARHA
         if(sums[0] <=2 )
-            table3.setValueAt("دیوارهای سبک، زمان تاخیر کوتاه",index++ , 0);
-        if(sums[0] >= 3 && sums[0] <= 12)
-            table3.setValueAt("دیوارهای سنگین داخلی و خارجی",index++ , 0);
-
-        if(sums[0] <= 5)
-            table3.setValueAt("سقف‌های عایق‌کاری‌شده سبک",index++ , 0);
+            table3.setValueAt("دیوارها: دیوارهای سبک، زمان تاخیر کوتاه",index++ , 0);
         else
-            table3.setValueAt("سقف‌های سنگین، بیش از ۸ ساعت زمان تاخیر",index++ , 0);
+            table3.setValueAt("دیوارها: دیوارهای سنگین داخلی و خارجی",index++ , 0);
 
-        if(sums[1] >= 2 && sums[1] <= 12)
-            table3.setValueAt("فضایی برای خواب بیرون مورد نیاز است",index++,0);
+        //////////////////////////////   SAGHFHA
+        if(sums[0] <= 5)
+            table3.setValueAt("سقف‌ها: سقف‌های عایق‌کاری‌شده سبک",index++ , 0);
+        else
+            table3.setValueAt("سقف‌ها: سقف‌های سنگین، بیش از ۸ ساعت زمان تاخیر",index++ , 0);
 
+        //////////////////////////////   KHAB E BIROON
+        if(sums[1] >= 2 )
+            table3.setValueAt("خواب بیرون: فضایی برای خواب بیرون مورد نیاز است",index++,0);
+
+        //////////////////////////////   MOHAFEZAT AZ BARAN
         if(sums[5] >= 3)
-            table3.setValueAt("محافظت در برابر باران سنگین مورد نیاز است",index++ , 0);
+            table3.setValueAt("محافظت از باران: محافظت در برابر باران سنگین مورد نیاز است",index++ , 0);
 
+        //////////////////////////////   ROZANE
         if(sums[0] <= 1 && sums[2] == 0)
             table3.setValueAt("روزنه‌، نورگیر و پنجره وسیع: 40 تا 80 درصد دیواره‌های شمالی و جنوبی",index++ , 0);
         if(sums[2] >= 1 || (sums[0] >= 2 && sums[0]<=5))
@@ -214,27 +254,30 @@ public class MahoneyController extends IndexController {
         if(sums[0] >= 11 && sums[2] >= 4)
             table3.setValueAt("روزنه، نورگیر و پنجره متوسط: 25 تا 45 درصد مساحت دیوار",index++ , 0);
 
-
+        //////////////////////////////   MAHALE ROZANE
         if(sums[0] <= 5 || sums[3] >= 3)
-            table3.setValueAt("محل روزنه در دیوار‌های شمالی و جنوبی، بدن انسان رو به باد و nر ارتفاع بدن انسان",index++ , 0);
+            table3.setValueAt("محل روزنه: در دیوار‌های شمالی و جنوبی، بدن انسان رو به باد و nر ارتفاع بدن انسان",index++ , 0);
         if(sums[0] >= 6 || sums[4] >= 2)
-            table3.setValueAt("محل روزنه در دیوار\u200Cهای شمالی و جنوبی، بدن انسان رو به باد و nر ارتفاع بدن انسان همین‌طور روزنه در دیوارهای داخلی نیز تعبیه شود",index++ , 0);
+            table3.setValueAt("محل روزنه: در دیوار\u200Cهای شمالی و جنوبی، بدن انسان رو به باد و nر ارتفاع بدن انسان همین‌طور روزنه در دیوارهای داخلی نیز تعبیه شود",index++ , 0);
 
+        //////////////////////////////   HEFAZATE ROZANE
         if(sums[2] <= 2)
-            table3.setValueAt("روزنه از اشعه مستقیم آفتاب حفاظت شود",index++ , 0);
+            table3.setValueAt("حفاظت روزنه: روزنه از اشعه مستقیم آفتاب حفاظت شود",index++ , 0);
         if(sums[5] >= 2)
-            table3.setValueAt("روزنه در مقابل باران حفاظت شود",index++ , 0);
+            table3.setValueAt("حفاظت روزنه: روزنه در مقابل باران حفاظت شود",index++ , 0);
 
+        //////////////////////////////   DIVARHA VA KAFHA
         if(sums[0] <= 2)
-            table3.setValueAt("دیوارها و کف‌ها با ظرفیت گرمایی کم و سبک",index++ , 0);
+            table3.setValueAt("دیوارها و کف‌ها: ظرفیت گرمایی کم و سبک",index++ , 0);
         else
-            table3.setValueAt("دیوارها و کف‌ها سنگین، زمان تاخیر بیش از ۸ ساعت",index++ , 0);
+            table3.setValueAt("دیوارها و کف‌ها: سنگین، زمان تاخیر بیش از ۸ ساعت",index++ , 0);
 
+        //////////////////////////////   SAGHFHA VA FAZAHAYE KHAREJI
         if(sums[3] >= 10){
             if(sums[0] <= 2)
-                table3.setValueAt("سقف‌ها سبک، سطح منعکس‌کننده، دوجداره",index++ , 0);
+                table3.setValueAt("سقف‌ها: سبک، سطح منعکس‌کننده، دوجداره",index++ , 0);
             else
-                table3.setValueAt("سقف‌ها سبک، عایق سدی خوب",index++ , 0);
+                table3.setValueAt("سقف‌ها: سبک، عایق سدی خوب",index++ , 0);
         }
         else
         {
@@ -246,9 +289,9 @@ public class MahoneyController extends IndexController {
 
 
         if(sums[1] >= 1)
-            table3.setValueAt("فضا برای خوابیدن در فضای آزاد", index ++ , 0);
-        if(sums[4] >= 1)
-            table3.setValueAt("تدارکات کافی برای رد‌کردن آب باران",index++ , 0);
+            table3.setValueAt("فضای خارجی: فضا برای خوابیدن در فضای آزاد", index ++ , 0);
+        if(sums[5] >= 1)
+            table3.setValueAt("فضای خارجی: تدارکات کافی برای رد‌کردن آب باران",index++ , 0);
 
 
 

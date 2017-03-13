@@ -1,7 +1,11 @@
 package controllers;
 
+import facilities.ExcelAdapter;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 /**
@@ -57,6 +61,30 @@ public class RSIController extends IndexController {
 
     private JScrollPane createNewSubTable(JTable table1) {
         JScrollPane jsp1 = new JScrollPane(table1) ;
+        table1.setShowHorizontalLines(true);
+        table1.setShowVerticalLines(true);
+
+
+        ExcelAdapter adapter = new ExcelAdapter(table1) ;
+        table1.addMouseListener( new MouseAdapter()
+        {
+            public void mousePressed(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            public void mouseReleased(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            private void doPop(MouseEvent e){
+                PopUp menu = new PopUp(adapter);
+                menu.show(e.getComponent(), e.getX(), e.getY());
+            }
+        });
+
+
         jsp1.setSize(table1.getSize());
         jsp1.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         table1.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);

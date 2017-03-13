@@ -26,6 +26,8 @@ public abstract class MonthCosineController extends JTable {
         setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         setSize(parent.getWidth(), parent.getHeight() - 50);
         setLocation(0,0);
+        setShowHorizontalLines(true);
+        setShowVerticalLines(true);
 
         double[] hours = new double[13] ;
 

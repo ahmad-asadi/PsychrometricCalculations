@@ -9,10 +9,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
+import java.awt.event.*;
 import java.io.*;
 
 /**
@@ -96,8 +93,45 @@ public class CosineFrame extends JFrame{
         medarMillTable.setFillsViewportHeight(true);
         medarMillTable.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 
+        sunHoursTable.addMouseListener( new MouseAdapter()
+        {
+            public void mousePressed(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            public void mouseReleased(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            private void doPop(MouseEvent e){
+                PopUp menu = new PopUp(adapter);
+                menu.show(e.getComponent(), e.getX(), e.getY());
+            }
+        });
+
 
         ExcelAdapter adapter2 = new ExcelAdapter(medarMillTable) ;
+
+        medarMillTable.addMouseListener( new MouseAdapter()
+        {
+            public void mousePressed(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            public void mouseReleased(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            private void doPop(MouseEvent e){
+                PopUp menu = new PopUp(adapter2);
+                menu.show(e.getComponent(), e.getX(), e.getY());
+            }
+        });
+
 
 
         JLabel label = new JLabel("عرض جغرافیایی");
@@ -284,3 +318,32 @@ class CustomCellRenderer extends DefaultTableCellRenderer {
 
 }
 
+
+class PopUp extends JPopupMenu {
+    JMenuItem copyItem;
+    JMenuItem pasteItem;
+    ExcelAdapter adapter ;
+    public PopUp(ExcelAdapter adapter){
+        this.adapter = adapter ;
+        copyItem = new JMenuItem("Copy");
+        add(copyItem);
+        pasteItem = new JMenuItem("Paste");
+        add(pasteItem);
+
+        copyItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ActionEvent ev = new ActionEvent(this , 9999999 , "Copy") ;
+                adapter.actionPerformed(ev);
+            }
+        });
+
+        pasteItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ActionEvent ev = new ActionEvent(this , 9999998 , "Paste") ;
+                adapter.actionPerformed(ev);
+            }
+        });
+    }
+}

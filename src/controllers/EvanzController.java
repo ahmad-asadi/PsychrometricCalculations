@@ -1,9 +1,13 @@
 package controllers;
 
+import facilities.ExcelAdapter;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableModel;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 /**
@@ -79,6 +83,30 @@ public class EvanzController extends IndexController{
             table1.getColumnModel().getColumn(i).setPreferredWidth(180);
 
         table1.setFillsViewportHeight(true);
+        table1.setShowHorizontalLines(true);
+        table1.setShowVerticalLines(true);
+
+
+        ExcelAdapter adapter = new ExcelAdapter(table1) ;
+        table1.addMouseListener( new MouseAdapter()
+        {
+            public void mousePressed(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            public void mouseReleased(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            private void doPop(MouseEvent e){
+                PopUp menu = new PopUp(adapter);
+                menu.show(e.getComponent(), e.getX(), e.getY());
+            }
+        });
+
+
         return jsp1;
     }
 
