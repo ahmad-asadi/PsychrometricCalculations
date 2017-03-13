@@ -85,6 +85,15 @@ public abstract class IndexController extends JPanel {
 //        add(boundJsp) ;
 
 
+
+        varTable.setShowHorizontalLines(true);
+        varTable.setShowVerticalLines(true);
+        resTable.setShowHorizontalLines(true);
+        resTable.setShowVerticalLines(true);
+        if(constTable != null) {
+            constTable.setShowHorizontalLines(true);
+            constTable.setShowVerticalLines(true);
+        }
     }
 
     private void createConstTable() {

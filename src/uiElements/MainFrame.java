@@ -433,12 +433,12 @@ public class MainFrame extends JFrame {
         authors.setLocation((panel.getWidth() - authors.getWidth())/2 , titleLabel.getY() + titleLabel.getHeight() + 20);
 
 
-        authorsen = new JLabel("Dr Z. Hejazizadeh                    A. R. Karbalaee Doree", JLabel.CENTER) ;
+        authorsen = new JLabel("Dr Z. Hedjazizadeh                    A. R. Karbalaee Doree", JLabel.CENTER) ;
         authorsen.setFont(new Font("Tahoma", 10 , 18));
         authorsen.setSize(700 , 40);
         authorsen.setLocation((panel.getWidth() - authorsen.getWidth())/2 , authors.getY() + authors.getHeight() + 20);
 
-        email1 = new JLabel("hedijazizadeh@tmu.ac.ir", JLabel.CENTER) ;
+        email1 = new JLabel("hedjazizadeh@tmu.ac.ir", JLabel.CENTER) ;
         email1.setFont(new Font("Tahoma", 10 , 18));
         email1.setSize(700 , 40);
         email1.setLocation((panel.getWidth() - authorsen.getWidth())/2 , authorsen.getY() + authorsen.getHeight() + 20);

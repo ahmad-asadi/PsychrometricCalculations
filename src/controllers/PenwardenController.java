@@ -19,7 +19,7 @@ public class PenwardenController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دما","میانگین سرعت باد به متر بر ثانیه","رطوبت نسبی"};
+        return new String[]{"میانگین دما","میانگین سرعت باد به متر بر ثانیه"};
     }
 
     @Override

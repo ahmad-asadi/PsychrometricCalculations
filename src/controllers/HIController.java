@@ -23,7 +23,7 @@ public class HIController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دما به فارنهایت","میانگین رطوبت نسبی به درصد" , "دمای نقطه شبنم"};
+        return new String[]{"میانگین دما به فارنهایت","میانگین رطوبت نسبی به درصد" , "دمای نقطه شبنم به سانتی‌گراد"};
     }
 
     @Override

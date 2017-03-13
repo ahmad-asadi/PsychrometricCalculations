@@ -2,6 +2,7 @@ package uiElements;
 
 import com.sun.xml.internal.ws.server.ServerRtException;
 import controllers.*;
+import facilities.ExcelAdapter;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -84,6 +85,8 @@ public class CosineFrame extends JFrame{
         sunHoursTable.setFillsViewportHeight(true);
         sunHoursTable.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 
+        ExcelAdapter adapter = new ExcelAdapter(sunHoursTable) ;
+
         JScrollPane jsp1 = new JScrollPane(medarMillTable) ;
         jsp1.setSize(medarMillTable.getWidth(), medarMillTable.getHeight() + 40);
         jsp1.setLocation(10 , 20);
@@ -92,6 +95,9 @@ public class CosineFrame extends JFrame{
         medarMillTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         medarMillTable.setFillsViewportHeight(true);
         medarMillTable.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+
+
+        ExcelAdapter adapter2 = new ExcelAdapter(medarMillTable) ;
 
 
         JLabel label = new JLabel("عرض جغرافیایی");

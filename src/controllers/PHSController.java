@@ -19,12 +19,12 @@ public class PHSController extends AnalyticalIndexController {
 
     @Override
     protected String getBoundString(double[] resInput, int i) {
-        return null;
+        return getBoundString(boundStrings, bounds, resInput[i]);
     }
 
     @Override
     protected String[] getLocalResList(){
-        return new String[]{"PHS","محدودیت‌های شاخص تنش فیزیکی PHS"} ;
+        return new String[]{"PHS","احساس حرارتی"} ;
     }
 
     @Override

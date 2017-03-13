@@ -35,9 +35,11 @@ public class SuperTable extends JTable {
         switch (selectedIndex){
             case 0:
                 res = 1;
+                setValueAt("135",1,1);
                 break ;
             case 1:
                 res = 2;
+                setValueAt("125",1,1);
                 break ;
        }
 
