@@ -156,12 +156,12 @@ public class CosineFrame extends JFrame{
         });
 
 //        JButton btn1 = createButton("مجموع ساعات نظری ماه‌ها",getWidth()*2/5 + 20 , label.getY()) ;
-//        JButton btn2 = createButton("مجموع ساعات واقعی با احتساب ساعات نظری ماه‌ها",getWidth()/5 + 20, label.getY()) ;
+        JButton btn2 = createButton("پاک‌کردن ورودی‌ها",getWidth()/5 + 20, label.getY()) ;
         JButton btn3 = createButton("محاسبه مراحل برای تک‌تک ماه‌ها",20 , label.getY()) ;
 
 //        btn1.addActionListener(e -> btn1Handle());
 //
-//        btn2.addActionListener(e -> btn2Handle());
+        btn2.addActionListener(e -> btn2Handle());
 
         btn3.addActionListener(e -> btn3Handle());
 
@@ -177,7 +177,7 @@ public class CosineFrame extends JFrame{
         getContentPane().add(label) ;
         getContentPane().add(lat) ;
 //        getContentPane().add(btn1) ;
-//        getContentPane().add(btn2) ;
+        getContentPane().add(btn2) ;
         getContentPane().add(btn3) ;
 
         btn3Handle();
@@ -240,7 +240,10 @@ public class CosineFrame extends JFrame{
     }
 
     private void btn2Handle() {
-        //TODO
+        for(int i = 1 ; i < sunHoursTable.getColumnCount() ; i ++) {
+            sunHoursTable.setValueAt("", 0, i);
+            medarMillTable.setValueAt("",0,i);
+        }
     }
 
     private void btn1Handle() {

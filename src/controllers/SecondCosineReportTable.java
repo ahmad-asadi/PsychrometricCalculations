@@ -1,9 +1,12 @@
 package controllers;
 
+import facilities.ExcelAdapter;
 import uiElements.CosineFrame;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * This class is created by Ahmad Asadi on 2/18/17.
@@ -14,6 +17,27 @@ public class SecondCosineReportTable extends JTable {
 
         setShowHorizontalLines(true);
         setShowVerticalLines(true);
+
+        ExcelAdapter adapter = new ExcelAdapter(this) ;
+
+        addMouseListener( new MouseAdapter()
+        {
+            public void mousePressed(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            public void mouseReleased(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            private void doPop(MouseEvent e){
+                PopUp menu = new PopUp(adapter);
+                menu.show(e.getComponent(), e.getX(), e.getY());
+            }
+        });
+
 
         setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         setSize(cosineFrame.getWidth(), cosineFrame.getHeight() - 50);

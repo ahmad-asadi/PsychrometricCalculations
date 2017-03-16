@@ -1,10 +1,13 @@
 package controllers;
 
+import facilities.ExcelAdapter;
 import uiElements.CosineFrame;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * This class is created by Ahmad Asadi on 2/18/17.
@@ -28,6 +31,29 @@ public abstract class MonthCosineController extends JTable {
         setLocation(0,0);
         setShowHorizontalLines(true);
         setShowVerticalLines(true);
+        setRowSelectionAllowed(true);
+        setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+
+        ExcelAdapter adapter = new ExcelAdapter(this) ;
+
+        addMouseListener( new MouseAdapter()
+        {
+            public void mousePressed(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            public void mouseReleased(MouseEvent e){
+                if (e.isPopupTrigger())
+                    doPop(e);
+            }
+
+            private void doPop(MouseEvent e){
+                PopUp menu = new PopUp(adapter);
+                menu.show(e.getComponent(), e.getX(), e.getY());
+            }
+        });
+
 
         double[] hours = new double[13] ;
 
@@ -209,6 +235,7 @@ class CustomCellRenderer2 extends DefaultTableCellRenderer {
     public Component getTableCellRendererComponent(JTable table, Object value,
                                                    boolean isSelected, boolean hasFocus, int row, int column) {
 
+
         Component rendererComp = super.getTableCellRendererComponent(table, value, isSelected, hasFocus,
                 row, column);
 
@@ -219,6 +246,11 @@ class CustomCellRenderer2 extends DefaultTableCellRenderer {
         else {
             rendererComp.setBackground(Color.WHITE);
             rendererComp.setForeground(Color.black);
+        }
+
+        if (isSelected){
+            rendererComp = super.getTableCellRendererComponent(table, value, isSelected, hasFocus,
+                    row, column);
         }
 
         return rendererComp ;

@@ -25,7 +25,7 @@ public class TerjungChartController extends IndexController {
         varTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
         for(int i = 0 ; i < varTable.getColumnCount() ; i++)
-            varTable.getColumnModel().getColumn(i).setPreferredWidth(200);
+            varTable.getColumnModel().getColumn(i).setPreferredWidth(100);
 
         resTable.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
     }

@@ -21,7 +21,6 @@ public class PMVController extends IndexController {
         numberOfVars = 6 ;
         indexOfBoundStrings = new ArrayList<>() ;
         indexOfBoundStrings.add(2);
-        indexOfBoundStrings.add(3);
 //        for(int i = 0 ; i < varTable.getRowCount() ; i++)
 //            if(varTable.getValueAt(i,0) != null && !varTable.getValueAt(i,0).equals("") && !varTable.getValueAt(i,0).equals(" ")) {
 //                varTable.setValueAt("1", i, 1);
@@ -36,12 +35,12 @@ public class PMVController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"دمای هوا","رطوبت نسبی","دمای کروی","سرعت باد"};
+        return new String[]{"دمای هوا","رطوبت نسبی","دمای کروی","سرعت باد به متر بر ثانیه"};
     }
 
     @Override
     protected String[] getResList() {
-        return new String[]{"شاخص PMV","شاخص PPD","حساسیت حرارتی","درجه تنش فیزیولوژیک"};
+        return new String[]{"شاخص PMV","شاخص PPD","حساسیت حرارتی"};
     }
 
     @Override

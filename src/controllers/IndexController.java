@@ -21,7 +21,7 @@ public abstract class IndexController extends JPanel {
 
     private JLabel varLabel;
     private JLabel resLabel;
-    private JLabel constLabel;
+    protected JLabel constLabel;
 
     private ExcelAdapter constAdapter ;
 
@@ -201,7 +201,7 @@ public abstract class IndexController extends JPanel {
         return rows;
     }
 
-    private JLabel createTableLabel(String text,int x , int y) {
+    protected JLabel createTableLabel(String text,int x , int y) {
         JLabel label = new JLabel(text) ;
 
         if(!hasConstList())

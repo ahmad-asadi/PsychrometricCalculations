@@ -58,7 +58,7 @@ public class HIController extends IndexController {
     @Override
     protected double computeRes(double[] inputs, int index){
         double cond = inputs[2] ;
-        if(cond >= 20 && inputs[0] >= 80 && inputs[1] >= 40)
+        if(cond >= 12 && inputs[0] >= 80 && inputs[1] >= 40)
             return -24.379+(2.04901523*inputs[0])+(10.14333127*inputs[1])-(0.22475541*inputs[0]*inputs[1])-(0.00683783*inputs[0]*inputs[0])-(0.05481717*inputs[1]*inputs[1])+(0.001228*inputs[0]*inputs[0]*inputs[1])+(0.00085282*inputs[0]*inputs[1]*inputs[1])-(0.00000199*inputs[0]*inputs[0]*inputs[1]*inputs[1]) ;
         else
             return -1 ;

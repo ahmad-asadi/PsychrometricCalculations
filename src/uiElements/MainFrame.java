@@ -5,11 +5,14 @@ import controllers.IndexController;
 import facilities.ExcelAdapter;
 import lang.LanguageDictionary;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 /**
  * This class is created by Ahmad Asadi on 1/10/17.
@@ -62,6 +65,13 @@ public class MainFrame extends JFrame {
     public MainFrame()
     {
         facade = new Facade();
+
+//        try {
+//            setIconImage(ImageIO.read(this.getClass().getResourceAsStream("/Imgs/logo.jpg")));
+            setIconImage(Toolkit.getDefaultToolkit().getImage("/Imgs/logo.png"));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         titleFont = new Font("Tahoma",20,18) ;
         normalFont = new Font("Tahoma",20,12) ;
@@ -438,7 +448,7 @@ public class MainFrame extends JFrame {
         authorsen.setSize(700 , 40);
         authorsen.setLocation((panel.getWidth() - authorsen.getWidth())/2 , authors.getY() + authors.getHeight() + 20);
 
-        email1 = new JLabel("hedjazizadeh@tmu.ac.ir", JLabel.CENTER) ;
+        email1 = new JLabel("hedjazizadeh@yahoo.com", JLabel.CENTER) ;
         email1.setFont(new Font("Tahoma", 10 , 18));
         email1.setSize(700 , 40);
         email1.setLocation((panel.getWidth() - authorsen.getWidth())/2 , authorsen.getY() + authorsen.getHeight() + 20);

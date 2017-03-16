@@ -39,7 +39,7 @@ public class TejungController extends IndexController {
         varTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
         for(int i = 0 ; i < varTable.getColumnCount() ; i++)
-            varTable.getColumnModel().getColumn(i).setPreferredWidth(200);
+            varTable.getColumnModel().getColumn(i).setPreferredWidth(100);
 
         constTable.setValueAt("عرض جغرافیایی",0,0);
 

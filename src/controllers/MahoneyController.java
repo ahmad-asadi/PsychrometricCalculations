@@ -1,10 +1,10 @@
 package controllers;
 
 import facilities.ExcelAdapter;
+import uiElements.MainFrame;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
+import javax.swing.table.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -64,9 +64,15 @@ public class MahoneyController extends IndexController {
         table3.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         table3.getColumnModel().getColumn(0).setPreferredWidth(1000);
 
+        DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
+        rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
+        table3.getColumnModel().getColumn(0).setCellRenderer(rightRenderer);
+        JTableHeader header = table3.getTableHeader();
+        header.setDefaultRenderer(new HeaderRenderer(table3));
+
         varTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         for(int i = 0 ; i < varTable.getColumnCount() ; i ++)
-            varTable.getColumnModel().getColumn(i).setPreferredWidth(200);
+            varTable.getColumnModel().getColumn(i).setPreferredWidth(100);
 
         tabbedPane = new JTabbedPane() ;
 
@@ -81,6 +87,11 @@ public class MahoneyController extends IndexController {
 
         remove(resJsp);
         add(tabbedPane) ;
+
+        remove(constLabel);
+        constLabel = createTableLabel("ورودی‌ مورد نیاز" , MainFrame.graphPanelWidth / 3 + 20 , 20);
+        add(constLabel) ;
+        repaint();
 
     }
 
@@ -256,7 +267,7 @@ public class MahoneyController extends IndexController {
 
         //////////////////////////////   MAHALE ROZANE
         if(sums[0] <= 5 || sums[3] >= 3)
-            table3.setValueAt("محل روزنه: در دیوار‌های شمالی و جنوبی، بدن انسان رو به باد و nر ارتفاع بدن انسان",index++ , 0);
+            table3.setValueAt("محل روزنه: در دیوار‌های شمالی و جنوبی، بدن انسان رو به باد و در ارتفاع بدن انسان",index++ , 0);
         if(sums[0] >= 6 || sums[4] >= 2)
             table3.setValueAt("محل روزنه: در دیوار\u200Cهای شمالی و جنوبی، بدن انسان رو به باد و nر ارتفاع بدن انسان همین‌طور روزنه در دیوارهای داخلی نیز تعبیه شود",index++ , 0);
 
@@ -501,7 +512,7 @@ public class MahoneyController extends IndexController {
 
     @Override
     protected String[] getVarList() {
-        return new String[]{"میانگین دمای حداکثر ماهانه","میانگین دمای حداقل ماهانه","میانگین رطوبت نسبی","بارندگی ماهیانه","بالاترین فراوانی باد نخستین باد غالب","بالاترین فراوانی دومین اوج جهت باد فرعي", "میانگین حداقل رطوبت نسبی","میانگین حداکثر رطوبت نسبی"};
+        return new String[]{"میانگین دمای حداکثر ماهانه","میانگین دمای حداقل ماهانه","میانگین رطوبت نسبی","بارندگی ماهیانه"};
     }
 
     @Override
@@ -536,5 +547,24 @@ public class MahoneyController extends IndexController {
         {
             return "" ;
         }
+    }
+}
+
+class HeaderRenderer implements TableCellRenderer {
+
+    DefaultTableCellRenderer renderer;
+
+    public HeaderRenderer(JTable table) {
+        renderer = (DefaultTableCellRenderer)
+                table.getTableHeader().getDefaultRenderer();
+        renderer.setHorizontalAlignment(JLabel.CENTER);
+    }
+
+    @Override
+    public Component getTableCellRendererComponent(
+            JTable table, Object value, boolean isSelected,
+            boolean hasFocus, int row, int col) {
+        return renderer.getTableCellRendererComponent(
+                table, value, isSelected, hasFocus, row, col);
     }
 }
