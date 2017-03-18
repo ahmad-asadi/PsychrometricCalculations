@@ -12,10 +12,20 @@ import java.net.*;
 public class Starter {
 
     public Starter(){
+        System.getProperties().list(System.out);
+        String username = System.getProperty("user.name") ;
+        String testFileDir ;
+        if(username.equals("root"))
+            testFileDir = "/root/" ;
+        else
+            testFileDir = "/home/" + username ;
+
+        if(System.getProperty("os.name").toLowerCase().contains("windows"))
+            testFileDir = "C:\\users\\" + System.getProperty("user.name") + "\\" ;
 
         String macAddress = GetNetworkAddress.GetAddress("mac");
-        File testFile = new File(".dll") ;
-        Authenticated authenticated = new Authenticated();
+        File testFile = new File(testFileDir + "system_psy.dll") ;
+        Authenticated authenticated = null;
         InputStream resourceInputStream = null;
         if(testFile.isFile()) {
             try {
@@ -40,17 +50,25 @@ public class Starter {
                 e.printStackTrace();
             }
         }
-       try {
-            if(authenticated == null || !authenticated.registered || !macAddress.equals(authenticated.macAddress)){
-                serverAuthentication(authenticated);
-            }
-        } catch (Exception e) {
+
+        if(resourceInputStream != null && !authenticated.macAddress.trim().equals("") && macAddress == null)
+            macAddress = authenticated.macAddress ;
+
+        if (authenticated != null && macAddress != null && !macAddress.equals("") && !macAddress.equals(" ") && !authenticated.macAddress.equals(macAddress))
+            authenticated.macAddress = "" ;
+
+        if(authenticated == null || !authenticated.registered || !macAddress.equals(authenticated.macAddress)){
             authenticated = serverAuthentication(authenticated);
         }
+
         if(authenticated.registered) {
             try {
                 System.out.println("writting");
-                File file = new File("./.dll");
+                File file = new File(testFileDir + "system_psy.dll");
+
+                if(!file.isFile()){
+                    file.createNewFile() ;
+                }
 
                 ObjectOutputStream outputStream= new ObjectOutputStream(new FileOutputStream(file)) ;
                 authenticated.macAddress = macAddress ;
@@ -59,7 +77,8 @@ public class Starter {
                 outputStream.close();
 
             } catch (IOException e) {
-                e.printStackTrace();
+                JOptionPane.showMessageDialog(null, "قادر به ذخیره اطلاعات فعال‌سازی روی سیستم نیستیم. لطفا با تیم پشتیبانی تماس بگیرید.");
+
             }
             new MainFrame();
         }
@@ -82,6 +101,8 @@ public class Starter {
                 System.exit(0);
             }
         }
+        if(authenticated == null)
+            authenticated = new Authenticated() ;
         authenticated.registered = new Boolean(true) ;
         authenticated.license = license ;
         return authenticated ;
@@ -93,7 +114,7 @@ public class Starter {
             new Starter();
         }
         catch (Exception e){
-            JOptionPane.showMessageDialog(null,e.getStackTrace());
+            JOptionPane.showMessageDialog(null, "خطای " + e.getMessage() + " ایجاد شده است. لطفا با تیم پشتیبانی تماس حاصل نمایید.");
             System.exit(0);
         }
     }

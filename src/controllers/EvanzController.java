@@ -284,33 +284,3 @@ public class EvanzController extends IndexController{
     }
 
 }
-
-
-/**
- * @author suhas
- *
- */
-class CustomCellRenderer extends DefaultTableCellRenderer {
-
-    private Color color ;
-    public CustomCellRenderer(Color color)
-    {
-        this.color = color ;
-    }
-    /* (non-Javadoc)
-     * @see javax.swing.table.DefaultTableCellRenderer#getTableCellRendererComponent(javax.swing.JTable, java.lang.Object, boolean, boolean, int, int)
-     */
-    public Component getTableCellRendererComponent(JTable table, Object value,
-                                                   boolean isSelected, boolean hasFocus, int row, int column) {
-
-        Component rendererComp = super.getTableCellRendererComponent(table, value, isSelected, hasFocus,
-                row, column);
-
-        //Set background color
-        rendererComp .setBackground(color);
-
-        return rendererComp ;
-    }
-
-}
-
